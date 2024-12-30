@@ -1,0 +1,36 @@
+/* Светлая тема */
+[data-md-color-scheme="default"] {
+    --md-code-hl-function-color: #6f42c1;      /* Структурные ключевые слова */
+    /*--md-code-hl-decorator-color: #e36209;     !* Модификаторы *!*/
+    --md-code-hl-control-color: #d73a49;       /* Управляющие конструкции */
+    --md-code-hl-builtin-color: #e36209;       /* Специальные ключевые слова */
+    --md-code-hl-type-color: #224588;          /* Типы данных */
+    --md-code-hl-variable-color: #3a3a3a;       /* Переменные */
+    --md-code-hl-comment-color: #6a737d;       /* Комментарии */
+    --md-code-hl-operator-color: #d73a49;      /* Операторы */
+    --md-code-hl-punctuation-color: #4d4d4d;   /* Пунктуация */
+}
+
+/* Темная тема */
+[data-md-color-scheme="slate"] {
+    --md-code-hl-function-color: #b392f0;      /* Структурные ключевые слова */
+    /*--md-code-hl-decorator-color: #ffab70;     !* Модификаторы *!*/
+    --md-code-hl-control-color: #f97583;       /* Управляющие конструкции */
+    --md-code-hl-builtin-color: #ffab70;       /* Специальные ключевые слова */
+    --md-code-hl-type-color: #39a6dd;          /* Типы данных */
+    --md-code-hl-variable-color: #d1d1d1;      /* Переменные */
+    --md-code-hl-comment-color: #8b949e;       /* Комментарии */
+    --md-code-hl-operator-color: #f97583;      /* Операторы */
+    --md-code-hl-punctuation-color: #c4c4c4;   /* Пунктуация */
+}
+
+
+.highlight .k { color: var(--md-code-hl-control-color) !important; }        /* Управляющие конструкции */
+/*.highlight .kd { color: var(--md-code-hl-decorator-color) !important; }     !* Модификаторы *!*/
+.highlight .nb { color: var(--md-code-hl-builtin-color) !important; }       /* Специальные ключевые слова */
+.highlight .kt { color: var(--md-code-hl-type-color) !important; }          /* Типы данных */
+.highlight .nf { color: var(--md-code-hl-function-color) !important; }      /* Структурные ключевые слова */
+.highlight .nx { color: var(--md-code-hl-variable-color) !important; }      /* Переменные */
+.highlight .nx { color: var(--md-code-hl-comment-color) !important; }       /* Комментарии */
+.highlight .nx { color: var(--md-code-hl-operator-color) !important; }      /* Операторы */
+.highlight .nx { color: var(--md-code-hl-punctuation-color) !important; }   /* Пунктуация */
