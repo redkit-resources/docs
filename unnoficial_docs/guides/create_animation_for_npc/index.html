@@ -1,0 +1,1874 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://redkit-resources.github.io/docs/unnoficial_docs/guides/create_animation_for_npc/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../useful_features/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Создать анимацию для NPC - REDkit Open Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/syntax_highlight.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pymdown_details.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom_admonitions.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#npc" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="REDkit Open Documentation" class="md-header__button md-logo" aria-label="REDkit Open Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            REDkit Open Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Создать анимацию для NPC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-purple"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Темная тема" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Системная тема"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Системная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/redkit-resources/docs" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    redkit-resources/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Главная
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Документация сообщества
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="REDkit Open Documentation" class="md-nav__button md-logo" aria-label="REDkit Open Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.svg" alt="logo">
+
+    </a>
+    REDkit Open Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/redkit-resources/docs" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    redkit-resources/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Главная
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Добро пожаловать
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Гайд для контрибьюторов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Журнал изменений
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Благодарности
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Документация сообщества
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Документация сообщества
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Основы
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Основы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Поведения
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Поведения
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/behavior/behavior/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Общие сведения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Гайды
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Гайды
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Создать анимацию для NPC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Создать анимацию для NPC
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вам потребуются:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг первый. Выбор модели, для которой будут создаваться анимации.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг второй. Подготовка модели.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг второй. Подготовка модели.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Импорт файлов FBX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fbx_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разбор ситуации с FBX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подготовка модели
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг третий. Начало анимирования.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг третий. Начало анимирования.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перенос модели в новую версию Blender
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Исправление костей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Исправление весов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cascadeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг четвертый. Cascadeur.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг четвертый. Cascadeur.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cascadeur_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Передача модели в Cascadeur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сопоставление скелета
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blender_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Возврат анимации в Blender
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг пятый. Добавление/замена анимации в REDkit.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Полезные фичи
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Полезные фичи
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful_features/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Полезные горячие клавиши
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful_features/copy_info_from_objects_prop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cкопировать инфу из свойств объекта
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Баги и их решения
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Баги и их решения
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bugs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Справочники
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Справочники
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вам потребуются:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг первый. Выбор модели, для которой будут создаваться анимации.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг второй. Подготовка модели.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг второй. Подготовка модели.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Импорт файлов FBX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fbx_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разбор ситуации с FBX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подготовка модели
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг третий. Начало анимирования.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг третий. Начало анимирования.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перенос модели в новую версию Blender
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Исправление костей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Исправление весов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cascadeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг четвертый. Cascadeur.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаг четвертый. Cascadeur.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cascadeur_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Передача модели в Cascadeur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сопоставление скелета
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blender_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Возврат анимации в Blender
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Шаг пятый. Добавление/замена анимации в REDkit.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">Гайд</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Анимации</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Animations</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">NPC</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">blender</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Cascadeur</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/redkit-resources/docs/edit/main/docs/unnoficial_docs/guides/create_animation_for_npc.md" title="Редактировать страницу" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/redkit-resources/docs/raw/main/docs/unnoficial_docs/guides/create_animation_for_npc.md" title="Посмотреть исходный код страницы" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
+
+
+<h1 id="npc">Как создать свою анимацию для NPC<a class="headerlink" href="#npc" title="Permanent link">&para;</a></h1>
+<p>Это руководство содержит пошаговую инструкцию по созданию и внедрению собственных анимаций.</p>
+<h3 id="_1">Вам потребуются:<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.blender.org/download/">Blender</a> последней версии. На момент написания это версия 4.3.1.</li>
+<li><a href="https://www.blender.org/download/releases/3-6/">Blender версии 3.6.</a> (в которой работает важный плагин)</li>
+<li>(необязательно) Полная версия программы для анимирования Cascadeur. 
+Free-версия не подойдет, поскольку в ней недоступна функция экспорта в формат FBX.</li>
+<li>Фикс <a href="https://www.nexusmods.com/witcher3/mods/8105">FBX Import Addon for Blender</a>. 
+Я использую версию, совместимую с Blender 3.6, так как мне эта версия показалась наиболее стабильной.</li>
+<li>(необязательно) Плагин <a href="https://github.com/arcsikex/cascadeur_bridge">Сascadeur Bridge for Blender</a>. 
+Версия плагина зависит от вашей версии Cascadeur (читайте описание плагина). 
+Плагин устанавливается на актуальную версию Blender.</li>
+</ul>
+<h2 id="_2">Шаг первый. Выбор модели, для которой будут создаваться анимации.<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Для начала определитесь, для какого NPC вы будете создавать анимацию. Выбор важен, так как
+базовые скелеты у разных персонажей отличаются, даже если это люди разного пола. 
+В случае с другими расами различия будут еще больше.</p>
+<div class="admonition note">
+<p class="admonition-title">Комментарий</p>
+<p>Анимации для главного героя будут рассматриваться в отдельном уроке, так как в этом случае могут 
+возникнуть дополнительные нюансы.</p>
+</div>
+<p>Для демонстрации в рамках этого урока я создам анимацию для человека женщины. 
+В качестве примера возьмем Йеннифер. Откроем ее основной шаблон сущности (<strong>Entity</strong>):</p>
+<p><code>characters\npc_entities\main_npc\yennefer.w2ent</code></p>
+<ol>
+<li>
+<p>Перейдите на вкладку «<strong>Apearances</strong>». Здесь отображается перечень список вариантов внешности для данного
+персонажа. Этот список поможет нам найти исходные модели, с которыми мы будем работать.
+Выберем вариант, с которых хотим поработать.</p>
+<div class="admonition note">
+<p class="admonition-title">Комментарий</p>
+<p>В идеале анимации должны быть универсальными и не зависимыми от внешнего вида персонажа. 
+Однако если анимация напрямую связана с элементами одежды,
+выбирайте вариант с этой одеждой.</p>
+</div>
+<p>Так как я планирую создать простую анимацию, наиболее удобным будет использовать не обременению
+лишними деталями модель - <strong>yennefer_naked</strong>.</p>
+<p><img alt="yennefer_naked.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked.webp" /></p>
+<p>После выбора варианта внешнего вида справа отобразится из чего он состоит. Простейший вариант
+состоит из тела, головы и волос. Нам понадобится только тело и голова.</p>
+</li>
+<li>
+<p>Дважды щелкните на элемент в списке, и вы перейдете к нему в <strong>Asset Browser</strong>. 
+Эти действия помогут нам найти отдельные части Йеннифер в иерархии папок, но это ещё не то, что
+нам нужно.</p>
+</li>
+<li>
+<p>Теперь, когда вы нашли шаблон конкретного элемента, откройте его и найдите в графе элемент,
+который отвечает за <strong>mesh</strong> (модель) элемента.</p>
+<p><img alt="yennefer_naked_graph.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp" /></p>
+</li>
+<li>
+<p>Внизу, в списке свойств вы увидите путь к модели. 
+Нажмите на значок лупы в строке с путем, и нужный нам файл будет выделен в <strong>Asset Browser</strong>. 
+В моем случае:</p>
+<p><code>characters\models\main_npc\yennefer\h_01_wa__yennefer\h_01_wa__yennefer_hq.w2mesh</code></p>
+</li>
+<li>
+<p>Нажмите на файл правой кнопкой мыши и выберете <strong>«Export Asset»</strong>. 
+Сохраните файл FBX в удобное место.
+Повторите этот процесс для второй части тела.</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Информация</p>
+<p>Весь описанный процесс нужен, чтобы найти необходимые нам модели для частей тела. 
+Если вы уже знаете, где находятся требуемые mesh, вы можете сразу перейти к их экспорту в FBX.</p>
+</div>
+<h2 id="_3">Шаг второй. Подготовка модели.<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>На этом этапе нам нужно предварительно подготовить модель к анимированию.</p>
+<p>Для этого потребуется <a href="https://www.blender.org/download/releases/3-6/">Blender 3.6</a> 
+с установленным фиксом <a href="https://github.com/arcsikex/cascadeur_bridge">FBX Import Addon for Blender</a>. 
+Обратите внимание, что это не самостоятельный аддон, а именно фикс для существующего аддона импорта FBX.
+Устанавливаете его, следуя инструкции на старице фикса.</p>
+<div class="admonition note">
+<p class="admonition-title">Комментарий</p>
+<p>Вы можете использовать другую версию Blender, опираясь на доступные вариации фикса.
+Однако, по моему опыту, наиболее стабильной оказалась версия для Blender 3.6.</p>
+</div>
+<h3 id="fbx">Импорт файлов FBX<a class="headerlink" href="#fbx" title="Permanent link">&para;</a></h3>
+<p>После установки фикса откройте Blender 3.6 и удалите все стартовые элементы. 
+Затем выполните следующие шаги:</p>
+<ol>
+<li>Перейдите в меню: «File &rarr; Import &rarr; FBX». </li>
+<li>Выберите оба файла, которые вы ранее экспортировали из <strong>REDkit</strong>. </li>
+<li>
+<p>В настройках импорта обязательно измените значения для <strong>Primary Bone Axis</strong> и <strong>Secondary Bone Axis</strong>.</p>
+<ul>
+<li>Установите X/-Y (это отличается от рекомендаций разработчиков в их обучающей статье).</li>
+</ul>
+<div class="admonition note">
+<p>В ходе экспериментов я обнаружил, что именно такие настройки работают корректно.
+Позже в процессе работы я объясню, почему.</p>
+</div>
+</li>
+</ol>
+<p><img alt="blender_import_fbx.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp" /></p>
+<h3 id="fbx_1">Разбор ситуации с FBX<a class="headerlink" href="#fbx_1" title="Permanent link">&para;</a></h3>
+<p>Прежде чем продолжить, давайте разберемся что тут происходит.</p>
+<p>При стандартном импорте FBX теряется информация о привязке скелета к модели.
+Это означает, что вы не сможете управлять моделью, манипулируя скелетом. 
+Именно для решения этой проблемы мы используем версию Blender 3.6 с фиксом от сообщества.</p>
+<h3 id="_4">Подготовка модели<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>После импорта моделей выполните следующее:</p>
+<p><strong>Очистите её от лишних элементов.</strong></p>
+<p>Удалите вариации моделей для разной дальности (LOD). Для этого выделите соответствующие элементы в списке и нажмите <strong>x</strong>.</p>
+<p><img alt="blender_lod_delete.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp" /></p>
+<p><strong>Объедините части модели.</strong></p>
+<p>Чтобы упростить дальнейшую работу, объедините голову и тело в одну модель. 
+Для этого:</p>
+<ul>
+<li>Зажмите <span class="keys"><kbd class="key-shift">Shift</kbd></span> и выделите в окне редактора голову и тело (порядок выбора важен). </li>
+<li>Нажмите <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-j">J</kbd></span>, чтобы объединить их в единое целое.</li>
+</ul>
+<p><strong>Очистите лишние данные в блоке Armature.001.</strong></p>
+<p>Этот блок содержит информацию о костях, которая в рамках нашей задачи не нужна (она касается мимики, не которая рассматривается в этом уроке).</p>
+<p>Удалите этот элемент аналогично удалению LOD.</p>
+<p><img alt="blender_armature_delete.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp" /></p>
+<div class="admonition success">
+<p>Подготовительный этап окончен. Модель готова для дальнейшей работы.</p>
+</div>
+<h2 id="_5">Шаг третий. Начало анимирования.<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Дальнейшая работа будет проходить в актуальной версии Blender (в моем случае это 4.3.1 из Steam). </p>
+<h3 id="blender">Перенос модели в новую версию Blender<a class="headerlink" href="#blender" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Откройте актуальную версию Blender параллельно с уже открытой версией 3.6.</li>
+<li>Вернитесь в Blender 3.6, щелкните на пустое место редактора и нажмите <span class="keys"><kbd class="key-a">A</kbd></span>, чтобы выделить все элементы.</li>
+<li>Скопируйте их, нажав <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span>, затем перейдите в актуальную версию Blender.</li>
+<li>Вставьте скопированное, нажимая <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span>.</li>
+</ol>
+<p>На данный момент модель почти готова к анимированию, однако содержит несколько проблем которые нужно решить. </p>
+<ol>
+<li>Текущая вариация костей не подходит для создания анимаций, </li>
+<li>У головы есть ошибки в весах, так как модель рассчитана на наличие мимики</li>
+</ol>
+<p>Исправим оба момента по очереди.</p>
+<h3 id="_6">Исправление костей<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Для решения проблемы с костями можно использовать простой лайфхак — подгрузить готовую анимацию поверх текущей модели.</p>
+<ol>
+<li>Установите аддон от разработчиков, позволяющий импортировать файлы формата <code>.re</code> в Blender.
+    Инструкцию по установке аддона можно найти в этом <a href="https://www.youtube.com/watch?v=wXQRwfslN4Q">видео</a>.</li>
+<li>
+<p>Определитесь с анимацией, которую будете использовать как основу. Так как в конечном итоге нам нужна только одна поза, 
+   выбор анимации должен быть основан на наличии в ней подходящей позы. Например:</p>
+<ul>
+<li>Если вы хотите начать анимацию с обычной позы, то найдите любою анимацию, которая так же начинается с нее. </li>
+<li>Eсли же вы хотите, что бы ваша анимация продолжала другую, то берите ту, что нужно продолжить 
+   (далее мы сможем взять финальную позу и продолжить с нее).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>Анимация должна быть выбрана среди набора для текущего типа NPC. В нашем случае человек-женщина.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Информация</p>
+<p>Все анимации расположены в папке «<strong>Animation</strong>» в файлах <code>.w2anims</code> 
+В видео выше показан пример, как выбрать анимацию и сохранить ее в формат <code>.re</code></p>
+</div>
+</li>
+<li>
+<p>После выбора и экспорта анимации вернитесь в Blender. </p>
+<ul>
+<li>В списке элементов выделите «<strong>Armature</strong>» и нажмите правую кнопку мыши. </li>
+<li>Выберите пункт меню «<strong>Replace Animation from an .re file</strong>».</li>
+<li>В настройках импорта обязательно установите пункт «Object scale» в единицу.</li>
+</ul>
+<p><img alt="blender_object_scale.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_object_scale.webp" /></p>
+</li>
+</ol>
+<p>Если вы сделали все верно, скелет будет заменен на более верный, 
+при нажатии пробела модель будет выполнять загруженную анимацию.</p>
+<div class="admonition warning">
+<p class="admonition-title">Обратите внимание</p>
+<p>Если вместо пункта «Replace Animation…», вы выберете <strong>Import</strong>, 
+анимация загрузится отдельно и будет представлять из себя пустой скелет. 
+Поскольку этот импорт не содержит настроек координат, важно, чтобы модель, 
+на которую будет наложен скелет, совпадала с ним по направлению. 
+Именно это позволяет определить какие параметры стоит выбрать при импорте FBX в описанной выше стадии. 
+Так как скелет смотрит в сторону -Y, его мы и выбрали при импорте.</p>
+</div>
+<h3 id="_7">Исправление весов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Теперь переходим ко второй проблеме</p>
+<p><img alt="blender_weight_bug_example.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp" style="width: 30%;" /></p>
+<p>Часть элементов лица не реагируют анимацию, так как не содержат информации о весе. </p>
+<p>Исправим это вручную:</p>
+<ol>
+<li>Выберите модель и перейдите в режим редактирования «<strong>Weight Paint</strong>»</li>
+<li>
+<p>В верхней части интерфейса, в списке вершин, выберите «<strong>head</strong>»</p>
+<p><img alt="blender_weight_fix_1.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp" /></p>
+</li>
+<li>
+<p>Добавьте вес проблемным областям, нажав на них несколько раз.</p>
+</li>
+<li>
+<p>Если вы все сделали правильно, проблема исчезнет.</p>
+<p><img alt="blender_weight_fix_2.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp" /></p>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Можно работать</p>
+<p>На текущий момент вы уже можете создавать новую анимацию прямо в Blender, 
+если обладаете необходимым навыком, однако я планирую использовать более продвинутый инструмент.</p>
+</div>
+<h2 id="cascadeur">Шаг четвертый. Cascadeur.<a class="headerlink" href="#cascadeur" title="Permanent link">&para;</a></h2>
+<p>Cascadeur — это программа для создания анимаций с ключевой особенностью: физически корректное поведение. 
+Создавая анимации в Cascadeur, вы сильно упрощаете свою задачу, 
+что позволяет гораздо быстрее получить более плавные и физически реалистичные анимации.</p>
+<div class="admonition warning">
+<p class="admonition-title">Важно</p>
+<p>К сожалению, бесплатная версия программы не поддерживает экспорт в FBX, 
+что делает невозможным возврат работы обратно.
+Поэтому если у вас нет возможности купить полную версию (например, в «зёленом магазине»), 
+вы можете пропустить эту часть урока.</p>
+</div>
+<h3 id="cascadeur_1">Передача модели в Cascadeur<a class="headerlink" href="#cascadeur_1" title="Permanent link">&para;</a></h3>
+<p>Чтобы начать работу, нужно передать нашу модель в Cascadeur.</p>
+<p>Хотя можно воспользоваться стандартным процессом импорта/экспорта FBX, энтузиаст 
+<a href="https://www.youtube.com/@AronNemeth95">Aron Nemeth</a> 
+создал гораздо более удобный инструмент — <a href="https://github.com/arcsikex/cascadeur_bridge">Сascadeur Bridge for Blender</a>. </p>
+<p>Этот плагин позволяет Blender и Cascadeur взаимодействовать напрямую без мороки с файлами.</p>
+<ol>
+<li>
+<p>Скачайте и установите этот плагин, убедившись, что его версия соответствует вашей версии Cascadeur.
+(у меня это Cascadeur 2023.1 и плагин версии 1.0.0)</p>
+</li>
+<li>
+<p>Настройте плагин, следуя инструкциям разработчика. Подробное описание работы плагина можно найти
+<a href="https://www.youtube.com/watch?v=0muo9EPIPSE"> в этом видео</a>.</p>
+</li>
+</ol>
+<h3 id="_8">Сопоставление скелета<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Для полноценного использования возможностей программы нужно сопоставить скелет
+нашей модели с внутренней системой Cascadeur.</p>
+<p>Это легко делается с помощью встроенного инструмента, работа которого описана <a href="https://www.youtube.com/watch?v=gPOh1MT8Tlk">тут</a>.</p>
+<p>После выполнения сопоставление не забудьте экспортировать (сохранить) настройки для будущего использования.</p>
+<p>В результате проделанной работы мы получим следующий результат:</p>
+<p><img alt="cascadeur_result.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/cascadeur_result.webp" /></p>
+<div class="admonition success">
+<p class="admonition-title">Успех</p>
+<p>Теперь вы можете создавать анимацию, опираясь на многочисленные обучающие видеоуроки в интернете.</p>
+</div>
+<h3 id="blender_1">Возврат анимации в Blender<a class="headerlink" href="#blender_1" title="Permanent link">&para;</a></h3>
+<p>После завершения создания анимации:
+1. Вернитесь в Blender и выделите арматуру объекта.
+2. В модуле аддона Сascadeur Bridge нажмите «Import Action». 
+3. Спустя какое-то время анимация перенесется в Blender.</p>
+<p>Теперь мы готовы перенести анимацию в REDkit.</p>
+<h2 id="redkit">Шаг пятый. Добавление/замена анимации в REDkit.<a class="headerlink" href="#redkit" title="Permanent link">&para;</a></h2>
+<p>Для экспорта анимации в игру:</p>
+<ol>
+<li>
+<p>В Blender выберите меню «File &rarr; Export &rarr; RE» введите желаемое имя и нажмите <strong>Export</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Внимание</p>
+<p>Выбор имени для вашей анимации важен, так как может вызвать проблемы в случае применения ее в опредёленных сценариях: </p>
+<ul>
+<li>Если эта анимация отвечает за поведение, 
+её имя должно совпадать с именем из другого набора анимаций для поведения.</li>
+</ul>
+<div class="admonition note">
+<p>Краткую справку о системе поведений смотрите <a href="../../base/behavior/behavior/">тут</a></p>
+</div>
+<ul>
+<li>Если анимация предназначена для сцен, убедитесь, что имя отражает её суть, чтобы 
+облегчить поиск в будущем.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>После создания файла .re, вернитесь в REDkit. </p>
+</li>
+<li>Выберите набор анимаций, к которому вы добавите новую анимацию (или создайте новый набор). </li>
+<li>Откройте набор и нажмите на его имя на вкладе «<strong>All animation</strong>», 
+затем правой кнопкой мыши выберите «<strong>import simple/plain animation</strong>».</li>
+</ol>
+<p>Йен машет вам рукой. Помашите ей в ответ 😊</p>
+<p><img alt="yen_waves.webp" src="../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yen_waves.webp" /></p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Существует некоторые подводные камни и проблемы, с которыми вы можете столкнуться в процессе работы с собственными 
+анимациями в REDkit. Эти моменты будут рассмотрены отдельно.</p>
+</div>
+<hr />
+<p>Автор: lxgdark</p>
+<hr />
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Последнее обновление">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">30 декабря 2024 г.</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Дата создания">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">30 декабря 2024 г.</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Назад: Главная">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Главная
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../useful_features/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Главная">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Главная
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/kRTEy8KcNa" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/redkit-resources/docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "search.highlight", "navigation.footer", "navigation.tabs", "navigation.top", "content.action.edit", "content.action.view"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": {"provider": "git"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../javascripts/pymdown_details.js"></script>
+      
+    
+  </body>
+</html>
