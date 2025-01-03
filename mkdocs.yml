@@ -133,7 +133,7 @@ extra_javascript:
   - javascripts/pymdown_details.js
 
 nav:
-  - Главная:
+  - Начало:
       - Добро пожаловать: index.md
       - Гайд для контрибьюторов: contribute.md
       - Журнал изменений: changelog.md
@@ -160,4 +160,5 @@ nav:
 
     - Справочники:
       - Главная: unnoficial_docs/references/index.md
+      - Расширения файлов: unnoficial_docs/references/file_extensions.md
 
