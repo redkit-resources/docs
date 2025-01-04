@@ -128,6 +128,7 @@ extra_css:
   - stylesheets/syntax_highlight.css
   - stylesheets/pymdown_details.css
   - stylesheets/custom_admonitions.css
+  - stylesheets/title_case_fix.css
 
 extra_javascript:
   - javascripts/pymdown_details.js
