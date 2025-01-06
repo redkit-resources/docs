@@ -1,0 +1,4 @@
+.md-typeset h5, .md-typeset h6 {
+    text-transform: none !important;
+    font-size: .9em;
+}
