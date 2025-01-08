@@ -1,0 +1,4434 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://redkit-resources.github.io/docs/unnoficial_docs/references/world/env_params/">
+      
+      
+        <link rel="prev" href="../shadow_params/">
+      
+      
+        <link rel="next" href="../merged_geometry_params/">
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Параметры окружения - REDkit Open Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/syntax_highlight.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/pymdown_details.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/custom_admonitions.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/title_case_fix.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/toc_toggle.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#environmentparameters" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="REDkit Open Documentation" class="md-header__button md-logo" aria-label="REDkit Open Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/favicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            REDkit Open Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Параметры окружения
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-purple"  aria-label="Темная тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Темная тема" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Системная тема"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Системная тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/redkit-resources/docs" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    redkit-resources/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+  Начало
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  Документация сообщества
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="REDkit Open Documentation" class="md-nav__button md-logo" aria-label="REDkit Open Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/favicon.svg" alt="logo">
+
+    </a>
+    REDkit Open Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/redkit-resources/docs" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    redkit-resources/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Начало
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Начало
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Добро пожаловать
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Гайд для контрибьюторов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Журнал изменений
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Благодарности
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Документация сообщества
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Документация сообщества
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Основы
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Основы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Поведения
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Поведения
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/behavior/behavior/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Общие сведения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Мир
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Мир
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../base/world/world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Миры основы
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Гайды
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Гайды
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/create_animation_for_npc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Создать анимацию для NPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Полезные фичи
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Полезные фичи
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../useful_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../useful_features/shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Полезные горячие клавиши
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../useful_features/copy_info_from_objects_prop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cкопировать инфу из свойств объекта
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Баги и их решения
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Баги и их решения
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bugs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Справочники
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Справочники
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Мир
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Мир
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world_params/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Параметры мира
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../umbra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Umbra
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pathlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Параметры pathlib
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shadow_params/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Параметры теней
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Параметры окружения
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Параметры окружения
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sworldenvironmentparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      SWorldEnvironmentParameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SWorldEnvironmentParameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vignettetexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      vignetteTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cameradirttexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameraDirtTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackambienttexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackAmbientTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectiontexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globallightingtrajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalLightingTrajectory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="globalLightingTrajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yawdegrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      yawDegrees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yawdegreessunoffset" class="md-nav__link">
+    <span class="md-ellipsis">
+      yawDegreesSunOffset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yawdegreesmoonoffset" class="md-nav__link">
+    <span class="md-ellipsis">
+      yawDegreesMoonOffset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suncurveshiftfactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunCurveShiftFactor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mooncurveshiftfactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonCurveShiftFactor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunsqueeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunSqueeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonsqueeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonSqueeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunHeight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonHeight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      lightHeight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightdirchoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      lightDirChoice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skydayamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      skyDayAmount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonshaftsbeginhour" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonShaftsBeginHour
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonshaftsendhour" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonShaftsEndHour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tonemappingadaptationspeedup" class="md-nav__link">
+    <span class="md-ellipsis">
+      toneMappingAdaptationSpeedUp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tonemappingadaptationspeeddown" class="md-nav__link">
+    <span class="md-ellipsis">
+      toneMappingAdaptationSpeedDown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      environmentDefinition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenesenvironmentdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      scenesEnvironmentDefinition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedtreeparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      speedTreeParameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="speedTreeParameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphascalar3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalar3d
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrassnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrassNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrass" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrassdistnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrassDistNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrassdistfar" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrassDistFar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalarbillboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarBillboards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainbias" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainBias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainalbedoscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainAlbedoScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainnormalscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainNormalScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainclipscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainClipScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainclipbias" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainClipBias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainclipdamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainClipDamping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grassnormalsvariation" class="md-nav__link">
+    <span class="md-ellipsis">
+      grassNormalsVariation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weathertemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      weatherTemplate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disablewatershaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      disableWaterShaders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skybox" class="md-nav__link">
+    <span class="md-ellipsis">
+      skybox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="skybox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sunmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunMaterial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sunMaterial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-instance-basematerial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material Instance / baseMaterial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonMaterial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skyboxmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      skyboxMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skyboxmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      skyboxMaterial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudsmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      cloudsMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudsmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      cloudsMaterial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lensflare" class="md-nav__link">
+    <span class="md-ellipsis">
+      lensFlare
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="lensFlare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      default
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neardistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      nearDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nearrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      nearRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fardistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      farDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#farrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      farRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sun" class="md-nav__link">
+    <span class="md-ellipsis">
+      sun
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moon" class="md-nav__link">
+    <span class="md-ellipsis">
+      moon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom0-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      custom0 - 5
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendersettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      renderSettings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="renderSettings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cameranearplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameraNearPlane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camerafarplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameraFarPlane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssaoblurenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssaoBlurEnable:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssaonormalsenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssaoNormalsEnable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envprobesecondambientfiltersize" class="md-nav__link">
+    <span class="md-ellipsis">
+      envProbeSecondAmbientFilterSize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakecloudsshadowsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      fakeCloudsShadowSize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakecloudsshadowspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      fakeCloudsShadowSpeed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakecloudsshadowtexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      fakeCloudsShadowTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomlevelsrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomLevelsRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomlevelsoffset" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomLevelsOffset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomscaleconst" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomScaleConst
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomdownscaledivbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomDownscaleDivBase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomdownscaleexpbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomDownscaleExpBase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomlevelscale0-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomLevelScale0 - 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomprecision" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomPrecision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaftslevelindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      shaftsLevelIndex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaftsintensity" class="md-nav__link">
+    <span class="md-ellipsis">
+      shaftsIntensity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaftsthresholdsscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      shaftsThresholdsScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresnelscalelights" class="md-nav__link">
+    <span class="md-ellipsis">
+      fresnelScaleLights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresnelscaleenvprobes" class="md-nav__link">
+    <span class="md-ellipsis">
+      fresnelScaleEnvProbes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresnelroughnessshape" class="md-nav__link">
+    <span class="md-ellipsis">
+      fresnelRoughnessShape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiordimmerambientlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorDimmerAmbientLevel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesmoothextent" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumeSmoothExtent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesmoothremovalrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumeSmoothRemovalRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesfadestartdist" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumesFadeStartDist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesfaderange" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumesFadeRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesfadeencoderange" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumesFadeEncodeRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distantlightstartdistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      distantLightStartDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distantlightfadedistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      distantLightFadeDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalflarestransparencythreshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalFlaresTransparencyThreshold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalflarestransparencyrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalFlaresTransparencyRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motionblursettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      motionBlurSettings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="motionBlurSettings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isposttonemapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      isPostTonemapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distancenear" class="md-nav__link">
+    <span class="md-ellipsis">
+      distanceNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distancerange" class="md-nav__link">
+    <span class="md-ellipsis">
+      distanceRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strengthnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      strengthNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strengthfar" class="md-nav__link">
+    <span class="md-ellipsis">
+      strengthFar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fullblendoverpixels" class="md-nav__link">
+    <span class="md-ellipsis">
+      fullBlendOverPixels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutdistancenear" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutDistanceNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutdistancerange" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutDistanceRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutamountnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutAmountNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutamountfar" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutAmountFar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpenamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      sharpenAmount
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chromaticaberrationstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      chromaticAberrationStart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chromaticaberrationrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      chromaticAberrationRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionthresholdlow" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionThresholdLow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionthresholdhigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionThresholdHigh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionblendlow" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionBlendLow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionblendhigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionBlendHigh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enableenvprobelights" class="md-nav__link">
+    <span class="md-ellipsis">
+      enableEnvProbeLights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localwinddampers" class="md-nav__link">
+    <span class="md-ellipsis">
+      localWindDampers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localwatervisibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      localWaterVisibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merged_geometry_params/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Параметры геометрии
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file_extensions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Расширения файлов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Типы данных параметров
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sworldenvironmentparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      SWorldEnvironmentParameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SWorldEnvironmentParameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vignettetexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      vignetteTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cameradirttexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameraDirtTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackambienttexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackAmbientTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectiontexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globallightingtrajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalLightingTrajectory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="globalLightingTrajectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yawdegrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      yawDegrees
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yawdegreessunoffset" class="md-nav__link">
+    <span class="md-ellipsis">
+      yawDegreesSunOffset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yawdegreesmoonoffset" class="md-nav__link">
+    <span class="md-ellipsis">
+      yawDegreesMoonOffset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suncurveshiftfactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunCurveShiftFactor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mooncurveshiftfactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonCurveShiftFactor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunsqueeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunSqueeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonsqueeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonSqueeze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunHeight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonHeight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      lightHeight
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightdirchoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      lightDirChoice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skydayamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      skyDayAmount
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonshaftsbeginhour" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonShaftsBeginHour
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonshaftsendhour" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonShaftsEndHour
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tonemappingadaptationspeedup" class="md-nav__link">
+    <span class="md-ellipsis">
+      toneMappingAdaptationSpeedUp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tonemappingadaptationspeeddown" class="md-nav__link">
+    <span class="md-ellipsis">
+      toneMappingAdaptationSpeedDown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      environmentDefinition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenesenvironmentdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      scenesEnvironmentDefinition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedtreeparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      speedTreeParameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="speedTreeParameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphascalar3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalar3d
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrassnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrassNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrass" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrassdistnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrassDistNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalargrassdistfar" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarGrassDistFar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphascalarbillboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      alphaScalarBillboards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainbias" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainBias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainalbedoscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainAlbedoScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainnormalscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainNormalScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainclipscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainClipScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainclipbias" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainClipBias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billboardsgrainclipdamping" class="md-nav__link">
+    <span class="md-ellipsis">
+      billboardsGrainClipDamping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grassnormalsvariation" class="md-nav__link">
+    <span class="md-ellipsis">
+      grassNormalsVariation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weathertemplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      weatherTemplate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disablewatershaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      disableWaterShaders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skybox" class="md-nav__link">
+    <span class="md-ellipsis">
+      skybox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="skybox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sunmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      sunMaterial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sunMaterial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material-instance-basematerial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material Instance / baseMaterial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moonmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      moonMaterial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skyboxmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      skyboxMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skyboxmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      skyboxMaterial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudsmesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      cloudsMesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudsmaterial" class="md-nav__link">
+    <span class="md-ellipsis">
+      cloudsMaterial
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lensflare" class="md-nav__link">
+    <span class="md-ellipsis">
+      lensFlare
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="lensFlare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      default
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neardistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      nearDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nearrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      nearRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fardistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      farDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#farrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      farRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sun" class="md-nav__link">
+    <span class="md-ellipsis">
+      sun
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moon" class="md-nav__link">
+    <span class="md-ellipsis">
+      moon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom0-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      custom0 - 5
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendersettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      renderSettings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="renderSettings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cameranearplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameraNearPlane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camerafarplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      cameraFarPlane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssaoblurenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssaoBlurEnable:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssaonormalsenable" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssaoNormalsEnable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envprobesecondambientfiltersize" class="md-nav__link">
+    <span class="md-ellipsis">
+      envProbeSecondAmbientFilterSize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakecloudsshadowsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      fakeCloudsShadowSize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakecloudsshadowspeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      fakeCloudsShadowSpeed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakecloudsshadowtexture" class="md-nav__link">
+    <span class="md-ellipsis">
+      fakeCloudsShadowTexture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomlevelsrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomLevelsRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomlevelsoffset" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomLevelsOffset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomscaleconst" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomScaleConst
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomdownscaledivbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomDownscaleDivBase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomdownscaleexpbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomDownscaleExpBase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomlevelscale0-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomLevelScale0 - 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloomprecision" class="md-nav__link">
+    <span class="md-ellipsis">
+      bloomPrecision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaftslevelindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      shaftsLevelIndex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaftsintensity" class="md-nav__link">
+    <span class="md-ellipsis">
+      shaftsIntensity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaftsthresholdsscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      shaftsThresholdsScale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresnelscalelights" class="md-nav__link">
+    <span class="md-ellipsis">
+      fresnelScaleLights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresnelscaleenvprobes" class="md-nav__link">
+    <span class="md-ellipsis">
+      fresnelScaleEnvProbes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresnelroughnessshape" class="md-nav__link">
+    <span class="md-ellipsis">
+      fresnelRoughnessShape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiordimmerambientlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorDimmerAmbientLevel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesmoothextent" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumeSmoothExtent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesmoothremovalrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumeSmoothRemovalRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesfadestartdist" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumesFadeStartDist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesfaderange" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumesFadeRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorvolumesfadeencoderange" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorVolumesFadeEncodeRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distantlightstartdistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      distantLightStartDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distantlightfadedistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      distantLightFadeDistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalflarestransparencythreshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalFlaresTransparencyThreshold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalflarestransparencyrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalFlaresTransparencyRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motionblursettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      motionBlurSettings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="motionBlurSettings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isposttonemapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      isPostTonemapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distancenear" class="md-nav__link">
+    <span class="md-ellipsis">
+      distanceNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distancerange" class="md-nav__link">
+    <span class="md-ellipsis">
+      distanceRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strengthnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      strengthNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strengthfar" class="md-nav__link">
+    <span class="md-ellipsis">
+      strengthFar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fullblendoverpixels" class="md-nav__link">
+    <span class="md-ellipsis">
+      fullBlendOverPixels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutdistancenear" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutDistanceNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutdistancerange" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutDistanceRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutamountnear" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutAmountNear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standoutamountfar" class="md-nav__link">
+    <span class="md-ellipsis">
+      standoutAmountFar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpenamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      sharpenAmount
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chromaticaberrationstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      chromaticAberrationStart
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chromaticaberrationrange" class="md-nav__link">
+    <span class="md-ellipsis">
+      chromaticAberrationRange
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionthresholdlow" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionThresholdLow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionthresholdhigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionThresholdHigh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionblendlow" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionBlendLow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interiorfallbackreflectionblendhigh" class="md-nav__link">
+    <span class="md-ellipsis">
+      interiorFallbackReflectionBlendHigh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enableenvprobelights" class="md-nav__link">
+    <span class="md-ellipsis">
+      enableEnvProbeLights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localwinddampers" class="md-nav__link">
+    <span class="md-ellipsis">
+      localWindDampers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localwatervisibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      localWaterVisibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+<nav class="md-tags" >
+  
+    
+    
+    
+      <span class="md-tag">Справочники</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Мир</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Окружение</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">world</span>
+    
+  
+    
+    
+    
+      <span class="md-tag">Environment</span>
+    
+  
+</nav>
+
+
+  
+    <a href="https://github.com/redkit-resources/docs/edit/main/docs/unnoficial_docs/references/world/env_params.md" title="Редактировать страницу" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/redkit-resources/docs/raw/main/docs/unnoficial_docs/references/world/env_params.md" title="Посмотреть исходный код страницы" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
+
+
+<h1 id="environmentparameters">environmentParameters<a class="headerlink" href="#environmentparameters" title="Permanent link">&para;</a></h1>
+<p>На этой странице описаны глобальные параметры окружения для мира. </p>
+<p>Эта часть движка содержит множество тонких настроек, большинство из которых 
+имеют <strong>продвинутый технический характер</strong>.
+И обычно <strong>не изменяются</strong> для большинства миров.</p>
+<p>Наиболее сложными для настройки являются параметры <code>speedTreeParameters</code>, <code>lensFlare</code> и <code>renderSettings</code>. 
+Изменение этих параметров требует глубокого понимания системы рендеринга. 
+Их описания ориентированы на <strong>продвинутых пользователей</strong>, 
+которые хотят значительно изменить визуальное восприятие мира.</p>
+<p>Для базовой настройки достаточно изменения нескольких <strong>основных</strong> параметров по примерам готовых миров.</p>
+<h2 id="sworldenvironmentparameters">SWorldEnvironmentParameters<a class="headerlink" href="#sworldenvironmentparameters" title="Permanent link">&para;</a></h2>
+<h3 id="vignettetexture">vignetteTexture<a class="headerlink" href="#vignettetexture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong> [CBitmapTexture]</li>
+<li><strong>Описание</strong>: Указывает текстуру для создания эффекта
+<a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BD%D1%8C%D0%B5%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">виньетирования</a>.
+(затемнения краев экрана). </li>
+</ul>
+<h3 id="cameradirttexture">cameraDirtTexture<a class="headerlink" href="#cameradirttexture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong> [CBitmapTexture]</li>
+<li><strong>Описание</strong>: Указывает текстуру, создающую эффект загрязнения объектива камеры. 
+Особенно заметен эффект при ярком освещении.</li>
+</ul>
+<h3 id="interiorfallbackambienttexture">interiorFallbackAmbientTexture<a class="headerlink" href="#interiorfallbackambienttexture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong> [CCubeTexture]</li>
+<li><strong>Описание</strong>: Резервная кубическая текстура для фонового освещения 
+интерьеров. Используется системой освещения как запасной вариант при 
+отсутствии корректного освещения. (Нигде не используется в мирах CDPR)</li>
+</ul>
+<h3 id="interiorfallbackreflectiontexture">interiorFallbackReflectionTexture<a class="headerlink" href="#interiorfallbackreflectiontexture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong> [CCubeTexture]</li>
+<li><strong>Описание</strong>: Резервная кубическая текстура для отражений в интерьерах.
+(Нигде не используется в мирах CDPR)</li>
+</ul>
+<h3 class="collapsed" id="globallightingtrajectory">globalLightingTrajectory<a class="headerlink" href="#globallightingtrajectory" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Class</strong>[CGlobalLightingTrajectory]</li>
+<li><strong>Описание</strong>: Набор параметров для конфигурации поведения глобальных источников освещения (солнца и луны) в мире.</li>
+</ul>
+<h4 id="yawdegrees">yawDegrees<a class="headerlink" href="#yawdegrees" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong>  </li>
+<li><strong>Описание</strong>: Базовый угол (азимут) для всех источников света в градусах. Задается в градусах.
+Этот параметр определяет основное направление света и служит отправной точкой для расчета позиций солнца и луны.</li>
+</ul>
+<h4 id="yawdegreessunoffset">yawDegreesSunOffset<a class="headerlink" href="#yawdegreessunoffset" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong> </li>
+<li><strong>Описание</strong>: Дополнительное смещение азимута для солнца относительно базового угла <code>yawDegrees</code>.
+Позволяет дополнительно изменить азимут солнца. </li>
+</ul>
+<h4 id="yawdegreesmoonoffset">yawDegreesMoonOffset<a class="headerlink" href="#yawdegreesmoonoffset" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong> </li>
+<li><strong>Описание</strong>: Аналогично параметру <code>yawDegreesSunOffset</code>, но применяется к луне.</li>
+</ul>
+<h4 id="suncurveshiftfactor">sunCurveShiftFactor<a class="headerlink" href="#suncurveshiftfactor" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong> </li>
+<li><strong>Описание</strong>: Коэффициент временного смещения солнечного цикла.
+Положительные значения увеличивают продолжительность светового дня, 
+смещая восход и закат на более позднее время. Отрицательные значения 
+сокращают день. Применяется после расчета всех кривых, что позволяет 
+корректировать время без изменения формы кривых освещения.</li>
+</ul>
+<h4 id="mooncurveshiftfactor">moonCurveShiftFactor<a class="headerlink" href="#mooncurveshiftfactor" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong> </li>
+<li><strong>Описание</strong>: Аналогичен <code>sunCurveShiftFactor</code>, но для луны.</li>
+</ul>
+<h4 id="sunsqueeze">sunSqueeze<a class="headerlink" href="#sunsqueeze" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li>
+<p><strong>Описание</strong>: Коэффициент сжатия временного цикла солнца.
+Влияет на интерполяцию времени дня, создавая более резкие или плавные изменения.</p>
+<details class="abstract">
+<summary>Подробнее об сжатии времени</summary>
+<p>Как работает "сжатие" времени?</p>
+<p>Принцип работы основан на математической формуле:</p>
+<div class="arithmatex">\[
+t = (t - t_\mathrm{ref}) \cdot \text{sunSqueeze} + t_\mathrm{ref}
+\]</div>
+<p>Где:</p>
+<ul>
+<li>t: текущее время</li>
+<li>t_ref: опорная точка времени (комбинация текущего времени, значения на кривой и модификатора смещения)</li>
+<li>sunSqueeze: коэффициент сжатия</li>
+</ul>
+<p>При значениях меньше 1.0 происходит растяжение цикла:</p>
+<ul>
+<li>Рассвет и закат становятся более плавными и длительными</li>
+<li>Солнце дольше находится низко над горизонтом</li>
+<li>Переходы между фазами дня становятся более "мягкими"</li>
+</ul>
+<p>При значениях больше 1.0 происходит сжатие цикла:</p>
+<ul>
+<li>Рассвет и закат становятся более резкими и быстрыми</li>
+<li>Солнце проводит больше времени в зените</li>
+<li>Переходы между фазами дня становятся более динамичными</li>
+</ul>
+</details>
+</li>
+</ul>
+<h4 id="moonsqueeze">moonSqueeze<a class="headerlink" href="#moonsqueeze" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Аналогичен <code>sunSequeeze</code>, но для луны.</li>
+</ul>
+<h4 id="sunheight">sunHeight<a class="headerlink" href="#sunheight" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Curve</strong></li>
+<li><strong>Описание</strong>: Кривая, определяющая высоту солнца над горизонтом в течение 
+суток. Позволяет точно настроить траекторию движения солнца.</li>
+</ul>
+<h4 id="moonheight">moonHeight<a class="headerlink" href="#moonheight" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Curve</strong></li>
+<li><strong>Описание</strong>: Аналогичен <code>sunHeight</code>, но для луны.</li>
+</ul>
+<h4 id="lightheight">lightHeight<a class="headerlink" href="#lightheight" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Curve</strong></li>
+<li><strong>Описание</strong>: Кривая контроля высоты главного источника освещения. 
+Используется системой рендеринга для расчета направления теней и общей 
+интенсивности освещения в мире.</li>
+</ul>
+<h4 id="lightdirchoice">lightDirChoice<a class="headerlink" href="#lightdirchoice" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Curve</strong></li>
+<li><strong>Описание</strong>: Кривая, определяющая переход между солнечным и лунным освещением.<br />
+Значение определяет, какой источник света (солнце или луна) является основным в данный момент времени. 
+Управляет плавностью смены дня и ночи, определяет интенсивность каждого источника света и время сумерек.</li>
+</ul>
+<h4 id="skydayamount">skyDayAmount<a class="headerlink" href="#skydayamount" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Curve</strong></li>
+<li><strong>Описание</strong>: Кривая, контролирующая интенсивность дневного освещения на протяжении суток.</li>
+</ul>
+<h4 id="moonshaftsbeginhour">moonShaftsBeginHour<a class="headerlink" href="#moonshaftsbeginhour" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Время начала появления эффекта лунного света. 
+Создает едва заметное свечение вокруг луны. 
+Эффект проявляется как слабое увеличение интенсивности лунного света.</li>
+</ul>
+<h4 id="moonshaftsendhour">moonShaftsEndHour<a class="headerlink" href="#moonshaftsendhour" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Время исчезновения эффекта лунного света.</li>
+</ul>
+<h3 id="tonemappingadaptationspeedup">toneMappingAdaptationSpeedUp<a class="headerlink" href="#tonemappingadaptationspeedup" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет скорость адаптации системы тонального отображения 
+при переходе от темных к светлым сценам. Более высокие значения ускоряют 
+адаптацию камеры к яркому свету, имитируя работу человеческого глаза.</li>
+</ul>
+<h3 id="tonemappingadaptationspeeddown">toneMappingAdaptationSpeedDown<a class="headerlink" href="#tonemappingadaptationspeeddown" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Контролирует скорость адаптации при переходе от светлых к 
+темным сценам. Этот параметр позволяет настроить, как быстро "глаз камеры" 
+привыкает к темноте.</li>
+</ul>
+<h3 id="environmentdefinition">environmentDefinition<a class="headerlink" href="#environmentdefinition" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong> [CEnvironmentDefinition]</li>
+<li><strong>Описание</strong>: Задает путь к файлу определения окружения (environment definition) 
+который используется как стандартный для данного мира.
+Файл содержит комплексные настройки эффектов окружения и погодных явлений. 
+Env является отдельным сложным компонентом движка который будет разобран отдельно в будущем.</li>
+</ul>
+<h3 id="scenesenvironmentdefinition">scenesEnvironmentDefinition<a class="headerlink" href="#scenesenvironmentdefinition" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong> [CEnvironmentDefinition]</li>
+<li><strong>Описание</strong>: Задает путь к файлу определения окружения (environment definition) 
+который будет использоваться по-умолчанию для сцен.</li>
+</ul>
+<h3 class="collapsed" id="speedtreeparameters">speedTreeParameters<a class="headerlink" href="#speedtreeparameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SGlobalSpeedTreeParameters]</li>
+<li><strong>Описание</strong>: Набор параметров для конфигурации поведения и внешнего вида растительности в мире.</li>
+</ul>
+<h4 id="alphascalar3d">alphaScalar3d<a class="headerlink" href="#alphascalar3d" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Глобальный множитель прозрачности для всей трехмерной 
+растительности в мире.</li>
+</ul>
+<h4 id="alphascalargrassnear">alphaScalarGrassNear<a class="headerlink" href="#alphascalargrassnear" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Множитель прозрачности для травы в ближней зоне от камеры. 
+Повышение значения делает траву более прозрачной вблизи, что может помочь 
+избежать визуальных артефактов и улучшить производительность.</li>
+</ul>
+<h4 id="alphascalargrass">alphaScalarGrass<a class="headerlink" href="#alphascalargrass" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Множитель прозрачности травы на дальних дистанциях. 
+Более высокие значения улучшают видимость травы вдали.</li>
+</ul>
+<h4 id="alphascalargrassdistnear">alphaScalarGrassDistNear<a class="headerlink" href="#alphascalargrassdistnear" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет минимальную дистанцию от камеры, на которой 
+начинает действовать эффект прозрачности травы.</li>
+</ul>
+<h4 id="alphascalargrassdistfar">alphaScalarGrassDistFar<a class="headerlink" href="#alphascalargrassdistfar" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает максимальную дистанцию применения эффекта 
+прозрачности травы.</li>
+</ul>
+<h4 id="alphascalarbillboards">alphaScalarBillboards<a class="headerlink" href="#alphascalarbillboards" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет прозрачностью 2D-спрайтов растительности 
+(билбордов), которые автоматически поворачиваются к камере. Влияет на то, 
+насколько заметной будет упрощенная версия растительности на большом 
+расстоянии.</li>
+</ul>
+<h4 id="billboardsgrainbias">billboardsGrainBias<a class="headerlink" href="#billboardsgrainbias" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Настраивает базовое смещение текстур билбордов растительности. 
+Меньшие значения делают текстуру более четкой, большие создают эффект размытия.</li>
+</ul>
+<h4 id="billboardsgrainalbedoscale">billboardsGrainAlbedoScale<a class="headerlink" href="#billboardsgrainalbedoscale" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>:  Контролирует интенсивность текстурной зернистости билбордов. 
+Позволяет настроить, насколько заметными будут детали текстуры.</li>
+</ul>
+<h4 id="billboardsgrainnormalscale">billboardsGrainNormalScale<a class="headerlink" href="#billboardsgrainnormalscale" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет масштаб карты нормалей для текстур билбордов. 
+Влияет на то, как свет взаимодействует с поверхностью растительности, 
+изменяя восприятие рельефности и детализации.</li>
+</ul>
+<h4 id="billboardsgrainclipscale">billboardsGrainClipScale<a class="headerlink" href="#billboardsgrainclipscale" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет масштабом отсечения текстурной зернистости, 
+что влияет на визуальные эффекты при появлении и исчезновении 
+растительности.</li>
+</ul>
+<h4 id="billboardsgrainclipbias">billboardsGrainClipBias<a class="headerlink" href="#billboardsgrainclipbias" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает базовое смещение для отсечения текстурной 
+зернистости билбордов. Влияет на то, как постепенно появляется или 
+исчезает растительность при изменении дистанции до камеры.</li>
+</ul>
+<h4 id="billboardsgrainclipdamping">billboardsGrainClipDamping<a class="headerlink" href="#billboardsgrainclipdamping" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет степень сглаживания перехода текстурной 
+зернистости билбордов при изменении расстояния от камеры. Помогает создать более 
+плавные визуальные переходы.</li>
+</ul>
+<h4 id="grassnormalsvariation">grassNormalsVariation<a class="headerlink" href="#grassnormalsvariation" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Контролирует степень случайного отклонения нормалей травы. 
+Более высокие значения создают более естественное взаимодействие травы 
+со светом и разнообразят её внешний вид при движении.</li>
+</ul>
+<h3 id="weathertemplate">weatherTemplate<a class="headerlink" href="#weathertemplate" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong> [C2dArray]</li>
+<li><strong>Описание</strong>: Указывает путь к CSV-файлу, определяющему конфигурацию 
+погодных условий в мире. Файл содержит настройки погодных эффектов и пути 
+к .env файлам окружения. Будут разобраны отдельно в документации про env.</li>
+</ul>
+<h3 id="disablewatershaders">disableWaterShaders<a class="headerlink" href="#disablewatershaders" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Bool</strong></li>
+<li><strong>Описание</strong>: Этот параметр управляет рендерингом шейдеров воды на уровне. 
+Если значение установлено в <code>true</code>, все глобальные эффекты воды на данном уровне будут отключены.
+Это повысит производительность, но сильно ухудшит качество воды в мире.</li>
+</ul>
+<h3 class="collapsed" id="skybox">skybox<a class="headerlink" href="#skybox" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SWorldSkyboxParameters]</li>
+<li><strong>Описание</strong>: Набор параметров настройки неба (skybox)</li>
+</ul>
+<h4 id="sunmesh">sunMesh<a class="headerlink" href="#sunmesh" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CMesh]</li>
+<li><strong>Описание</strong>: Этот параметр указывает на 3D-модель солнца, которая будет отображаться в skybox.</li>
+</ul>
+<h4 id="sunmaterial">sunMaterial<a class="headerlink" href="#sunmaterial" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Class</strong>[CMaterialInstance]</li>
+<li><strong>Описание</strong>: Конфигурация материала солнца из графа материала</li>
+</ul>
+<h5 id="material-instance-basematerial">Material Instance / baseMaterial<a class="headerlink" href="#material-instance-basematerial" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CMaterialGraph]</li>
+<li><strong>Описание</strong>: Устанавливает материал (<strong>w2mg</strong>) для 3D-модели солнца.</li>
+</ul>
+<h4 id="moonmesh">moonMesh<a class="headerlink" href="#moonmesh" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CMesh]</li>
+<li>Этот параметр указывает на 3D-модель луны, которая будет отображаться в skybox.</li>
+</ul>
+<h4 id="moonmaterial">moonMaterial<a class="headerlink" href="#moonmaterial" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Class</strong>[CMaterialInstance]</li>
+<li><strong>Описание</strong>: Конфигурация материала луны из графа материала. Аналогичен <code>sunMaterial</code></li>
+</ul>
+<h4 id="skyboxmesh">skyboxMesh<a class="headerlink" href="#skyboxmesh" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CMesh]</li>
+<li>Этот параметр указывает на 3D-модель неба, которая будет отображаться в skybox.</li>
+</ul>
+<h4 id="skyboxmaterial">skyboxMaterial<a class="headerlink" href="#skyboxmaterial" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Class</strong>[CMaterialInstance]</li>
+<li><strong>Описание</strong>: Конфигурация материала неба из графа материала. Аналогичен <code>sunMaterial</code></li>
+</ul>
+<h4 id="cloudsmesh">cloudsMesh<a class="headerlink" href="#cloudsmesh" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CMesh]</li>
+<li><strong>Описание</strong>: Этот параметр указывает на 3D-модель облаков, которая будет отображаться в skybox.</li>
+</ul>
+<h4 id="cloudsmaterial">cloudsMaterial<a class="headerlink" href="#cloudsmaterial" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Class</strong>[CMaterialInstance]</li>
+<li><strong>Описание</strong>: Конфигурация материала облаков из графа материала. Аналогичен <code>sunMaterial</code></li>
+</ul>
+<h3 class="collapsed" id="lensflare">lensFlare<a class="headerlink" href="#lensflare" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SLensFlareGroupsParameters]</li>
+<li><strong>Описание</strong>: Набор параметров отвечающих за блики объектива</li>
+</ul>
+<h4 id="default">default<a class="headerlink" href="#default" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SLensFlareParameters]</li>
+<li><strong>Описание</strong>: Параметры для бликов по-умолчанию</li>
+</ul>
+<h5 id="neardistance">nearDistance<a class="headerlink" href="#neardistance" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Это значение задает минимальное расстояние, 
+на котором начинают проявляться блики от солнечного света. 
+Чем меньше это значение, тем ближе к камере появится эффект.</li>
+</ul>
+<h5 id="nearrange">nearRange<a class="headerlink" href="#nearrange" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр указывает диапазон эффекта на ближней дистанции, 
+то есть как сильно блики будут распространяться на близком расстоянии от источника света (солнца).</li>
+</ul>
+<h5 id="fardistance">farDistance<a class="headerlink" href="#fardistance" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Указывает максимальное расстояние, на котором эффект бликов от солнца может быть видим. 
+Большие значения означают, что эффект будет распространяться на дальние объекты или области.</li>
+</ul>
+<h5 id="farrange">farRange<a class="headerlink" href="#farrange" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр контролирует диапазон бликов на дальнем расстоянии. 
+Чем выше значение, тем шире будет распространяться блик на дальнем расстоянии.</li>
+</ul>
+<h5 id="sun">sun<a class="headerlink" href="#sun" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SLensFlareParameters]</li>
+<li><strong>Описание</strong>: Параметры бликов для солнца</li>
+</ul>
+<h5 id="moon">moon<a class="headerlink" href="#moon" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SLensFlareParameters]</li>
+<li><strong>Описание</strong>: Параметры бликов солнца</li>
+</ul>
+<h5 id="custom0-5">custom0 - 5<a class="headerlink" href="#custom0-5" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SLensFlareParameters]</li>
+<li><strong>Описание</strong>: Кастомные параметры бликов, не совсем ясно, где используются.</li>
+</ul>
+<h3 class="collapsed" id="rendersettings">renderSettings<a class="headerlink" href="#rendersettings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SWorldRenderSettings]</li>
+<li><strong>Описание</strong>: Набор глобальных параметров, отвечающих за рендеринг в игровом мире</li>
+</ul>
+<h4 id="cameranearplane">cameraNearPlane<a class="headerlink" href="#cameranearplane" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр определяет расстояние от камеры, при котором начинается рендеринг объектов. 
+Меньшие значения позволяют камере видеть объекты, находящиеся очень близко.</li>
+</ul>
+<h4 id="camerafarplane">cameraFarPlane<a class="headerlink" href="#camerafarplane" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает максимальное расстояние, на котором камера будет отображать объекты. 
+Объекты, находящиеся за этим пределом, не будут видны.</li>
+</ul>
+<h4 id="ssaoblurenable">ssaoBlurEnable:<a class="headerlink" href="#ssaoblurenable" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Bool</strong></li>
+<li><strong>Описание</strong>: Включает эффект размытия для <a href="https://sky.pro/wiki/gamedev/chto-takoe-ssao-i-kak-eto-rabotaet-v-igrah/">SSAO</a></li>
+</ul>
+<h4 id="ssaonormalsenable">ssaoNormalsEnable<a class="headerlink" href="#ssaonormalsenable" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Bool</strong></li>
+<li><strong>Описание</strong>: Включает использование <a href="https://habr.com/ru/articles/481480/">карты нормалей </a>
+для SSAO, что улучшает качество и реалистичность эффекта окклюзии.</li>
+</ul>
+<h4 id="envprobesecondambientfiltersize">envProbeSecondAmbientFilterSize<a class="headerlink" href="#envprobesecondambientfiltersize" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр регулирует размер фильтра для вторичного амбиентного освещения, 
+применяемого на гладких поверхностях (например, кожа), улучшая их визуализацию.</li>
+</ul>
+<h4 id="fakecloudsshadowsize">fakeCloudsShadowSize<a class="headerlink" href="#fakecloudsshadowsize" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет размером тени от искусственных облаков. 
+Меньшие значения создают более мелкие и детализированные тени.</li>
+</ul>
+<h4 id="fakecloudsshadowspeed">fakeCloudsShadowSpeed<a class="headerlink" href="#fakecloudsshadowspeed" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр определяет скорость движения тени искусственных облаков, 
+влияя на скорость изменения освещенности.</li>
+</ul>
+<h4 id="fakecloudsshadowtexture">fakeCloudsShadowTexture<a class="headerlink" href="#fakecloudsshadowtexture" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CTextureArray]</li>
+<li><strong>Описание</strong>: Параметр указывающий на массив текстур для теней искусственных облаков.
+Массив содержит несколько текстур для разных облаков.</li>
+</ul>
+<h4 id="bloomlevelsrange">bloomLevelsRange<a class="headerlink" href="#bloomlevelsrange" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>UInt</strong>[0-7]</li>
+<li><strong>Описание</strong>: Задает количество уровней для эффекта "свечения" (<a href="https://ru.wikipedia.org/wiki/Bloom">bloom</a>), 
+который размывает яркие световые источники, создавая эффект свечения.</li>
+</ul>
+<h4 id="bloomlevelsoffset">bloomLevelsOffset<a class="headerlink" href="#bloomlevelsoffset" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>UInt</strong></li>
+<li><strong>Описание</strong>: Определяет базовое смещение для уровней эффекта bloom, влияя на то, 
+как сильно будет заметен эффект свечения на разных уровнях яркости.</li>
+</ul>
+<h4 id="bloomscaleconst">bloomScaleConst<a class="headerlink" href="#bloomscaleconst" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Глобальный масштабный коэффициент эффекта bloom. 
+Это значение влияет на интенсивность свечения.</li>
+</ul>
+<h4 id="bloomdownscaledivbase">bloomDownscaleDivBase<a class="headerlink" href="#bloomdownscaledivbase" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет степенью уменьшения разрешения при расчете эффекта bloom. 
+Влияет на производительность и качество свечения.</li>
+</ul>
+<h4 id="bloomdownscaleexpbase">bloomDownscaleExpBase<a class="headerlink" href="#bloomdownscaleexpbase" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает экспоненциальное снижение разрешения для эффекта bloom, 
+позволяя точно настроить баланс между качеством и производительностью.</li>
+</ul>
+<h4 id="bloomlevelscale0-7">bloomLevelScale0 - 7<a class="headerlink" href="#bloomlevelscale0-7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Параметры для точной настройки масштабирования эффекта свечения на каждом уровне яркости, 
+позволяющий создать естественное распределение свечения.</li>
+</ul>
+<h4 id="bloomprecision">bloomPrecision<a class="headerlink" href="#bloomprecision" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет точность вычислений для эффекта bloom, влияя на качество и реалистичность 
+результирующего свечения.</li>
+</ul>
+<h4 id="shaftslevelindex">shaftsLevelIndex<a class="headerlink" href="#shaftslevelindex" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>UInt</strong></li>
+<li><strong>Описание</strong>: Устанавливает базовый уровень интенсивности световых лучей (например, лучи света, проникающие через окна).</li>
+</ul>
+<h4 id="shaftsintensity">shaftsIntensity<a class="headerlink" href="#shaftsintensity" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет интенсивность световых лучей.</li>
+</ul>
+<h4 id="shaftsthresholdsscale">shaftsThresholdsScale<a class="headerlink" href="#shaftsthresholdsscale" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Масштабирует пороговые значения для эффектов световых лучей, влияя на их видимость и интенсивность.</li>
+</ul>
+<h4 id="fresnelscalelights">fresnelScaleLights<a class="headerlink" href="#fresnelscalelights" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет масштабированием <a href="https://unityhub.ru/manual/StandardShaderFresnel">эффекта Френеля</a> 
+для источников света, влияя на отражения и преломления.</li>
+</ul>
+<h4 id="fresnelscaleenvprobes">fresnelScaleEnvProbes<a class="headerlink" href="#fresnelscaleenvprobes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Масштабирует эффект Френеля для окружающей среды и проб окружения, улучшая реалистичность отражений.</li>
+</ul>
+<h4 id="fresnelroughnessshape">fresnelRoughnessShape<a class="headerlink" href="#fresnelroughnessshape" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Регулирует форму шероховатости эффекта Френеля, 
+который используется для различных материалов (например, воды, стекла).</li>
+</ul>
+<h4 id="interiordimmerambientlevel">interiorDimmerAmbientLevel<a class="headerlink" href="#interiordimmerambientlevel" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет степень приглушения амбиентного освещения для внутренних помещений.</li>
+</ul>
+<h4 id="interiorvolumesmoothextent">interiorVolumeSmoothExtent<a class="headerlink" href="#interiorvolumesmoothextent" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Контролирует масштаб сглаживания для объемных эффектов внутри помещений.</li>
+</ul>
+<h4 id="interiorvolumesmoothremovalrange">interiorVolumeSmoothRemovalRange<a class="headerlink" href="#interiorvolumesmoothremovalrange" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает диапазон удаления сглаживающих эффектов в объемных данных помещений.</li>
+</ul>
+<h4 id="interiorvolumesfadestartdist">interiorVolumesFadeStartDist<a class="headerlink" href="#interiorvolumesfadestartdist" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет расстояние, с которого начинается плавное исчезновение объемных эффектов в помещениях.</li>
+</ul>
+<h4 id="interiorvolumesfaderange">interiorVolumesFadeRange<a class="headerlink" href="#interiorvolumesfaderange" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет диапазоном затухания эффектов внутри помещений.</li>
+</ul>
+<h4 id="interiorvolumesfadeencoderange">interiorVolumesFadeEncodeRange<a class="headerlink" href="#interiorvolumesfadeencoderange" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает диапазон кодирования объемных эффектов в интерьерах.</li>
+</ul>
+<h4 id="distantlightstartdistance">distantLightStartDistance<a class="headerlink" href="#distantlightstartdistance" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет расстояние, с которого источники света начинают обрабатываться как удаленные.</li>
+</ul>
+<h4 id="distantlightfadedistance">distantLightFadeDistance<a class="headerlink" href="#distantlightfadedistance" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Управляет дистанцией плавного перехода между обычным и удаленным освещением.</li>
+</ul>
+<h4 id="globalflarestransparencythreshold">globalFlaresTransparencyThreshold<a class="headerlink" href="#globalflarestransparencythreshold" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Устанавливает пороговое значение прозрачности для глобальных бликов.</li>
+</ul>
+<h4 id="globalflarestransparencyrange">globalFlaresTransparencyRange<a class="headerlink" href="#globalflarestransparencyrange" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет диапазон изменения прозрачности глобальных бликов.</li>
+</ul>
+<h4 class="collapsed" id="motionblursettings">motionBlurSettings<a class="headerlink" href="#motionblursettings" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Struct</strong>[SWorldMotionBlurSettings]</li>
+<li><strong>Описание</strong>: Набор параметров для настройки эффекта размытия движения 
+(<a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B2%D0%B5%D0%BB%D1%91%D0%BD%D0%BA%D0%B0">motion blur</a>)</li>
+</ul>
+<h5 id="isposttonemapping">isPostTonemapping<a class="headerlink" href="#isposttonemapping" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Bool</strong></li>
+<li><strong>Описание</strong>: Указывает, будет ли эффект размытия движения применяться после тонирования изображения.</li>
+</ul>
+<h5 id="distancenear">distanceNear<a class="headerlink" href="#distancenear" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Расстояние от камеры, начиная с которого будет применяться эффект размытия для объектов, 
+находящихся на ближайшем расстоянии. Меньшее значение приведет к более заметному размытию объектов, находящихся вблизи.</li>
+</ul>
+<h5 id="distancerange">distanceRange<a class="headerlink" href="#distancerange" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет дальность действия эффекта размытия движения.
+Чем больше значение, тем дальше от камеры будет распространяться эффект размытия.</li>
+</ul>
+<h5 id="strengthnear">strengthNear<a class="headerlink" href="#strengthnear" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Интенсивность размытия для объектов, находящихся близко к камере.</li>
+</ul>
+<h5 id="strengthfar">strengthFar<a class="headerlink" href="#strengthfar" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Интенсивность размытия для удаленных объектов.</li>
+</ul>
+<h5 id="fullblendoverpixels">fullBlendOverPixels<a class="headerlink" href="#fullblendoverpixels" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Количество пикселей, через которые происходит полное смешивание эффекта размытия движения. 
+Чем больше значение, тем плавнее будет переход между объектами с разным уровнем размытия.</li>
+</ul>
+<h5 id="standoutdistancenear">standoutDistanceNear<a class="headerlink" href="#standoutdistancenear" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Указывает на минимальное расстояние, на котором будет заметно эффект выделения объектов, 
+находящихся ближе к камере.</li>
+</ul>
+<h5 id="standoutdistancerange">standoutDistanceRange<a class="headerlink" href="#standoutdistancerange" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Указывает на максимальное расстояние, на котором эффект выделения объектов будет применяться.</li>
+</ul>
+<h5 id="standoutamountnear">standoutAmountNear<a class="headerlink" href="#standoutamountnear" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Уровень выделения объектов вблизи камеры. 
+Это значение определяет, насколько сильно будут выделяться объекты, находящиеся на ближайшем расстоянии.</li>
+</ul>
+<h5 id="standoutamountfar">standoutAmountFar<a class="headerlink" href="#standoutamountfar" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Уровень выделения объектов, находящихся на дальнем расстоянии.</li>
+</ul>
+<h5 id="sharpenamount">sharpenAmount<a class="headerlink" href="#sharpenamount" title="Permanent link">&para;</a></h5>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Уровень повышения резкости изображения (sharpening) для размытия движения. 
+Значения больше нуля делают изображение более четким, но могут добавить артефакты не краях (перешарп)</li>
+</ul>
+<h4 id="chromaticaberrationstart">chromaticAberrationStart<a class="headerlink" href="#chromaticaberrationstart" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Определяет начальную точку эффекта
+<a href="https://radojuva.com/2011/04/chromatic-aberration/">хроматической аберрации.</a></li>
+</ul>
+<h4 id="chromaticaberrationrange">chromaticAberrationRange<a class="headerlink" href="#chromaticaberrationrange" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Задает диапазон действия хроматической аберрации. Большие значения усиливают цветовые искажения.</li>
+</ul>
+<h4 id="interiorfallbackreflectionthresholdlow">interiorFallbackReflectionThresholdLow<a class="headerlink" href="#interiorfallbackreflectionthresholdlow" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр управляет пороговым значением для отражений внутри помещений при использовании 
+"резервных" отражений (fallback). 
+Если освещенность сцены ниже заданного порога, 
+то в интерьерах будет использован резервный способ рендеринга отражений.</li>
+</ul>
+<h4 id="interiorfallbackreflectionthresholdhigh">interiorFallbackReflectionThresholdHigh<a class="headerlink" href="#interiorfallbackreflectionthresholdhigh" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Порог для высоких значений освещенности, при которых будут активироваться резервные отражения. 
+Когда освещенность сцены достигает этого порога, отражения в интерьерах будут сильнее и более заметными. </li>
+</ul>
+<h4 id="interiorfallbackreflectionblendlow">interiorFallbackReflectionBlendLow<a class="headerlink" href="#interiorfallbackreflectionblendlow" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Этот параметр определяет, 
+как сильно будут смешиваться (blend) резервные отражения в условиях низкой освещенности.</li>
+</ul>
+<h4 id="interiorfallbackreflectionblendhigh">interiorFallbackReflectionBlendHigh<a class="headerlink" href="#interiorfallbackreflectionblendhigh" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Float</strong></li>
+<li><strong>Описание</strong>: Параметр аналогичен <code>interiorFallbackReflectionBlendLow</code>, но для высоких уровней освещенности.</li>
+</ul>
+<h4 id="enableenvprobelights">enableEnvProbeLights<a class="headerlink" href="#enableenvprobelights" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Тип</strong>: <strong>Bool</strong></li>
+<li><strong>Описание</strong>: Включает использование освещения, основанного на пробах окружающей среды (envprobe).</li>
+</ul>
+<h3 id="localwinddampers">localWindDampers<a class="headerlink" href="#localwinddampers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CResourceSimplexTree]</li>
+<li><strong>Описание</strong>: Параметр принимает симплексное дерево на основе которого 
+управляет зонами влияния ветра, регулирующими силу и направления движения воздушных масс в различных частях мира. 
+Задача таких зон — моделировать влияние ветра на окружающую среду, а также влиять на погодные эффекты и физику.</li>
+</ul>
+<h3 id="localwatervisibility">localWaterVisibility<a class="headerlink" href="#localwatervisibility" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Тип</strong>: <strong>Resource</strong>[CResourceSimplexTree]</li>
+<li><strong>Описание</strong>: Параметр принимает симплексное дерево на основе которого 
+управляет видимостью локальной воды в различных зонах мира.</li>
+</ul>
+<hr />
+<p>Автор grandvel</p>
+<hr />
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Последнее обновление">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">8 января 2025 г.</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Дата создания">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">8 января 2025 г.</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../shadow_params/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Параметры теней">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Параметры теней
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../merged_geometry_params/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Параметры геометрии">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Параметры геометрии
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/kRTEy8KcNa" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/redkit-resources/docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "search.highlight", "navigation.footer", "navigation.tabs", "navigation.top", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": {"provider": "git"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../../javascripts/pymdown_details.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../javascripts/toc_toggle.js"></script>
+      
+    
+  </body>
+</html>
