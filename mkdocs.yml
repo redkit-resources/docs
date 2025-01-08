@@ -148,25 +148,35 @@ nav:
       - Благодарности: credits.md
 
   - Документация сообщества:
-    - Главная: unnoficial_docs/index.md
-    - Основы:
-        Главная: unnoficial_docs/base/index.md
-        Поведения:
-          - Общие сведения: unnoficial_docs/base/behavior/behavior.md
+      - Главная: unnoficial_docs/index.md
+      - Основы:
+          Главная: unnoficial_docs/base/index.md
+          Поведения:
+            - Общие сведения: unnoficial_docs/base/behavior/behavior.md
+          Мир:
+            - Миры основы: unnoficial_docs/base/world/world.md
 
-    - Гайды:
-        - Главная: unnoficial_docs/guides/index.md
-        - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
+      - Гайды:
+          - Главная: unnoficial_docs/guides/index.md
+          - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
 
-    - Полезные фичи:
-      - Главная: unnoficial_docs/useful_features/index.md
-      - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
-      - Cкопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
+      - Полезные фичи:
+          - Главная: unnoficial_docs/useful_features/index.md
+          - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
+          - Cкопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
 
-    - Баги и их решения:
-      - Главная: unnoficial_docs/bugs/index.md
+      - Баги и их решения:
+          - Главная: unnoficial_docs/bugs/index.md
 
-    - Справочники:
-      - Главная: unnoficial_docs/references/index.md
-      - Расширения файлов: unnoficial_docs/references/file_extensions.md
+      - Справочники:
+          - Главная: unnoficial_docs/references/index.md
+          - Мир:
+              - Параметры мира: unnoficial_docs/references/world/world_params.md
+              - Umbra: unnoficial_docs/references/world/umbra.md
+              - Параметры pathlib: unnoficial_docs/references/world/pathlib.md
+              - Параметры теней: unnoficial_docs/references/world/shadow_params.md
+              - Параметры окружения: unnoficial_docs/references/world/env_params.md
+              - Параметры геометрии: unnoficial_docs/references/world/merged_geometry_params.md
+          - Расширения файлов: unnoficial_docs/references/file_extensions.md
+          - Типы данных параметров: unnoficial_docs/references/data_types.md
 

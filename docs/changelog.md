@@ -4,4 +4,11 @@
 
 ***
 
+- 1.2.0 - Добавлено множество страниц связанных с миром. Улучшена навигация по документам. Добавленные страницы: 
+    [1](unnoficial_docs/base/world/world.md), [2](unnoficial_docs/references/world/env_params.md), 
+    [3](unnoficial_docs/references/world/merged_geometry_params.md), [4](unnoficial_docs/references/world/pathlib.md), 
+    [5](unnoficial_docs/references/world/shadow_params.md), [6](unnoficial_docs/references/world/umbra.md),
+    [7](unnoficial_docs/references/world/world_params.md), [8](unnoficial_docs/references/data_types.md)
+
+- 1.1.0 - Добавлена [страница](unnoficial_docs/references/file_extensions.md) 
 - 1.0.0 - Init версия. Перенесены некоторые доки из discord

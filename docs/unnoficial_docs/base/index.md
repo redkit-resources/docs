@@ -8,3 +8,9 @@
     Раздел c информацией об поведениях, графах поведений.
     
     [:octicons-arrow-right-24: Начать изучение](behavior/behavior.md){ .md-button }
+
+
+!!! docs "Миры"
+    Раздел c информацией о мирах.
+    
+    [:octicons-arrow-right-24: Начать изучение](world/world.md){ .md-button }
