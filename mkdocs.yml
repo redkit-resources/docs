@@ -132,11 +132,13 @@ extra_css:
   - stylesheets/pymdown_details.css
   - stylesheets/custom_admonitions.css
   - stylesheets/title_case_fix.css
+  - stylesheets/toc_toggle.css
 
 extra_javascript:
   - javascripts/pymdown_details.js
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/toc_toggle.js
 
 nav:
   - Начало:
