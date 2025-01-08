@@ -4,7 +4,6 @@ tags:
   - Редактор
   - Файлы
 
-status: new
 ---
 
 
@@ -41,6 +40,13 @@ status: new
 #### **redwpset** [CWayPointsCollectionsSet] 
 - ??? Какой-то предварительно собранный (cooked) файл. Вероятно связанный с навигацией.
 
+#### **w3occlusiondef** [CUmbraScene] 
+- Определяет общие параметры для Umbra окклюзии. 
+
+#### **w3occlusion** [CUmbraTile] 
+- Файлы окклюзии, которые генерируются для каждого тайла мира.
+
+
 #### **sellmap** [CSwarmCellMap] 
 - Судя по всему, часть системы навигации.
 
@@ -59,16 +65,6 @@ status: new
 
 #### **w2mi** [CMaterialInstance] 
 - Экземпляр материала. Это уже готовый материал, созданный на основе графа материала (`.w2mg`) и текстур.
-
-## Окклюзия
-#### **w3occlusiondef** [CUmbraScene] 
-- Определяет общие параметры для Umbra окклюзии. 
-
-#### **w3occlusion** [CUmbraTile] 
-- Файлы окклюзии, которые генерируются для каждого тайла мира.
-
-#### **w3simplex** [CResourceSimplexTree]
-- Симплексное дерево. Применяется для точной настройки отсечения в umbra окклюзии.
 
 ## Растительность
 #### **srt** [CFoliageResource] 
@@ -222,6 +218,9 @@ status: new
 
 #### **journal** [CJournalResource] 
 - Файлы содержания игрового журнала.
+
+#### **w3simplex** [CResourceSimplexTree]
+- Симплексное дерево.
 
 ***
 Автор: leviofanh
