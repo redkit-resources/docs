@@ -1,182 +1,48 @@
 site_name: REDkit Open Documentation
 site_url: https://redkit-resources.github.io/docs/
-repo_name: redkit-resources/docs
+repo_name: redkit-resources/docs/
 repo_url: https://github.com/redkit-resources/docs
 edit_uri: edit/main/docs/
-theme:
-  name: material
-  language: ru
-  logo: assets/favicon.svg
-  favicon: assets/favicon.svg
-  features:
-    - content.code.copy
-    - content.code.annotate
-    - navigation.instant
-    - navigation.instant.progress
-    - search.highlight
-    - navigation.footer
-    - navigation.tabs
-    - navigation.top
-    - content.action.edit
-    - content.action.view
+copyright: При поддержке сообщества REDkit RU
 
-  font:
-    text: Roboto
-    code: JetBrains Mono
-
-  icon:
-    edit: material/pencil
-    view: material/eye
-    repo: fontawesome/brands/github
-
-  palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Светлая тема
-
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
-      accent: deep purple
-      toggle:
-        icon: material/weather-night
-        name: Темная тема
-
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: deep purple
-      accent: teal
-      toggle:
-        icon: material/weather-sunny
-        name: Системная тема
-
-markdown_extensions:
-  - pymdownx.highlight:
-      use_pygments: true
-      pygments_lang_class: true
-      anchor_linenums: true
-      auto_title: true
-      line_spans: __span
-
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-  - pymdownx.tabbed:
-      alternate_style: true
-
-  - toc:
-      permalink: true
-
-  - pymdownx.keys:
-      key_map: {
-        "пкм": "ПКМ",
-        "лкм": "ЛКМ",
-        "скм": "СКМ",
-      }
-
-  - pymdownx.arithmatex:
-      generic: true
-
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.betterem
-  - pymdownx.blocks.caption
-  - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.details
-  - pymdownx.smartsymbols
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.magiclink
-
-  - admonition
-  - attr_list
-  - tables
-  - md_in_html
-  - def_list
-  - footnotes
-  - abbr
-
-
-plugins:
-  - tags
-
-  - search:
-      lang:
-        - en
-        - ru
-
-
-  - git-revision-date-localized:
-      fallback_to_build_date: true
-      enable_creation_date: true
-
-
-extra:
-  social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/kRTEy8KcNa
-
-    - icon: fontawesome/brands/github
-      link: https://github.com/redkit-resources/docs
-
-  version:
-    provider: git
-
-
-extra_css:
-  - stylesheets/syntax_highlight.css
-  - stylesheets/pymdown_details.css
-  - stylesheets/custom_admonitions.css
-  - stylesheets/title_case_fix.css
-  - stylesheets/toc_toggle.css
-
-extra_javascript:
-  - javascripts/pymdown_details.js
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/toc_toggle.js
+INHERIT: mkdocs.common.yml
 
 nav:
   - Начало:
-      - Добро пожаловать: index.md
-      - Гайд для контрибьюторов: contribute.md
-      - Журнал изменений: changelog.md
-      - Благодарности: credits.md
+    - Добро пожаловать: index.md
+    - Гайд для контрибьюторов: contribute.md
+    - Журнал изменений: changelog.md
+    - Благодарности: credits.md
 
   - Документация сообщества:
-      - Главная: unnoficial_docs/index.md
-      - Основы:
-          Главная: unnoficial_docs/base/index.md
-          Поведения:
-            - Общие сведения: unnoficial_docs/base/behavior/behavior.md
-          Мир:
-            - Миры основы: unnoficial_docs/base/world/world.md
+    - Главная: unnoficial_docs/index.md
+    - Основы:
+        Главная: unnoficial_docs/base/index.md
+        Поведения:
+          - Общие сведения: unnoficial_docs/base/behavior/behavior.md
+        Мир:
+          - Миры основы: unnoficial_docs/base/world/world.md
 
-      - Гайды:
-          - Главная: unnoficial_docs/guides/index.md
-          - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
+    - Гайды:
+        - Главная: unnoficial_docs/guides/index.md
+        - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
 
-      - Полезные фичи:
-          - Главная: unnoficial_docs/useful_features/index.md
-          - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
-          - Cкопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
+    - Полезные фичи:
+        - Главная: unnoficial_docs/useful_features/index.md
+        - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
+        - Cкопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
 
-      - Баги и их решения:
-          - Главная: unnoficial_docs/bugs/index.md
+    - Баги и их решения:
+        - Главная: unnoficial_docs/bugs/index.md
 
-      - Справочники:
-          - Главная: unnoficial_docs/references/index.md
-          - Мир:
-              - Параметры мира: unnoficial_docs/references/world/world_params.md
-              - Umbra: unnoficial_docs/references/world/umbra.md
-              - Параметры pathlib: unnoficial_docs/references/world/pathlib.md
-              - Параметры теней: unnoficial_docs/references/world/shadow_params.md
-              - Параметры окружения: unnoficial_docs/references/world/env_params.md
-              - Параметры геометрии: unnoficial_docs/references/world/merged_geometry_params.md
-          - Расширения файлов: unnoficial_docs/references/file_extensions.md
-          - Типы данных параметров: unnoficial_docs/references/data_types.md
-
+    - Справочники:
+        - Главная: unnoficial_docs/references/index.md
+        - Мир:
+            - Параметры мира: unnoficial_docs/references/world/world_params.md
+            - Umbra: unnoficial_docs/references/world/umbra.md
+            - Параметры pathlib: unnoficial_docs/references/world/pathlib.md
+            - Параметры теней: unnoficial_docs/references/world/shadow_params.md
+            - Параметры окружения: unnoficial_docs/references/world/env_params.md
+            - Параметры геометрии: unnoficial_docs/references/world/merged_geometry_params.md
+        - Расширения файлов: unnoficial_docs/references/file_extensions.md
+        - Типы данных параметров: unnoficial_docs/references/data_types.md

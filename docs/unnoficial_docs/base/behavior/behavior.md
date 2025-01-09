@@ -187,4 +187,6 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 
 ***
 Автор: lxgdark
+
+*Документация поддерживается участниками сообщества [REDkit RU](https://discord.gg/kRTEy8KcNa)*
 ***

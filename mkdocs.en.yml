@@ -1,0 +1,72 @@
+site_name: REDkit Open Documentation
+site_url: https://redkit-resources.github.io/docs/
+repo_name: redkit-resources/docs
+repo_url: https://github.com/redkit-resources/docs
+edit_uri: edit/main/docs/en
+copyright: Supported by REDkit RU community
+
+INHERIT: mkdocs.common.yml
+
+theme:
+  language: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Light theme
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Dark theme
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: System theme
+
+nav:
+  - Getting Started:
+    - Welcome: en/index.md
+    - Contribution Guide: en/contribute.md
+    - Changelog: en/changelog.md
+    - Credits: en/credits.md
+
+  - Community Documentation:
+    - Home: en/unnoficial_docs/index.md
+    - Basics:
+        Home: en/unnoficial_docs/base/index.md
+        Behaviors:
+          - General Information: en/unnoficial_docs/base/behavior/behavior.md
+        World:
+          - World Basics: en/unnoficial_docs/base/world/world.md
+
+    - Guides:
+        - Home: en/unnoficial_docs/guides/index.md
+        - Create NPC Animation: en/unnoficial_docs/guides/create_animation_for_npc.md
+
+    - Useful Features:
+        - Home: en/unnoficial_docs/useful_features/index.md
+        - Useful Shortcuts: en/unnoficial_docs/useful_features/shortcuts.md
+        - Copy Info from Object Properties: en/unnoficial_docs/useful_features/copy_info_from_objects_prop.md
+
+    - Bugs and Solutions:
+        - Home: en/unnoficial_docs/bugs/index.md
+
+    - References:
+        - Home: en/unnoficial_docs/references/index.md
+        - World:
+            - World Parameters: en/unnoficial_docs/references/world/world_params.md
+            - Umbra: en/unnoficial_docs/references/world/umbra.md
+            - Pathlib Parameters: en/unnoficial_docs/references/world/pathlib.md
+            - Shadow Parameters: en/unnoficial_docs/references/world/shadow_params.md
+            - Environment Parameters: en/unnoficial_docs/references/world/env_params.md
+            - Geometry Parameters: en/unnoficial_docs/references/world/merged_geometry_params.md
+        - File Extensions: en/unnoficial_docs/references/file_extensions.md
+        - Parameter Data Types: en/unnoficial_docs/references/data_types.md

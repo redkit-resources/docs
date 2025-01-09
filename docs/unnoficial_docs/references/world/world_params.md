@@ -111,4 +111,6 @@ Novigrad + No Mans Land - part 1
 
 ***
 Авторы: lxgdark, grandvel
+
+*Документация поддерживается участниками сообщества [REDkit RU](https://discord.gg/kRTEy8KcNa)*
 ***

@@ -35,8 +35,15 @@ jobs:
       - name: Build metadata
         run: pip install -e .
 
-      - name: Build MkDocs site
-        run: mkdocs build
+      - run: |
+          mkdocs build
+          
+          mkdocs build -f mkdocs.en.yml -d site_en
+          
+          mkdir -p site/en
+          cp -r site_en/* site/en/
+          
+          rm -rf site_en
 
       - name: Version Management
         id: version

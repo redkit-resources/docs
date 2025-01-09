@@ -224,4 +224,6 @@ tags:
 
 ***
 Автор: leviofanh
+
+*Документация поддерживается участниками сообщества [REDkit RU](https://discord.gg/kRTEy8KcNa)*
 ***

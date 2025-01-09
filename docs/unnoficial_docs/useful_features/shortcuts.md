@@ -92,4 +92,6 @@ tags:
 
 ***
 Авторы: lxgdark, x4lva
+
+*Документация поддерживается участниками сообщества [REDkit RU](https://discord.gg/kRTEy8KcNa)*
 ***
