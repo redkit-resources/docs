@@ -1,0 +1,84 @@
+:root {
+    --button-padding-y: 7px;           /* Вертикальные отступы */
+    --button-padding-x: 10px;          /* Горизонтальные отступы */
+    --button-font-size: 0.680rem;      /* Размер шрифта */
+    --button-border-radius: 3px;       /* Скругление границ */
+    --button-marigin-right: 10px;      /* Отступ от поиска*/
+    --button-border-width: 0px;        /* Толщина границы */
+    --button-font-weight: 700;         /* Толщина шрифта*/
+    --icon-marigin-right: 0.34em;      /* Отступ иконки от текста*/
+    --button-icon-size: 1.2rem;        /* Размер иконки */
+    --background-color-dark: #5e4090;  /* Цвет темная тема */
+    --font-color-dark: #cfc6de;        /* Шрифт темная тема */
+    --hover-dark: #8e6bc9;             /* hover темная тема */
+    --background-color-light: #006e63; /* Цвет светлая тема */
+    --font-color-light: #bae1dd;       /* Шрифт светлая тема */
+    --hover-light: #1fa194;            /* hover светлая тема */
+}
+
+.community-button {
+    margin-right: var(--button-marigin-right);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-border-radius);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    text-decoration: none;
+    white-space: nowrap;
+    border: var(--button-border-width) solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.community-button .button-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: var(--icon-marigin-right);
+    font-size: var(--button-icon-size);
+    flex-shrink: 0;
+}
+
+/* Темная тема */
+body[data-md-color-scheme="slate"] .community-button {
+    background-color: var(--background-color-dark);
+    color: var(--font-color-dark);
+}
+
+body[data-md-color-scheme="slate"] .community-button:hover {
+    background-color: var(--hover-dark);
+}
+
+/* Светлая тема */
+body[data-md-color-scheme="default"] .community-button {
+    background-color: var(--background-color-light);
+    color: var(--font-color-light);
+}
+
+body[data-md-color-scheme="default"] .community-button:hover {
+    background-color: var(--hover-light);
+}
+
+/* Мобильный вид */
+@media (max-width: 768px) {
+    .community-button .button-text {
+        display: none !important;
+    }
+
+    .community-button {
+        margin-right: 0;
+        background-color: transparent !important;
+
+    }
+
+    .community-button .button-icon {
+        margin-right: 0 !important;
+        padding: 0 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .community-button:hover .button-icon svg {
+        fill: #d2c4ea;
+    }
+}

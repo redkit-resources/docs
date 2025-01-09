@@ -1,0 +1,36 @@
+.toc-collapsed {
+    margin-bottom: 1em;
+}
+
+.toc-toggle {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toc-toggle svg {
+    transition: transform 0.15s ease;
+}
+
+.toc-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-right: 2em;
+}
+
+.toc-link {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 0.75em);
+}
+
+.md-sidebar.md-sidebar--secondary {
+    width: calc(12rem + 25px) !important;
+}
