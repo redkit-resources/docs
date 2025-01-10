@@ -6,6 +6,7 @@ This section collects known bugs and verified ways to work around them.
 
 ??? buglink "A Strange Thing Appeared on the Left Side of the World Window"
     
+    ### A Strange Thing Appeared on the Left Side of the World Window
     If you see this thing:  
 
     ![debug_onscreen_bug.webp](../../assets/images/unnoficial_docs/bugs/debug_onscreen_bug.webp){ style="width: 20%;" }
@@ -18,6 +19,8 @@ This section collects known bugs and verified ways to work around them.
 
 
 ??? buglink "UI: Fixing a Dropdown List Element"
+
+    ### UI: Fixing a Dropdown List Element
 
     After rebuilding any fla file with a dropdown list, you’ll notice that they stop working 
     (they won’t open/close).
