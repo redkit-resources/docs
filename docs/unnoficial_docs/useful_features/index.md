@@ -24,4 +24,12 @@
 
     [:octicons-arrow-right-24: Подробнее](shortcuts.md){ .md-button }
 
+-   **:material-code-json: Настройка Script Studio**
+    
+    ***
+
+    Гайд по настройке Script Studio, а также пример настроек хорошей темной темы.
+
+    [:octicons-arrow-right-24: Подробнее](setup_script_studio.md){ .md-button }
+
 </div>

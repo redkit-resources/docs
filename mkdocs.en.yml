@@ -55,6 +55,7 @@ nav:
         - Home: en/unnoficial_docs/useful_features/index.md
         - Useful Shortcuts: en/unnoficial_docs/useful_features/shortcuts.md
         - Copy Info from Object Properties: en/unnoficial_docs/useful_features/copy_info_from_objects_prop.md
+        - Customizing Script Studio: en/unnoficial_docs/useful_features/setup_script_studio.md
 
     - Bugs and Solutions:
         - Home: en/unnoficial_docs/bugs/index.md

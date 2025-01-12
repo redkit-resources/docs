@@ -31,6 +31,7 @@ nav:
         - Главная: unnoficial_docs/useful_features/index.md
         - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
         - Cкопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
+        - Настройка Script Studio: unnoficial_docs/useful_features/setup_script_studio.md
 
     - Баги и их решения:
         - Главная: unnoficial_docs/bugs/index.md

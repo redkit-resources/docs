@@ -24,4 +24,13 @@ A section with non-obvious REDkit features and techniques that will make your wo
 
     [:octicons-arrow-right-24: Learn More](shortcuts.md){ .md-button }
 
+-   **:material-code-json: Customizing Script Studio**
+    
+    ***
+
+     A guide to customizing Script Studio, as well as an example of how to customize a good dark theme.
+
+    [:octicons-arrow-right-24: Learn More](setup_script_studio.md){ .md-button }
+
+
 </div>

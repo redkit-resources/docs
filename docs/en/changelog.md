@@ -4,6 +4,7 @@ All significant changes and their versions will be published here.
 
 ***
 
+- 2.0.3 - Added [page](unnoficial_docs/useful_features/setup_script_studio.md) 
 - 2.0.0 - Added English version of documentation
 - 1.2.0 - Added many world related pages. Improved document navigation. Added pages: 
     [1](unnoficial_docs/base/world/world.md), [2](unnoficial_docs/references/world/env_params.md), 
