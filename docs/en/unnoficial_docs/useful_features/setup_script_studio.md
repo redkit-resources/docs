@@ -18,7 +18,7 @@ You can use your favorite theme instead.
 
 ## Configuring Syntax Highlighting
 
-To configure syntax highlighting, go to **Tools** -> **Text editor**.
+To configure syntax highlighting, go to **Tools** --> **Text editor**.
 
 Enable (some may be enabled by default):
 
@@ -46,7 +46,7 @@ This setting activates tooltips when hovering over function, class, or variable 
 
 ## Configuring the Theme 
 
-To change the theme, go to **Tools** -> **Text editor** -> **Colours**. 
+To change the theme, go to **Tools** --> **Text editor** --> **Colours**. 
 A table with columns will open:
 
 - **Style** — the element for which the color is changed.
@@ -68,21 +68,18 @@ Style descriptions:
 - **GlobalClass** — data types: _int_, _float_, _string_, _void_, _bool_, etc.
 - **Bracket Highlighting** — highlighting the current and closing bracket.
 - **Line Numbers** — the color of the line with line numbers.
-- **Opcodes**  — highlighting low-level commands. (Enable **Display Opcodes** in **Tools** -> **Advanced** for this).
+- **Opcodes**  — highlighting low-level commands. (Enable **Display Opcodes** in **Tools** --> **Advanced** for this).
 
 In the Hover Info menu, configure the colors for tooltips similarly to the main styles. 
 In the Caret section, change the caret color.
 
 ## My Configuration
-
-Now I’ll configure the editor for myself. 
-
 ### Font Selection
 
 First, replace the default font. The quality of the font directly affects code readability.
 
 **Courier New**, while nostalgic for the IBM era, is completely outdated. 
-I prefer **JetBrains Mono**—a font I’m used to. 
+I prefer **JetBrains Mono** — a font I’m used to. 
 You can choose any other font you like.
 
 For the **Word**, **Word 2**, and **GlobalClass** styles, I use medium italic, 
@@ -90,9 +87,10 @@ as it stands out better than bold.
 
 ### Color Configuration
 
-My color settings. If you like them, feel free to use them.
+My color settings. If you like them, feel free to use them (there's a screenshot at the end).
 
 Background:
+
 - For all elements except **Bracket Highlighting**: (44, 46, 52)
 - For **Bracket Highlighting**: (64, 62, 65)
 
@@ -104,11 +102,11 @@ Foreground:
 - **String**, **Character**: (231, 198, 100)
 - **Word**: (252, 93, 124)
 - **Word 2**: (118, 204, 224)
-**GlobalClass**: (158, 208, 114)
+- **GlobalClass**: (158, 208, 114)
 
 These same settings are applied in the **Hover Info** section.
 
-In **caret** -> **Сolour**: (250, 250, 250)
+In **caret** --> **Сolour**: (250, 250, 250)
 
 ## Result:
 
