@@ -59,6 +59,7 @@ nav:
 
     - Bugs and Solutions:
         - Home: en/unnoficial_docs/bugs/index.md
+        - Stitches on textures: en/unnoficial_docs/bugs/uv_bug.md
 
     - References:
         - Home: en/unnoficial_docs/references/index.md

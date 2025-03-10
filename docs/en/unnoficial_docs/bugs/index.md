@@ -672,3 +672,13 @@ This section collects known bugs and verified ways to work around them.
         }
         ```
     
+??? buglink "UV unwrapping bug when importing mesh"
+    When importing a mesh, a bug may occur causing seams on some parts of the model.
+    Even if nothing has changed and you simply exported and re-imported the model into the engine.
+
+    Example on Geralt's shoulder:
+     
+    ![uv_bug_example.webp](../../assets/images/unnoficial_docs/bugs/uv_bug_example.webp)
+    
+
+     The solution to this bug turned out to be not so simple, read more [details here...](uv_bug.md).

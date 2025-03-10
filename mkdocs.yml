@@ -35,6 +35,7 @@ nav:
 
     - Баги и их решения:
         - Главная: unnoficial_docs/bugs/index.md
+        - Швы на текстурах: unnoficial_docs/bugs/uv_bug.md
 
     - Справочники:
         - Главная: unnoficial_docs/references/index.md

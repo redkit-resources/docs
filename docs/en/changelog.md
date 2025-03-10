@@ -4,6 +4,7 @@ All significant changes and their versions will be published here.
 
 ***
 
+- 2.0.5 - Added [page](unnoficial_docs/bugs/uv_bug.md)
 - 2.0.3 - Added [page](unnoficial_docs/useful_features/setup_script_studio.md) 
 - 2.0.0 - Added English version of documentation
 - 1.2.0 - Added many world related pages. Improved document navigation. Added pages: 
