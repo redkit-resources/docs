@@ -14,3 +14,9 @@ From task setup to the final result.
     and provides practical tips, links to useful tools, and video tutorials.
 
     [:octicons-arrow-right-24: Go to Guide](create_animation_for_npc.md){ .md-button }
+
+??? guide "Creating USM videos"
+    This guide will walk you through the entire process of working with video in REDkit.
+    Learn how to unzip videos, how to prepare files, convert audio tracks for localizations and correctly assemble the final video.
+
+    [:octicons-arrow-right-24: Jump to guide](create_usm_video){ .md-button }

@@ -26,6 +26,7 @@ nav:
     - Гайды:
         - Главная: unnoficial_docs/guides/index.md
         - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
+        - Создать USM видео: unnoficial_docs/guides/create_usm_video.md
 
     - Полезные фичи:
         - Главная: unnoficial_docs/useful_features/index.md

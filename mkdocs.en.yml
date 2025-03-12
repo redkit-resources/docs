@@ -50,6 +50,7 @@ nav:
     - Guides:
         - Home: en/unnoficial_docs/guides/index.md
         - Create NPC Animation: en/unnoficial_docs/guides/create_animation_for_npc.md
+        - Create USM video: en/unnoficial_docs/guides/create_usm_video.md
 
     - Useful Features:
         - Home: en/unnoficial_docs/useful_features/index.md
