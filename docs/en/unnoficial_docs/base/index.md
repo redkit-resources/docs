@@ -14,3 +14,6 @@ This section contains detailed explanations of key concepts presented in a simpl
     A section with information about worlds.
     
     [:octicons-arrow-right-24: Start Learning](world/world.md){ .md-button }
+
+!!! docs "Other"
+    [Loading story screens](loading_screens.md)

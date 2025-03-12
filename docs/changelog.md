@@ -4,6 +4,7 @@
 
 ***
 
+- 2.0.7 - Добавлена [страница](unnoficial_docs/base/loading_screens.md), отредактирована [страница](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.6 - Добавлена [страница](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.5 - Добавлена [страница](unnoficial_docs/bugs/uv_bug.md)
 - 2.0.3 - Добавлена [страница](unnoficial_docs/useful_features/setup_script_studio.md)

@@ -14,3 +14,6 @@
     Раздел c информацией о мирах.
     
     [:octicons-arrow-right-24: Начать изучение](world/world.md){ .md-button }
+
+!!! docs "Остальное"
+    [Сюжетные экраны загрузки](loading_screens.md)

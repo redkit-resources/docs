@@ -46,6 +46,7 @@ nav:
           - General Information: en/unnoficial_docs/base/behavior/behavior.md
         World:
           - World Basics: en/unnoficial_docs/base/world/world.md
+        Loading screens: unnoficial_docs/base/loading_screens.md
 
     - Guides:
         - Home: en/unnoficial_docs/guides/index.md

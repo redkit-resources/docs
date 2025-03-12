@@ -23,6 +23,8 @@ nav:
         Мир:
           - Миры основы: unnoficial_docs/base/world/world.md
 
+        Загрузочные экраны: unnoficial_docs/base/loading_screens.md
+
     - Гайды:
         - Главная: unnoficial_docs/guides/index.md
         - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
