@@ -736,6 +736,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../unnoficial_docs/base/loading_screens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading screens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2070,7 +2091,9 @@
 </table>
 <p>You may notice that the tracks have gaps. This is probably a reserve for languages without voiceover.</p>
 <p>If the required localization is not in the list, the engine plays Track 0 with the default voiceover, usually English, but in your mod it might be a different language if it is not localized.</p>
-<p><em>I don't know why alternative voiceovers are needed</em></p>
+<p>Alternate voiceovers are needed for loading screens. 
+They usually have a different version of the file part of the story. 
+You can choose in the journal which one to play.</p>
 <div class="admonition success">
 <p class="admonition-title">Done</p>
 <p>After you assign everything, just click the <strong>Encode</strong> button.</p>
@@ -2078,7 +2101,8 @@
 <h2 id="subtitles">Subtitles<a class="headerlink" href="#subtitles" title="Permanent link">&para;</a></h2>
 <p>The engine supports built-in subtitles for USM videos, and they are stored in separate text files with the <code>.subs</code> extension. These files are located in the <strong>subs</strong> folder, located next to the USM video itself.</p>
 <h3 id="format">Format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h3>
-<p>Each subtitle file should be named the same as the video, with the addition of the ISO language code. For example, if you have a video <code>st_1.usm</code>, then the subtitle files will look like this:</p>
+<p>Each subtitle file should be named the same as the video, with the addition of the ISO language code. For example, if you have a video <code>st_1.usm</code>, then the subtitle files will look like this:
+Subtitles for alternate voiceovers are located in the <strong>altsubs</strong> folder.</p>
 <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>subs/st_1_en.subs<span class="w">  </span><span class="o">(</span>English<span class="w"> </span>subtitles<span class="o">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>subs/st_1_ru.subs<span class="w">  </span><span class="o">(</span>Russian<span class="w"> </span>subtitles<span class="o">)</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>subs/st_1_de.subs<span class="w">  </span><span class="o">(</span>German<span class="w"> </span>subtitles<span class="o">)</span>
