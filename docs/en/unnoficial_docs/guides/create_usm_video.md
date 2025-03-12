@@ -181,7 +181,9 @@ You may notice that the tracks have gaps. This is probably a reserve for languag
 
 If the required localization is not in the list, the engine plays Track 0 with the default voiceover, usually English, but in your mod it might be a different language if it is not localized.
 
-_I don't know why alternative voiceovers are needed_
+Alternate voiceovers are needed for loading screens. 
+They usually have a different version of the file part of the story. 
+You can choose in the journal which one to play.
 
 !!! success "Done" 
     After you assign everything, just click the **Encode** button.
@@ -193,6 +195,7 @@ The engine supports built-in subtitles for USM videos, and they are stored in se
 ### Format
 
 Each subtitle file should be named the same as the video, with the addition of the ISO language code. For example, if you have a video `st_1.usm`, then the subtitle files will look like this:
+Subtitles for alternate voiceovers are located in the **altsubs** folder.
 
 ```bash
 subs/st_1_en.subs  (English subtitles)
