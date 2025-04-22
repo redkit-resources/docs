@@ -4,6 +4,7 @@ All significant changes and their versions will be published here.
 
 ***
 
+- 2.0.8 - Added [page](unnoficial_docs/guides/create_new_hud_medallion.md)
 - 2.0.7 - Added [page](unnoficial_docs/base/loading_screens.md), edited [page](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.6 - Added [page](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.5 - Added [page](unnoficial_docs/bugs/uv_bug.md)

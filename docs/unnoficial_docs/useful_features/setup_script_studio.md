@@ -2,8 +2,6 @@
 tags:
   - Полезное
   - Редактор
-
-status: new
 ---
 
 # Настройка script studio

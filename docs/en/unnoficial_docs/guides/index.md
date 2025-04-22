@@ -20,3 +20,11 @@ From task setup to the final result.
     Learn how to unzip videos, how to prepare files, convert audio tracks for localizations and correctly assemble the final video.
 
     [:octicons-arrow-right-24: Jump to guide](create_usm_video){ .md-button }
+
+??? guide "How to Create your own medallion in hud"
+    This guide will help you create and replace your medallion icon in hud. 
+    Learn how to work with .fla files in Adobe Animate, add a new icon, 
+    switch it via Action Script, and plug it into Witcher Script. 
+    A great introduction to UI modding.
+
+    [:octicons-arrow-right-24: Jump to guide](create_new_hud_medallion.md){ .md-button }
