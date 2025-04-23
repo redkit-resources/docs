@@ -52,7 +52,7 @@ nav:
         - Home: en/unnoficial_docs/guides/index.md
         - Create NPC Animation: en/unnoficial_docs/guides/create_animation_for_npc.md
         - Create USM video: en/unnoficial_docs/guides/create_usm_video.md
-        - New medallion in hud: unnoficial_docs/guides/create_new_hud_medallion.md
+        - New medallion in hud: en/unnoficial_docs/guides/create_new_hud_medallion.md
 
     - Useful Features:
         - Home: en/unnoficial_docs/useful_features/index.md
