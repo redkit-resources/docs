@@ -29,3 +29,57 @@ status: new
 В REDkit всё будет выглядеть нормально. Однако проблема станет заметна после того, как вы опубликуете свой мод и увидите это же место в игре.
 ![Error](https://github.com/user-attachments/assets/63d4c244-fbd2-4bd1-8dc6-102ee725fbc7)
 
+Создайте новый мир или используйте уже существующий. Добавьте **объект Kaerto house** на новый слой уровня. Вы можете найти его здесь:
+
+- *environment\architecture\human\skellige\ard_skellig\kaer_trolde\buildings\old_set\entities\kaertro_house_big_old_exterior.w2ent*
+
+- blob:https://cdprojektred.atlassian.net/32ad4947-086f-406c-8a58-b23ba240cc85#media-blob-url=true&id=fd279a51-11c5-4a91-af8e-3a898f3a40a2&contextId=39256100&collection=contentId-39256100
+
+- Теперь сохраните и опубликуйте мод-проект, а затем установите его в папку с установленной игрой.
+
+Переместитесь в новый мир мода в релизной версии игры и проверьте, видны ли стены здания. Если вы выбрали деревню Дебря (Stonecutters' Settlement) под Новиградом как место для нового здания, это удобно, поскольку это первая область, в которой окажется игрок при запуске игры в режиме только с дополнением "Кровь и вино" (Blood and Wine)
+
+**Как стена выглядит в REDkit:**
+
+blob:https://cdprojektred.atlassian.net/20b781c8-ba23-4867-bcb4-5590f676165e#media-blob-url=true&id=38c21263-26af-4618-8b3a-91419f57a549&contextId=39256100&collection=contentId-39256100
+
+**Как стена выглядит в игре:**
+
+blob:https://cdprojektred.atlassian.net/55f02f46-c131-488a-825d-806fce1ffd2f#media-blob-url=true&id=145b91e4-1585-461f-9241-a1834889df52&contextId=39256100&collection=contentId-39256100
+
+### Исправление
+
+Вот как избавиться от этой проблемы.
+
+Для начала напомним, в чём суть: проблема возникает, когда вы выгружаете (check out) сущность, содержащую множество мешей, но файлы экземпляров материалов (.w2mi) не попадают в мод вместе с мешами (.w2mesh). Верно?
+
+И именно поэтому **вам нужно выгрузить (checkout) экземпляры материалов, которые использует эта сущность, чтобы включить их в мод.**
+
+Вот как это сделать:
+
+1. Сначала найдите материалы, которые использует данная сущность.
+
+2. Вы можете воспользоваться опцией **"Показать ресурсы" (Show resources)** в контекстном меню — щёлкните правой кнопкой мыши по сущности в панели сцены (Scene panel).
+
+
+blob:https://cdprojektred.atlassian.net/d14d40a1-e58d-4834-a4dc-b3c5c6c0e453#media-blob-url=true&id=e6c472c8-afa8-4971-9e41-071b1e3ba29b&contextId=39256100&collection=contentId-39256100
+
+Здесь вы можете увидеть список всех мешей (*.w2mesh), на которые ссылается сущность.
+
+Если вы кликнете на один из них, его точное расположение отобразится в Asset Browser. После открытия меша вы сможете увидеть, какие экземпляры материалов он использует.
+
+Найдите недостающий экземпляр материала во вкладке **Materials**. Там вы можете дважды щёлкнуть по значению в колонке **Base** (например: **village_stone_wall (instance)**), чтобы отобразить его точное местоположение в Asset Browser — и затем выгрузить (check out) его.
+
+blob:https://cdprojektred.atlassian.net/c2f949f8-650f-4e92-8bc8-8025c687f2f7#media-blob-url=true&id=6a018b7a-880f-4b8d-8908-ad4c4a5e6f16&contextId=39256100&collection=contentId-39256100
+
+6. ИЛИ вы можете добавить все файлы
+<your_mod_project_dir>\workspace\environment\textures_tileable\common_materials\skellige\kaer_trolde_houses\***.w2mi**
+в мод, выгрузив их (check out).
+
+blob:https://cdprojektred.atlassian.net/bbbdc608-2ed3-48bd-a180-a086892b2cce#media-blob-url=true&id=a12d878e-8946-41f5-a4f4-35e7d94a9a2b&contextId=39256100&collection=contentId-39256100
+
+***
+Автор: Johnny-Silverhand-Rocker
+
+*Документация поддерживается участниками сообщества [REDkit RU](https://discord.gg/kRTEy8KcNa)*
+***
