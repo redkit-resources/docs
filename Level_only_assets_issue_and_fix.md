@@ -11,7 +11,7 @@ status: new
 ---
 # Ассет конкретного уровня: проблема и исправление
 
-blob:https://cdprojektred.atlassian.net/828b84c7-3f47-495a-8da8-d963579a34b8#media-blob-url=true&id=63449140-30e0-4381-9134-eaf9b2b4a24f&contextId=39256100&collection=contentId-39256100
+![Error]https://cdprojektred.atlassian.net/828b84c7-3f47-495a-8da8-d963579a34b8#media-blob-url=true&id=63449140-30e0-4381-9134-eaf9b2b4a24f&contextId=39256100&collection=contentId-39256100
 
 **Некоторые ассеты привязаны к определённому уровню. Это означает, что ассет входит в состав пакета (bundle) этого уровня в финальной версии игры и загружается только при запуске именно этого уровня. Вот как можно исправить эту проблему.**
 
