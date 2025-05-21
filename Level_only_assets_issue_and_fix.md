@@ -31,7 +31,7 @@ status: new
 
 - *environment\architecture\human\skellige\ard_skellig\kaer_trolde\buildings\old_set\entities\kaertro_house_big_old_exterior.w2ent*
 
-![alt text](image-5.png)
+![alt text1](blob:https://cdprojektred.atlassian.net/b722733e-6f40-4ef3-979f-3584b8f88cfb#media-blob-url=true&id=fd279a51-11c5-4a91-af8e-3a898f3a40a2&contextId=39256100&collection=contentId-39256100)
 
 - Теперь сохраните и опубликуйте мод-проект, а затем установите его в папку с установленной игрой.
 
