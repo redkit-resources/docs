@@ -19,10 +19,10 @@ nav:
     - Основы:
         Главная: unnoficial_docs/base/index.md
         DLC-моды:
-          - О DLC модах: unnoficial_docs\base\dlc\index.md
-          - Шаг 1. Пространство ID: unnoficial_docs\base\dlc\dlc_steps\step_1.md
-          - Шаг 2. Имя мода: unnoficial_docs\base\dlc\dlc_steps\step_2.md
-          - Шаг 2. Структура папок: unnoficial_docs\base\dlc\dlc_steps\step_3.md
+          - О DLC модах: unnoficial_docs/base/dlc/index.md
+          - Шаг 1. Пространство ID: unnoficial_docs/base/dlc/dlc_steps/step_1.md
+          - Шаг 2. Имя мода: unnoficial_docs/base/dlc/dlc_steps/step_2.md
+          - Шаг 2. Структура папок: unnoficial_docs/base/dlc/dlc_steps/step_3.md
         Поведения:
           - Общие сведения: unnoficial_docs/base/behavior/behavior.md
         Мир:
