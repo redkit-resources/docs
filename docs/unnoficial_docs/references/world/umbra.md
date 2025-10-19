@@ -6,9 +6,6 @@ tags:
   - world
   - occlusion
   - w3occlusiondef
-
-status: new
-
 ---
 
 

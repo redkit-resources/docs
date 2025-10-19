@@ -4,8 +4,6 @@ tags:
   - Мир
   - world
   - w2w
-    
-status: new
 ---
 
 

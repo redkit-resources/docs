@@ -5,9 +5,6 @@ tags:
   - Навигация
   - world
   - navmesh
-
-status: new
-
 ---
 
 # PathLib

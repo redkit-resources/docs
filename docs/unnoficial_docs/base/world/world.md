@@ -7,9 +7,6 @@ tags:
   - world
   - level design
   - w2w
-
-status: new
-
 ---
 
 # World (Мир)
