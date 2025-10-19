@@ -5,9 +5,6 @@ tags:
   - Окружение
   - world
   - Environment
-
-status: new
-
 ---
 
 # environmentParameters

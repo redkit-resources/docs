@@ -10,9 +10,6 @@ tags:
   - .redswf
   - .as
   - .ws
-
-status: new
-
 ---
 
 # Как создать свой медальон в hud
