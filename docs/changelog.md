@@ -3,6 +3,7 @@
 Тут будут публиковаться все значимые изменения и их версии.
 
 ***
+- 2.1.0-2.1.2 - Начат [цикл](unnoficial_docs/base/dlc/index.md) пошагового руководства по созданию DLC-модов
 - 2.0.8 - Добавлена [страница](unnoficial_docs/guides/create_new_hud_medallion.md)
 - 2.0.7 - Добавлена [страница](unnoficial_docs/base/loading_screens.md), отредактирована [страница](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.6 - Добавлена [страница](unnoficial_docs/guides/create_usm_video.md)
