@@ -1,7 +1,7 @@
 ---
 tags:
   - dlc
-  - retddlc
+  - reddlc
 
 status: new
 

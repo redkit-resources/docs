@@ -1,7 +1,7 @@
 ---
 tags:
   - dlc
-  - retddlc
+  - reddlc
   - mod_name
 
 status: new
