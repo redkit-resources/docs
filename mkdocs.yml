@@ -50,8 +50,11 @@ nav:
     - Справочники:
         - Главная: unnoficial_docs/references/index.md
         - Редакторы:
-          - Редактор локализуемых строк: unnoficial_docs\references\editors\localized_strings_editor.md
-          - Asset Browser: unnoficial_docs\references\editors\asset_browser.md
+          - Редактор локализуемых строк: unnoficial_docs/references/editors/localized_strings_editor.md
+          - Asset Browser: unnoficial_docs/references/editors/asset_browser.md
+        - DLC Definition:
+          - Описание DLC Definition: unnoficial_docs/references/dlc/dlc_definition.md
+          - DLC Mounters: unnoficial_docs/references/dlc/dlc_mounters.md
         - Мир:
             - Параметры мира: unnoficial_docs/references/world/world_params.md
             - Umbra: unnoficial_docs/references/world/umbra.md

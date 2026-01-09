@@ -3,7 +3,10 @@
 Тут будут публиковаться все значимые изменения и их версии.
 
 ***
-- 2.1.0-2.1.2 - Начат [цикл](unnoficial_docs/base/dlc/index.md) пошагового руководства по созданию DLC-модов
+
+- 2.1.3 - Добавлены справочнки для [DLC Definition](unnoficial_docs/references/dlc/dlc_definition.md) и [DLC Mounters](unnoficial_docs/references/dlc/dlc_mounters.md)
+- 2.1.0-2.1.3 - Начат [цикл](unnoficial_docs/base/dlc/index.md) пошагового руководства по созданию DLC-модов
+- 2.1.0 - Добавдены справочники: [Asset Browser](unnoficial_docs/references/editors/asset_browser.md), [редактор локализуемых строк (Localized Strings Editor)](unnoficial_docs/references/editors/localized_strings_editor.md)
 - 2.0.8 - Добавлена [страница](unnoficial_docs/guides/create_new_hud_medallion.md)
 - 2.0.7 - Добавлена [страница](unnoficial_docs/base/loading_screens.md), отредактирована [страница](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.6 - Добавлена [страница](unnoficial_docs/guides/create_usm_video.md)
@@ -16,5 +19,5 @@
     [5](unnoficial_docs/references/world/shadow_params.md), [6](unnoficial_docs/references/world/umbra.md),
     [7](unnoficial_docs/references/world/world_params.md), [8](unnoficial_docs/references/data_types.md)
 
-- 1.1.0 - Добавлена [страница](unnoficial_docs/references/file_extensions.md) 
+- 1.1.0 - Добавлена [страница](unnoficial_docs/references/file_extensions.md)
 - 1.0.0 - Init версия. Перенесены некоторые доки из discord
