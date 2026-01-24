@@ -4,9 +4,11 @@
 
 ***
 
-- 2.1.3 - Добавлены справочнки для [DLC Definition](unnoficial_docs/references/dlc/dlc_definition.md) и [DLC Mounters](unnoficial_docs/references/dlc/dlc_mounters.md)
+- 2.1.5 - Добавлен набор статей о квестах:
+    [1](unnoficial_docs/references/quest/general.md), [2](unnoficial_docs/references/quest/editor.md), [3](unnoficial_docs/references/quest/blocks.md), [4](unnoficial_docs/references/quest/debug.md), [5](unnoficial_docs/references/quest/examples.md), [6](unnoficial_docs/references/quest/conditions_and_functions.md), [7](unnoficial_docs/base/dlc/dlc_mods/dlc_quest.md)
+- 2.1.3 - Добавлены справочники для [DLC Definition](unnoficial_docs/references/dlc/dlc_definition.md) и [DLC Mounters](unnoficial_docs/references/dlc/dlc_mounters.md)
 - 2.1.0-2.1.3 - Начат [цикл](unnoficial_docs/base/dlc/index.md) пошагового руководства по созданию DLC-модов
-- 2.1.0 - Добавдены справочники: [Asset Browser](unnoficial_docs/references/editors/asset_browser.md), [редактор локализуемых строк (Localized Strings Editor)](unnoficial_docs/references/editors/localized_strings_editor.md)
+- 2.1.0 - Добавлены справочники: [Asset Browser](unnoficial_docs/references/editors/asset_browser.md), [редактор локализуемых строк (Localized Strings Editor)](unnoficial_docs/references/editors/localized_strings_editor.md)
 - 2.0.8 - Добавлена [страница](unnoficial_docs/guides/create_new_hud_medallion.md)
 - 2.0.7 - Добавлена [страница](unnoficial_docs/base/loading_screens.md), отредактирована [страница](unnoficial_docs/guides/create_usm_video.md)
 - 2.0.6 - Добавлена [страница](unnoficial_docs/guides/create_usm_video.md)

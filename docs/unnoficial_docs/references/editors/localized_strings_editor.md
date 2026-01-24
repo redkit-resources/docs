@@ -3,9 +3,6 @@ tags:
   - editor
   - localization
   - strings
-
-status: new
-
 ---
 
 # Редактор локализуемых строк (Localized Strings Editor)
