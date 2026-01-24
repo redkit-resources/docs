@@ -3,9 +3,6 @@ tags:
   - editor
   - asset
   - browser
-
-status: new
-
 ---
 
 # Asset Browser

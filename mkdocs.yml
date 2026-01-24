@@ -24,6 +24,7 @@ nav:
           - Шаг 2. Имя мода: unnoficial_docs/base/dlc/dlc_steps/step_2.md
           - Шаг 3. Структура папок: unnoficial_docs/base/dlc/dlc_steps/step_3.md
           - Шаг 4. Определение DLC: unnoficial_docs/base/dlc/dlc_steps/step_4.md
+          - Варианты DLC. Квестовый DLC-мод: unnoficial_docs/base/dlc/dlc_mods/dlc_quest.md
         Поведения:
           - Общие сведения: unnoficial_docs/base/behavior/behavior.md
         Мир:
@@ -40,7 +41,7 @@ nav:
     - Полезные фичи:
         - Главная: unnoficial_docs/useful_features/index.md
         - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
-        - Cкопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
+        - Скопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
         - Настройка Script Studio: unnoficial_docs/useful_features/setup_script_studio.md
 
     - Баги и их решения:
@@ -55,6 +56,13 @@ nav:
         - DLC Definition:
           - Описание DLC Definition: unnoficial_docs/references/dlc/dlc_definition.md
           - DLC Mounters: unnoficial_docs/references/dlc/dlc_mounters.md
+        - Квесты:
+          - Общие данные о квестах: unnoficial_docs/references/quest/general.md
+          - Редактор файлов квестов: unnoficial_docs/references/quest/editor.md
+          - Квестовые блоки: unnoficial_docs/references/quest/blocks.md
+          - Условия и функции: unnoficial_docs/references/quest/conditions_and_functions.md
+          - Отладка квестов: unnoficial_docs/references/quest/debug.md
+          - Примеры сценариев: unnoficial_docs/references/quest/examples.md
         - Мир:
             - Параметры мира: unnoficial_docs/references/world/world_params.md
             - Umbra: unnoficial_docs/references/world/umbra.md
