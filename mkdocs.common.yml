@@ -1,5 +1,6 @@
 theme:
   name: material
+  custom_dir: overrides
   language: ru
   logo: assets/favicon.svg
   favicon: assets/favicon.svg
@@ -139,6 +140,8 @@ extra_css:
   - stylesheets/redkit_community.css
 
 extra_javascript:
+  - javascripts/redirect-config.js
+  - javascripts/redirect-router.js
   - javascripts/pymdown_details.js
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
