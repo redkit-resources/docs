@@ -19,7 +19,7 @@ A collection of useful hotkeys for solving routine tasks in the editor.
   This tool will help set the interior to the exterior’s coordinates, 
   as well as apply rotations and scaling (if any).
 
-    ![align_selection.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/align_selection.webp){ style="width: 25%;" }
+    ![align_selection.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/align_selection.webp){ style="width: 25%;" }
 
 
 - When you have an object selected, you can duplicate it along one of the axes.
@@ -27,12 +27,12 @@ A collection of useful hotkeys for solving routine tasks in the editor.
   Useful for building fences, scattering rocks, and other landscape work
   that requires duplicating elements along one of the coordinate axes.
 
-    ![selection_duplicate.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/selection_duplicate.webp){ style="width: 25%;" }
+    ![selection_duplicate.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/selection_duplicate.webp){ style="width: 25%;" }
 
 - ++x++ / ++y++ / ++z++ for quick movement along the corresponding axis.
   Useful if it’s difficult to grab the desired axis arrow in the current camera position.
 
-    ![selection_fast_move.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/selection_fast_move.webp){ style="width: 25%;" }
+    ![selection_fast_move.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/selection_fast_move.webp){ style="width: 25%;" }
 
 - ++ctrl+shift+e++ – select all similar w2ent objects within a small radius. 
   Allows you to select all nearby identical objects for group editing.
@@ -45,7 +45,7 @@ A collection of useful hotkeys for solving routine tasks in the editor.
 - ++"right mouse button"++ – rotate the camera.
 - ++shift++ – speeds up camera movement by 5 times.
 - ++"left mouse button"+"mouse wheel scroll"++ – increase/decrease camera speed.
-    ![camera_speed.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/camera_speed.webp)
+    ![camera_speed.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/camera_speed.webp)
 - ++j++ – quickly move to the point where the cursor is pointing. 
   The cursor must point to an object or terrain (not into empty space). 
   Useful for quick navigation on the map.
@@ -60,7 +60,7 @@ A collection of useful hotkeys for solving routine tasks in the editor.
 - ++"Mouse wheel scroll"++ – changes the brush size.
 
   _When using Shape Brush - Stamp._
-    ![shape_brush.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/shape_brush.webp)
+    ![shape_brush.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/shape_brush.webp)
 
 - ++"~"++ – inverts the Stamp, allowing you to draw relief depressions. Depends on the Intensity setting.
 - ++ctrl+"mouse movement left/right"++ – allows you to quickly change the stamp angle.
@@ -68,13 +68,13 @@ A collection of useful hotkeys for solving routine tasks in the editor.
   If you set fallout to 0, the terrain won’t change when drawing with this stamp, 
   only the textures will be transferred. Useful for creating typical landscapes with pre-prepared patterns.
 
-    ![falloff.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/falloff.webp)
+    ![falloff.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/falloff.webp)
 
 - ++alt+"left/right mouse button"++ on a material in the materials list sets it as a vertical/horizontal mask. 
   The mask allows you to paint only on the texture selected in the mask. 
   If you enable the Inv checkbox, painting will occur on all textures except the one in the mask.
 
-    ![texture_mask.webp](../../../assets/images/unnoficial_docs/usesful_features/shortcuts/texture_mask.webp)
+    ![texture_mask.webp](../../../assets/images/unofficial_docs/usesful_features/shortcuts/texture_mask.webp)
 
 ## Game Debugging
 

@@ -23,7 +23,7 @@ World (далее **Мир**) является центральной сущно
 
 К имеющимся игровым мирам можно отнести Белый сад, Новиград, Скеллиге и прочие.
 
-![World_LoadedWorld.webp](../../../assets/images/unnoficial_docs/base/world/World_LoadedWorld.webp)
+![World_LoadedWorld.webp](../../../assets/images/unofficial_docs/base/world/World_LoadedWorld.webp)
 
 ## Работа с мирами
 Для начала работы потребуется загрузить имеющийся или создать собственный **Мир**.
@@ -46,7 +46,7 @@ World (далее **Мир**) является центральной сущно
 В результате поиска вы сможете увидеть все имеющиеся игровые миры, в том числе и созданные вами. 
 Для открытия мира нажмите Enter или двойной щелчок левой кнопкой мыши.
 
-![World_SearchWorld.webp](../../../assets/images/unnoficial_docs/base/world/World_SearchWorld.webp)
+![World_SearchWorld.webp](../../../assets/images/unofficial_docs/base/world/World_SearchWorld.webp)
 
 !!! info "Подсказка"
     Чтобы найти расположение найденного файла, 
@@ -61,7 +61,7 @@ World (далее **Мир**) является центральной сущно
 2. В открывшемся окне укажите имя вашего игрового **Мира**.
 3. При необходимости укажите имя DLC (см. раздел "Особенности DLC" ниже)
 
-![World_OpenCreatedWorld.webp](../../../assets/images/unnoficial_docs/base/world/World_OpenCreatedWorld.webp)
+![World_OpenCreatedWorld.webp](../../../assets/images/unofficial_docs/base/world/World_OpenCreatedWorld.webp)
 
 ### Особенности DLC
 
@@ -82,7 +82,7 @@ World (далее **Мир**) является центральной сущно
 
 ### Scene
 
-![World_Scene.webp](../../../assets/images/unnoficial_docs/base/world/World_Scene.webp){ style="width: 75%;" }
+![World_Scene.webp](../../../assets/images/unofficial_docs/base/world/World_Scene.webp){ style="width: 75%;" }
 
 Панель Scene отображает структуру текущего **Мира**. 
 Он организован в виде иерархической структуры каталогов, 

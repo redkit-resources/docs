@@ -21,7 +21,7 @@ status: new
 
 ### Activate Game Camera
 
-![camera_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node1.webp)
+![camera_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node1.webp)
 
 Активирует главную игровую камеру. Этот блок пригодится, если ранее вы установили статическую камеру (например так, чтобы камера смотрела на игрока спереди в каком то месте игры). Блок позволит вернут камеру за спину игрока в стандартное положение.
 
@@ -29,7 +29,7 @@ status: new
 
 ### Run Static Camera
 
-![camera_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node2.webp)
+![camera_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node2.webp)
 
 Активирует статическую камеру, заранее установленную в игровом мире.
 
@@ -37,7 +37,7 @@ status: new
 
 ### Static Camera Sequence
 
-![camera_node3.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node3.webp)
+![camera_node3.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node3.webp)
 
 Создает последовательные переходы между статическими камерами, установленными в мире.
 
@@ -46,7 +46,7 @@ status: new
 
 ### Switch Static Camera
 
-![camera_node4.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node4.webp)
+![camera_node4.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node4.webp)
 
 Используется для плавного переключения между двумя статическими камерами, присутствующими в мире (первая камера уже должна быть активирована перед вызовом этого блока).
 
@@ -56,7 +56,7 @@ status: new
 
 ### Start/In
 
-![сomplexity_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/сomplexity_node1.webp)
+![сomplexity_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/сomplexity_node1.webp)
 
 Отвечает за вход в квест/фазу. Блок **Start** используется в квесте и определяет начало квеста. Блок **In** используется в фазе и является точкой входа в фазу. У фазы может быть более одного блока **In** для реализации разных логик входа в фазу уровнем выше (для этого у каждого **In** нужно задать свойство **socketID**).
 
@@ -66,7 +66,7 @@ status: new
 
 ### Phase
 
-![сomplexity_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/сomplexity_node2.webp)
+![сomplexity_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/сomplexity_node2.webp)
 
 Фаза - это, по сути, папка, используемая для структурирования квеста. Технически они не обязательны, но рекомендуется добавить их для лучшей структуры. Они также могут иметь собственный внешний **w2phase** или быть встроенным в родительский файл.
 
@@ -82,7 +82,7 @@ status: new
 
 ### Condition
 
-![flow_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node1.webp)
+![flow_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node1.webp)
 
 Проверяет, является ли конкретное условие в данный момент **True** или **False**, и немедленно выпускает сигнал через  соответствующий выход.
 
@@ -90,7 +90,7 @@ status: new
 
 ### Cut Control
 
-![flow_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node2.webp)
+![flow_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node2.webp)
 
 Используется, чтобы завершить ожидание, действие или целую фазу по сценарному условию, не дожидаясь, пока будут выполнены исходные условия этих узлов. Это похоже на выключение света в комнате, не заходя в неё. Как пример использования - ограничение времени на решение задачи (например, "найди улику за 60 секунд"). Вместо того чтобы создавать сложную систему отсчёта, вы можете использовать **Pause** и деактивировать реакцию на улику через **Cut Control** по истечении времени прервав всю логику работы с найденной уликой.
 
@@ -98,7 +98,7 @@ status: new
 
 ### Pause
 
-![flow_node3.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node3.webp)
+![flow_node3.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node3.webp)
 
 Один из самых важных узлов в графе квестов. Удерживает сигнал внутри, пока не будет выполнено заданное условие. После выполнения условий сигнал выходит из выхода.
 
@@ -106,7 +106,7 @@ status: new
 
 ### Random
 
-![flow_node4.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node4.webp)
+![flow_node4.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node4.webp)
 
 Выпускает луч в произвольную выходную точку. Этот блок поможет при необходимости сгенерировать случайное действие. Например вы хотите, чтобы при посещении какой то локации погода сменилась на случайную. Присоединив к выходным точкам скрипты смены погоды, луч попадет в случайный.
 
@@ -117,7 +117,7 @@ status: new
 
 ### Change World
 
-![game_control_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node1.webp)
+![game_control_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node1.webp)
 
 Переносит игрока в указанный игровой мир.
 
@@ -130,7 +130,7 @@ status: new
 
 ### Checkpoint
 
-![game_control_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node2.webp)
+![game_control_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node2.webp)
 
 Сохраняет игру. Нужен, чтобы в важных сюжетных точках позаботится о сохранении и не откатывать игрока далеко назад в случае чего.
 
@@ -139,7 +139,7 @@ status: new
 
 ### Denied Area
 
-![game_control_node3.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node3.webp)
+![game_control_node3.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node3.webp)
 
 Включает/отключает запрещающую зону на карте мира. Нужно, если у вас установлена зона которая запрещает доступ NPC и вы хотите в процессе отключить ее работу.
 
@@ -148,7 +148,7 @@ status: new
 
 ### FactsDB Change
 
-![game_control_node4.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node4.webp)
+![game_control_node4.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node4.webp)
 
 Важнейший блок, позволяющий управлять [фактами](general.md/#_6) игры.
 
@@ -158,7 +158,7 @@ status: new
 
 ### Hide/Show layers
 
-![game_control_node5.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node5.webp)
+![game_control_node5.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node5.webp)
 
 Используется для отображения и скрытия слоев в мире. У этого есть две основные цели: показать изменения в мире, зависящие от действий игрока / времени, и оптимизировать игру, чтобы не загружать слишком много квестовых объектов, когда они не нужны.
 
@@ -169,7 +169,7 @@ status: new
 
 ### Manage Fast Travel
 
-![game_control_node6.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node6.webp)
+![game_control_node6.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node6.webp)
 
 Управление точками быстрого перемещения. Позволяет сделать столбы для перемещения активными/не активными, а также видимыми/скрытыми на карте. Например Каэр Морхен виден на карте, но вы не сможете в него попасть, пока не будет активирован/отображен столб для быстрого перемещения.
 
@@ -181,7 +181,7 @@ status: new
 
 ### Manage Switch
 
-![game_control_node7.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node7.webp)
+![game_control_node7.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node7.webp)
 
 Управляет переключателями в игре. Этот блок позволяет управлять различными интерактивными объектами в игре, которые имеют состояния (например рычаги или двери).
 
@@ -192,7 +192,7 @@ status: new
 
 ### Minigame
 
-![game_control_node8.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node8.webp)
+![game_control_node8.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node8.webp)
 
 Запускает мини-игру (Гвинт или кулачный бой).
 
@@ -216,7 +216,7 @@ status: new
 
 ### Time Management
 
-![game_control_node9.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node9.webp)
+![game_control_node9.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node9.webp)
 
 Позволяет управлять временем в игре.
 
@@ -238,7 +238,7 @@ status: new
 
 ### Encounter full respawn
 
-![gameplay_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node1.webp)
+![gameplay_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node1.webp)
 
 Используется для полного перезапуска столкновения (*Encounter*). Основная идея — сбросить его до исходного состояния. Например, если игрок убил всех противников в зоне, вы можете использовать этот блок, чтобы все враги снова появились при выполнении определенных условий.
 
@@ -246,7 +246,7 @@ status: new
 
 ### Encounter manager
 
-![gameplay_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node2.webp)
+![gameplay_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node2.webp)
 
 Используется для контроля встреч (*Encounters*) напрямую из логики квеста. Пригодится, когда вам нужно динамически включать, отключать встречу или управлять её фазами в процессе выполнения квеста.
 
@@ -257,7 +257,7 @@ status: new
 
 ### Encounter manual activation
 
-![gameplay_node3.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node3.webp)
+![gameplay_node3.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node3.webp)
 
 Отдельный блок, позволяющий запустить или прекратить столкновение (*Encounter*)
 
@@ -266,7 +266,7 @@ status: new
 
 ### Encounter phase setter
 
-![gameplay_node4.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node4.webp)
+![gameplay_node4.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node4.webp)
 
 Позволяет указать конкретную фазу для встречи (столкновения).
 
@@ -275,7 +275,7 @@ status: new
 
 ### Entity Motion
 
-![gameplay_node5.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node5.webp)
+![gameplay_node5.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node5.webp)
 
 Это блок интерполяции (плавного перехода) состояния сущности. Её основная задача — не просто переместить предмет из точки A в точку B, а плавно и контролируемо изменить его позицию, поворот (вращение) и/или масштаб в пространстве за заданное время, следуя определённой кривой анимации. На практике это позволяет реализовать разные эффекты, как например, парящий предмет, или плавный сдвиг камня, заслонявшего пещеру.
 
@@ -289,7 +289,7 @@ status: new
 
 ### Fast forward communities
 
-![gameplay_node6.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node6.webp)
+![gameplay_node6.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node6.webp)
 
 Этот блок предназначен для тонкого контроля над процессом "перемотки" NPC, чтобы избежать багов и неестественного поведения. Так как у NPC размещенных с помощью *Community* есть различные расписания и сценарии поведения, могут возникнуть ситуации когда потребуется быстро привести поведение NPC к текущему времени суток. Этот блок поможет привести NPC  к тому состоянии, которому они должны соответствовать в текущий игровой момент.
 
@@ -300,13 +300,13 @@ status: new
 
 ### Interest point emitter
 
-![gameplay_node7.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node7.webp)
+![gameplay_node7.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node7.webp)
 
 Вероятно устаревший блок. В игре не разу не используется. Вероятно заменой этого блока стал блок представленный ниже.
 
 ### Look at
 
-![gameplay_node8.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node8.webp)
+![gameplay_node8.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node8.webp)
 
 Позволяет управлять вниманием (взглядом) различных NPC. Применяется в активных сценах (когда диалог между персонажами происходит в процессе игры). Например, вы исследуете помещение, пока NPC что-то рассказывает вам. Данный блок позволит сделать так, чтобы NPC следил за вами взглядом (поворачивая голову или даже все тело).
 
@@ -331,7 +331,7 @@ status: new
 
 ### Play animation
 
-![gameplay_node9.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node9.webp)
+![gameplay_node9.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node9.webp)
 
 Проигрывает анимацию для указанной сущности в мире (например мост, дверь или рычаг).
 
@@ -345,7 +345,7 @@ status: new
 
 ### Reward
 
-![gameplay_node10.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node10.webp)
+![gameplay_node10.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node10.webp)
 
 Вручает игроку указанную награду (например по итогам выполнения квеста). Теоретически может использоваться для вручения награды другим персонажам, но механика игры построена так, что этот блок практически всегда используется для вручения награды игроку.
 
@@ -354,13 +354,13 @@ status: new
 
 ### Spawn Not Streamed Boat
 
-![gameplay_node11.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node11.webp)
+![gameplay_node11.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node11.webp)
 
 Вероятно устаревший блок либо остаток от нереализованной системы лодочных гонок. В игре ни разу не использовался.
 
 ### Spawn Player's Vehicle
 
-![gameplay_node12.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node12.webp)
+![gameplay_node12.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node12.webp)
 
 Позволяет заспавнить (загрузить) средство передвижения в указанной точке. Например когда вы входите в усадьбу Корво Бьянко, этот блок загрузит лошадь в конюшне. Либо если вы уплыли с острова на лодке, а затем снова переместились на этот остров, можно снова подгрузить лодку к причалу.
 
@@ -369,7 +369,7 @@ status: new
 
 ### Story phase setter
 
-![gameplay_node13.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node13.webp)
+![gameplay_node13.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node13.webp)
 
 Управляет активацией/деактивацией определенных фаз взаимодействия с NPC (*Community*). Важный блок для организации сюжетных изменений для NPC.
 
@@ -392,7 +392,7 @@ status: new
 
 ### Comment block
 
-![helper_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/helper_node1.webp)
+![helper_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/helper_node1.webp)
 
 Позволяет обернуть группу блоков, указав общий комментарий. Применяется для внутреннего обозначения, например при совместной работе, чтобы другой разработчик понял логику либо выполнил доработки из комментария.
 
@@ -401,7 +401,7 @@ status: new
 
 ### Description note
 
-![helper_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/helper_node2.webp)
+![helper_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/helper_node2.webp)
 
 Блок заметка, который можно разместить в любом месте редактора. Поможет не забыть какую то логику или будущие доработки.
 
@@ -412,7 +412,7 @@ status: new
 
 ### Entry
 
-![journal_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node1.webp)
+![journal_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node1.webp)
 
 Активирует запись в журнале.
 
@@ -421,7 +421,7 @@ status: new
 
 ### Map Pin State
 
-![journal_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node2.webp)
+![journal_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node2.webp)
 
 Управляет точками на карте, которые связаны с записью журнала. Обычно при активации задания в журнале, на карте обозначается некоторая точка (или радиус) что связаны с этим заданием. Некоторых логиках вам может потребоваться не сразу показывать эти точки или скрывать их при каких то условиях. Например игрок идет по следу из улик и вам нужно активировать (показать) следующую улику на карте, только после того как игрок найдет предыдущую.
 
@@ -431,7 +431,7 @@ status: new
 
 ### Objective Counter
 
-![journal_node3.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node3.webp)
+![journal_node3.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node3.webp)
 
 Используется для отслеживания выполнения количественных задач, управляя счётчиком у конкретной цели в журнале. Например, если по заданию нужно убить три волка, вы можете после убийства волка увеличивать счетчик в задании с помощью этого блока.
 
@@ -446,7 +446,7 @@ status: new
 
 ### Quest
 
-![journal_node4.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node4.webp)
+![journal_node4.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node4.webp)
 
 Основной способ работы с журналом заданий. С помощью этого блока вы чаще всего будете управлять заданиями в журнале, переводя их в различные состояния.
 
@@ -457,7 +457,7 @@ status: new
 
 ### Quest Monster Known
 
-![journal_node5.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node5.webp)
+![journal_node5.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node5.webp)
 
 Предназначена для заполнения бестиария новой записью.
 
@@ -465,7 +465,7 @@ status: new
 
 ### Track Quest
 
-![journal_node6.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node6.webp)
+![journal_node6.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node6.webp)
 
 Позволяет направить внимание игрока на конкретный этап задания.
 
@@ -476,13 +476,13 @@ status: new
 
 ### And
 
-![logical_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/logical_node1.webp)
+![logical_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/logical_node1.webp)
 
 Пропустит луч дальше, если сигнал пришел во все входящие точки. ++пкм++ на блок, чтобы добавить еще входящих точек. Применяется, если для продвижения по квесту, обязательно исполнения нескольких условий.
 
 ### Xor
 
-![logical_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/logical_node2.webp)
+![logical_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/logical_node2.webp)
 
 Единожды пропустит луч, если сигнал прошел через любую входящую точку. Все остальные входящие сигналы будут игнорироваться. Применяется, если нужно активировать событие по одному из нескольких вариантов. Например вы нашли улику или смогли разговорить крестьянина. Событие будет запущено, а срабатывание других условий проигнорировано.
 
@@ -490,7 +490,7 @@ status: new
 
 ### Activate Content
 
-![playgo_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/playgo_node1.webp)
+![playgo_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/playgo_node1.webp)
 
 Заранее активирует фрагмент игрового контента. Этот блок выполняет задачу по оптимизации игры.
 
@@ -500,7 +500,7 @@ status: new
 
 ### Context Dialog
 
-![scenes_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node1.webp)
+![scenes_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node1.webp)
 
 Встраивает одну сцену в другую. Это блок позволяет дополнить существующую сцену новым диалогом. очень удобно, если вы делаете DLC и ходите внедрить в имеющийся игровой диалог новые варианты взаимодействий.
 
@@ -509,7 +509,7 @@ status: new
 
 ### Interaction Dialog
 
-![scenes_node2.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node2.webp)
+![scenes_node2.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node2.webp)
 
 Добавляет для указанного NPC интеракитный диалог. Это позволяет подойти к NPC и начать с ним диалог, настроенный этим блоком.
 
@@ -519,7 +519,7 @@ status: new
 
 ### Scene
 
-![scenes_node3.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node3.webp)
+![scenes_node3.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node3.webp)
 
 Запускает указанную сцену (катсцену).
 
@@ -531,7 +531,7 @@ status: new
 
 ### Scene prepare
 
-![scenes_node4.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node4.webp)
+![scenes_node4.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node4.webp)
 
 Подготавливает сцену для ее вопроизведения. Это позволяет загрузить нужные ресурсы в память заранее и избежать подвисания в начале воспроизведения тяжелой сцены.
 
@@ -542,7 +542,7 @@ status: new
 
 ### Scripted Dialog
 
-![scenes_node5.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node5.webp)
+![scenes_node5.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node5.webp)
 
 Вероятно устаревший блок. Не используется в основной игре.
 
@@ -553,7 +553,7 @@ status: new
 
 ### Script
 
-![script_node1.webp](../../../assets/images/unnoficial_docs/references/quests/quest_nodes/script_node1.webp)
+![script_node1.webp](../../../assets/images/unofficial_docs/references/quests/quest_nodes/script_node1.webp)
 
 Это очень важный блок, который позволяет выполнить игровой скрипт. Огромное число операций в игре выполняется через скрипты, не говоря о том, что вы можете сами их написать. Согласно логике работы блока, вам нужно выбрать один из множества скриптов списке и после появятся дополнительные поля для настройки. Так как это важная часть создания квестов, часть существующих скриптов описаны вы [этой](conditions_and_functions.md/#_3) статье.
 

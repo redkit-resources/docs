@@ -10,7 +10,7 @@ In REDkit, every object has a set of properties. Often, you need to copy their n
 for your own purposes (e.g., searching online).
 
 There’s a convenient way to quickly copy the entire structure of properties from a property group.
-![img.webp](../../../assets/images/unnoficial_docs/usesful_features/info_prop.webp)
+![img.webp](../../../assets/images/unofficial_docs/usesful_features/info_prop.webp)
 
 ## Method 1: Copying an Entire Property Group
 

@@ -11,7 +11,7 @@ tags:
 
 Существует удобный способ быстро скопировать всю структуру свойств из группы свойств.
 
-![img.webp](../../assets/images/unnoficial_docs/usesful_features/info_prop.webp)
+![img.webp](../../assets/images/unofficial_docs/usesful_features/info_prop.webp)
 
 ## Способ 1: Копирование всей группы свойств
 

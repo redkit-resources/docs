@@ -17,7 +17,7 @@ To understand the general structure of how behaviors work, you need to go throug
 
 First, let’s open the cat template and look at the main settings in the "**Template Properties**" tab.
 
-![entity_template_prop.webp](../../../../assets/images/unnoficial_docs/base/behavior/entity_template_prop.webp)
+![entity_template_prop.webp](../../../../assets/images/unofficial_docs/base/behavior/entity_template_prop.webp)
 
 Here, we’ll see a reference to the base template applied to this cat.
 
@@ -39,11 +39,11 @@ To understand what makes the cat hiss when it sees the player, we look for setti
 
 There, we’ll find the following parameters (see screenshot):
 
-![entity_ai.webp](../../../../assets/images/unnoficial_docs/base/behavior/entity_ai.webp)
+![entity_ai.webp](../../../../assets/images/unofficial_docs/base/behavior/entity_ai.webp)
 
 The `reactionTree` collection contains several different reactions to external stimuli. The reaction we’re interested in looks like this:
 
-![entity_ai_class_selector.webp](../../../../assets/images/unnoficial_docs/base/behavior/entity_ai_class_selector.webp)
+![entity_ai_class_selector.webp](../../../../assets/images/unofficial_docs/base/behavior/entity_ai_class_selector.webp)
 
 Having identified the reaction responsible for behavior in the presence of the player, we now look for information about it in the scripts.
 
@@ -87,7 +87,7 @@ You’ll only need to write a new tree when creating a completely new game mecha
 But let’s get back to the hissing cat. The tree we found, among other actions, 
 generates an animation event called "**Taunt**," which makes the cat hiss.
 
-![w2behtree_editor.webp](../../../../assets/images/unnoficial_docs/base/behavior/w2behtree_editor.webp)
+![w2behtree_editor.webp](../../../../assets/images/unofficial_docs/base/behavior/w2behtree_editor.webp)
 
 ### The Visual Part of Behavior
 Now, let’s figure out how this manifests visually.
@@ -107,7 +107,7 @@ Since cats are background and fairly simple NPCs, they don’t even have
 their own separate visual behavior file. 
 They use a shared template for all animals.
 
-![entity_animations.webp](../../../../assets/images/unnoficial_docs/base/behavior/entity_animations.webp)
+![entity_animations.webp](../../../../assets/images/unofficial_docs/base/behavior/entity_animations.webp)
 
 Now, let’s go to this file.
 
@@ -127,7 +127,7 @@ For example: All lines go from right to left, and the entry into the graph happe
 
 Thus, what you see at first glance is the end of the logic, not its beginning.
 
-![beh_editor.webp](../../../../assets/images/unnoficial_docs/base/behavior/beh_editor.webp)
+![beh_editor.webp](../../../../assets/images/unofficial_docs/base/behavior/beh_editor.webp)
 
 To navigate to the starting points of the logic, you’ll need to double-click on blocks containing logic. 
 Unfortunately, such blocks aren’t clearly marked, so try clicking on everything you can. 
@@ -135,7 +135,7 @@ At the very least, blocks labeled "**State machine**" definitely have nested con
 
 While wandering through the inner blocks, you’ll come across a screen like this:
 
-![beh_graph.webp](../../../../assets/images/unnoficial_docs/base/behavior/beh_graph.webp)
+![beh_graph.webp](../../../../assets/images/unofficial_docs/base/behavior/beh_graph.webp)
 
 This is the main node that distributes base behaviors. We’re interested in the leftmost nodes.
 
@@ -143,11 +143,11 @@ In particular, the circle is one of the situations where a logic path begins. Th
 is a condition that will trigger and start the path 
 if the "**Taunt**" event is generated (remember the first part of the lesson).
 
-![beh_graph_2.webp](../../../../assets/images/unnoficial_docs/base/behavior/beh_graph_2.webp)
+![beh_graph_2.webp](../../../../assets/images/unofficial_docs/base/behavior/beh_graph_2.webp)
 
 The block closest to the point has a fairly simple nested content, specifically calling the hissing animation.
 
-![beh_graph_3.webp](../../../../assets/images/unnoficial_docs/base/behavior/beh_graph_3.webp)
+![beh_graph_3.webp](../../../../assets/images/unofficial_docs/base/behavior/beh_graph_3.webp)
 
 It’s important to note that we’re in a shared template for animals, 
 and different animals will react differently to the player. 
@@ -157,12 +157,12 @@ If the animal doesn’t have such an animation, nothing will happen.
 
 The set of animations is defined in the same cat template, in the same "Animation" tab, but now in the "Animsets" sub-tab.
 
-![entity_animations_2.webp](../../../../assets/images/unnoficial_docs/base/behavior/entity_animations_2.webp)
+![entity_animations_2.webp](../../../../assets/images/unofficial_docs/base/behavior/entity_animations_2.webp)
 
 Thus, when the behavior calls for playing an animation with a specified name, 
 it will be searched for among all animation packages for the specific entity.
 
-![final_result.webp](../../../../assets/images/unnoficial_docs/base/behavior/final_result.webp)
+![final_result.webp](../../../../assets/images/unofficial_docs/base/behavior/final_result.webp)
 
 Let’s summarize everything we’ve discussed:
 

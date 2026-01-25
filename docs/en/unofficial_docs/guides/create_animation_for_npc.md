@@ -51,7 +51,7 @@ As an example, let’s take Yennefer. Open her main entity template (**Entity**)
     Since I plan to create a simple animation, the most convenient model to use is 
     the one without unnecessary details – **yennefer_naked**.
 
-    ![yennefer_naked.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked.webp)
+    ![yennefer_naked.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/yennefer_naked.webp)
 
 
      After selecting the appearance option, the right side will display what it consists of. 
@@ -64,7 +64,7 @@ As an example, let’s take Yennefer. Open her main entity template (**Entity**)
 3. Now that you’ve found the template for the specific element, open it and find the element 
    in the graph that is responsible for the **mesh** (model) of the element.
 
-    ![yennefer_naked_graph.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp)
+    ![yennefer_naked_graph.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp)
 
 4. At the bottom, in the properties list, you’ll see the path to the model. 
    Click the magnifying glass icon in the path line, and the file we need will be highlighted 
@@ -107,7 +107,7 @@ Then follow these steps:
         Later in the process, I’ll explain why.
 
 
-![blender_import_fbx.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp)
+![blender_import_fbx.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp)
 
 ### Understanding the FBX Situation
 Before continuing, let’s understand what’s happening here.
@@ -126,7 +126,7 @@ After importing the models, do the following:
 Delete the LOD (Level of Detail) variations of the models. To do this, 
 select the corresponding elements in the list and press **x**.
 
-![blender_lod_delete.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp)
+![blender_lod_delete.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp)
 
 **Merge the model parts.**
 
@@ -143,7 +143,7 @@ This block contains bone information that isn’t needed for our task (it relate
 Delete this element similarly to how you deleted the LOD.
 
 
-![blender_armature_delete.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp)
+![blender_armature_delete.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp)
 
 !!! success ""
     The preparatory stage is complete. The model is ready for further work.
@@ -190,7 +190,7 @@ To solve the bone issue, you can use a simple hack – load a ready-made animati
     - Choose the menu item "**Replace Animation from an .re file**".
     - In the import settings, be sure to set "Object scale" to one.
 
-    ![blender_object_scale.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_object_scale.webp)
+    ![blender_object_scale.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_object_scale.webp)
 
 If you’ve done everything correctly, the skeleton will be replaced with a more accurate one, 
 and pressing the spacebar will make the model perform the loaded animation.
@@ -206,7 +206,7 @@ and pressing the spacebar will make the model perform the loaded animation.
 ### Fixing Weights
 Now let’s move on to the second issue.
 
-![blender_weight_bug_example.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp){ style="width: 30%;" }
+![blender_weight_bug_example.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp){ style="width: 30%;" }
 
 Some facial elements don’t respond to the animation because they lack weight information. 
 
@@ -215,12 +215,12 @@ Let’s fix this manually:
 1. Select the model and switch to "**Weight Paint**" editing mode.
 2. In the top part of the interface, in the vertex list, select "**head**".
 
-    ![blender_weight_fix_1.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp)
+    ![blender_weight_fix_1.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp)
 
 3. Add weight to the problematic areas by clicking on them several times.
 4. If you’ve done everything correctly, the issue will disappear.
 
-    ![blender_weight_fix_2.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp)
+    ![blender_weight_fix_2.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp)
 
 !!! success "Ready to Work" 
     At this point, you can already create a new animation directly in Blender, 
@@ -266,7 +266,7 @@ After completing the matching, don’t forget to export (save) the settings for 
 
 As a result of this work, we’ll get the following:
 
-![cascadeur_result.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/cascadeur_result.webp)
+![cascadeur_result.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/cascadeur_result.webp)
 
 !!! success
     Now you can create animations, relying on numerous tutorial videos available online.
@@ -306,7 +306,7 @@ then right-click and select "**import simple/plain animation**".
 
 Yennefer waves at you. Wave back 😊
 
-![yen_waves.webp](../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yen_waves.webp)
+![yen_waves.webp](../../../assets/images/unofficial_docs/guides/create_animation_for_npc/yen_waves.webp)
 
 !!! note
     There are some pitfalls and issues you might encounter while working with custom 

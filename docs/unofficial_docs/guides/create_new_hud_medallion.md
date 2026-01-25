@@ -53,7 +53,7 @@ tags:
 - Выделите первый кадр и нажите **F9**
 - Откроется меню действий, найдите **MC_IMG_WolfHead** и кликните по любому кадру
 
-![animate_timeline.webp](../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_timeline.webp)
+![animate_timeline.webp](../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_timeline.webp)
 
 Вас перебросит внутрь компонента. Там будет 4 слоя и по 3 кадра для каждого медальона.
 
@@ -65,21 +65,21 @@ tags:
     ```actionscript linenums="1"
     stop();
     ```
-    ![animate_new_action.webp](../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_new_action.webp)
+    ![animate_new_action.webp](../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_new_action.webp)
 
 
 На слое **#Labels**:
 
 - ПКМ --> **Добавить пустой ключевой кадр**
 - В его свойствах задайте имя, это идентификатор который нужен Action Script для выбора кадра.
-    ![animate_new_label.webp](../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_new_label.webp)
+    ![animate_new_label.webp](../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_new_label.webp)
 
 На слое **Graphic_WolfGlow**:
 
 - ПКМ --> **Добавить пустой ключевой кадр**
 - Перетащите свою иконку из проводника прямо на сцену
 - Разместите ее и масштабируйте как нужно мышкой или в свойствах на вкладке объект
-    ![animate_add_image.webp](../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_add_image.webp)
+    ![animate_add_image.webp](../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_add_image.webp)
 
 Сохраняем `.fla` ++ctrl+s++, пока сворачиваем Animate и идем дальше.
 
@@ -231,7 +231,7 @@ exec function test_set_letho_hud(val : bool)
 ```
 Сверху в Script Studio нажмите на красный квадратик с двумя стрелками - это компиляция скриптов:
 
-![recompile_scripts.webp](../../assets/images/unnoficial_docs/recompile_scripts.webp)
+![recompile_scripts.webp](../../assets/images/unofficial_docs/recompile_scripts.webp)
 
 Никаких ошибок в консоли не должно быть, последняя строка: `Script compilation finished successfully.`
 
@@ -239,7 +239,7 @@ exec function test_set_letho_hud(val : bool)
     Выполните в консоли команду и передайте в нее true ( в моем случае test_set_letho_hud(true) ), 
     убедитесь, что медальон заменился.
 
-    ![success.webp](../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/success.webp)
+    ![success.webp](../../assets/images/unofficial_docs/guides/create_new_hud_medallion/success.webp)
 
 ***
 Автор: leviofanh

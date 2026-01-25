@@ -56,7 +56,7 @@ and all subfolders
 - Select the first frame and press **F9**
 - The actions menu will open, find **MC_IMG_WolfHead** and click on any frame
 
-![animate_timeline.webp](../../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_timeline.webp)
+![animate_timeline.webp](../../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_timeline.webp)
 
 This will take you inside the component. There will be 4 layers and 3 frames for each medallion.
 
@@ -68,21 +68,21 @@ On the **#Actions** layer:
     ```actionscript linenums="1"
     stop();
     ```
-    ![animate_new_action.webp](../../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_new_action.webp)
+    ![animate_new_action.webp](../../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_new_action.webp)
 
 
 On the **#Labels** layer:
 
 - Right-click --> **Insert Blank Keyframe**
 - In its properties, set a name, this is the identifier that Action Script needs to select the frame.
-    ![animate_new_label.webp](../../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_new_label.webp)
+    ![animate_new_label.webp](../../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_new_label.webp)
 
 On the **Graphic_WolfGlow** layer:
 
 - Right-click --> **Insert Blank Keyframe**
 - Drag your icon from the explorer directly onto the stage
 - Position and scale it as needed with the mouse or in the properties in the object tab
-    ![animate_add_image.webp](../../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/animate_add_image.webp)
+    ![animate_add_image.webp](../../../assets/images/unofficial_docs/guides/create_new_hud_medallion/animate_add_image.webp)
 
 Save the `.fla` with ++ctrl+s++, minimize Animate for now and continue.
 
@@ -234,7 +234,7 @@ exec function test_set_letho_hud(val : bool)
 ```
 At the top of Script Studio, click on the red square with two arrows - this is script compilation:
 
-![recompile_scripts.webp](../../../assets/images/unnoficial_docs/recompile_scripts.webp)
+![recompile_scripts.webp](../../../assets/images/unofficial_docs/recompile_scripts.webp)
 
 There should be no errors in the console, the last line should be: `Script compilation finished successfully.`
 
@@ -242,7 +242,7 @@ There should be no errors in the console, the last line should be: `Script compi
     Run the command in the console and pass true to it (in my case test_set_letho_hud(true)),
     make sure the medallion has been replaced.
 
-    ![success.webp](../../../assets/images/unnoficial_docs/guides/create_new_hud_medallion/success.webp)
+    ![success.webp](../../../assets/images/unofficial_docs/guides/create_new_hud_medallion/success.webp)
 
 ***
 Author: leviofanh

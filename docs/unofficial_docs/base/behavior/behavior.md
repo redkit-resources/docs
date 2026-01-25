@@ -19,7 +19,7 @@ tags:
 
 Для начала откроем шаблон кота и посмотрим на основные настройки во вкладке «**Template properties**»
 
-![entity_template_prop.webp](../../../assets/images/unnoficial_docs/base/behavior/entity_template_prop.webp)
+![entity_template_prop.webp](../../../assets/images/unofficial_docs/base/behavior/entity_template_prop.webp)
 
 Здесь мы увидим указатель на базовый шаблон, применённый к данному коту.
 
@@ -42,11 +42,11 @@ tags:
 
 Там мы найдем следующие параметры (см. скрин):
 
-![entity_ai.webp](../../../assets/images/unnoficial_docs/base/behavior/entity_ai.webp)
+![entity_ai.webp](../../../assets/images/unofficial_docs/base/behavior/entity_ai.webp)
 
 Коллекция `reactionTree` содержит несколько различных реакций на внешние раздражители. Нужная нам реакция выглядит так:
 
-![entity_ai_class_selector.webp](../../../assets/images/unnoficial_docs/base/behavior/entity_ai_class_selector.webp)
+![entity_ai_class_selector.webp](../../../assets/images/unofficial_docs/base/behavior/entity_ai_class_selector.webp)
 
 Определив реакцию, отвечающую за поведение при присутствии игрока, теперь ищем информацию о ней в скриптах
 
@@ -90,7 +90,7 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 Но вернёмся к шипящему котику. Найденное нами дерево кроме прочих действий, 
 генерирует событие анимации «**Taunt**», заставляющее котика шипеть.
 
-![w2behtree_editor.webp](../../../assets/images/unnoficial_docs/base/behavior/w2behtree_editor.webp)
+![w2behtree_editor.webp](../../../assets/images/unofficial_docs/base/behavior/w2behtree_editor.webp)
 
 ### Визуальная часть поведения
 Теперь разберёмся, как это проявляется визуально.
@@ -110,7 +110,7 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 своего отдельного файла визуального поведения. 
 Они используют общий шаблон для всех животных.
 
-![entity_animations.webp](../../../assets/images/unnoficial_docs/base/behavior/entity_animations.webp)
+![entity_animations.webp](../../../assets/images/unofficial_docs/base/behavior/entity_animations.webp)
 
 Перейдем теперь к данному файлу.
 
@@ -130,7 +130,7 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 
 Таким образом, то, что вы увидите при первом просмотре, будет концом логики, а не ее началом
 
-![beh_editor.webp](../../../assets/images/unnoficial_docs/base/behavior/beh_editor.webp)
+![beh_editor.webp](../../../assets/images/unofficial_docs/base/behavior/beh_editor.webp)
 
 Для перехода к стартовым позициям логика потребуется двойной щелчок на блоки, содержащие логику. 
 К сожалению, визуально такие блоки четно не разграничены, поэтому пробуйте жать на все, что можно. 
@@ -138,7 +138,7 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 
 Блуждая по внутренним блокам, вы попадете на такой экран
 
-![beh_graph.webp](../../../assets/images/unnoficial_docs/base/behavior/beh_graph.webp)
+![beh_graph.webp](../../../assets/images/unofficial_docs/base/behavior/beh_graph.webp)
 
 Это главный узел, распределяющий базовые поведения. Нам интересны самые левые узлы.
 
@@ -146,11 +146,11 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 является условием, которое сработает и запустит луч, 
 в случае если будет сгенерировано событие «**Taunt**» (вспоминаем первую часть урока).
 
-![beh_graph_2.webp](../../../assets/images/unnoficial_docs/base/behavior/beh_graph_2.webp)
+![beh_graph_2.webp](../../../assets/images/unofficial_docs/base/behavior/beh_graph_2.webp)
 
 Собственно ближайший к точке блок имеет довольно простое вложение, а именно вызов анимации шипения
 
-![beh_graph_3.webp](../../../assets/images/unnoficial_docs/base/behavior/beh_graph_3.webp)
+![beh_graph_3.webp](../../../assets/images/unofficial_docs/base/behavior/beh_graph_3.webp)
 
 Тут важно напомнить, что мы в едином шаблоне для животных, 
 а разные животные будут по-разному реагировать на игрока. 
@@ -161,12 +161,12 @@ class CAINpcReactionTauntAndMoveOut extends CAINpcReaction
 Набор же анимаций, определяется все в том же шаблоне кота, на той же вкладке «Animation», но теперь на подвкладке «Animsets».
 
 
-![entity_animations_2.webp](../../../assets/images/unnoficial_docs/base/behavior/entity_animations_2.webp)
+![entity_animations_2.webp](../../../assets/images/unofficial_docs/base/behavior/entity_animations_2.webp)
 
 Таким образом, когда поведение вызывает проигрывание анимации с указанным именем, 
 она будет искаться среди всех пакетов анимаций у конкретной сущности.
 
-![final_result.webp](../../../assets/images/unnoficial_docs/base/behavior/final_result.webp)
+![final_result.webp](../../../assets/images/unofficial_docs/base/behavior/final_result.webp)
 
 Подытожим все сказанное
 

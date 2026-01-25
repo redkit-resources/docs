@@ -124,7 +124,7 @@ tags:
 - **LFE** - практически не используется и зачатую пустой
 
 Пример правильного аудио:
-![correct_audio.webp](../../assets/images/unnoficial_docs/guides/create_usm_video/correct_audio.webp)
+![correct_audio.webp](../../assets/images/unofficial_docs/guides/create_usm_video/correct_audio.webp)
 
 Остальные аудиофайлы - это моно-дорожки, содержащие **только голос**.
 

@@ -112,7 +112,7 @@ Foreground:
 хоть они и применяются только к окну кода, а не ко всей IDE.
 
 Итоговый результат:
-![scriptstudio.webp](../../assets/images/unnoficial_docs/usesful_features/scriptstudio.webp)
+![scriptstudio.webp](../../assets/images/unofficial_docs/usesful_features/scriptstudio.webp)
 
 ***
 Автор: leviofanh

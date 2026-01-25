@@ -29,7 +29,7 @@ movies\cutscenes\storybook
 
 Давайте посмотрим, как это выглядит:
 
-![journal_1.webp](../../assets/images/unnoficial_docs/base/loading_screens/journal_1.webp)
+![journal_1.webp](../../assets/images/unofficial_docs/base/loading_screens/journal_1.webp)
 
 Из важных параметров тут World. 
 Он отвечает за то, для какого мира будет проигрываться видео. 
@@ -39,7 +39,7 @@ movies\cutscenes\storybook
 
 Внутри каждого файла журнала есть записи. Именно их активация запускает соответствующее видео:
 
-![journal_2.webp](../../assets/images/unnoficial_docs/base/loading_screens/journal_2.webp)
+![journal_2.webp](../../assets/images/unofficial_docs/base/loading_screens/journal_2.webp)
 
 Обратите внимание на параметр Video filename.
 

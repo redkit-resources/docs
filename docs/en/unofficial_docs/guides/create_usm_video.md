@@ -119,7 +119,7 @@ What does this mean in practice?
 - **LFE** - practically not used and often empty
 
 Example of correct audio:
-![correct_audio.webp](../../../assets/images/unnoficial_docs/guides/create_usm_video/correct_audio.webp)
+![correct_audio.webp](../../../assets/images/unofficial_docs/guides/create_usm_video/correct_audio.webp)
 
 The remaining audio files are mono tracks containing **voice only**.
 

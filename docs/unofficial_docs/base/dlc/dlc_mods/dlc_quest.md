@@ -19,7 +19,7 @@ status: new
 ## Создание файла квеста
 
 Перейдите в папку вашего DLC (далее в примере будет использоваться имя dlc77) и создайте папки так, чтобы они образовывали путь **"dlc --> dlc77 --> data --> quests"**. Внутри созданной папки, нажмите правой кнопкой мыши на пустое место и выберите пункт меню **"Create --> Quest"**. В качестве имени файла используйте **"dlc77_quest"**.
-![create_dlc_quest.webp](../../../../assets/images/unnoficial_docs/base/dlc/create_dlc_quest.webp)
+![create_dlc_quest.webp](../../../../assets/images/unofficial_docs/base/dlc/create_dlc_quest.webp)
 
 После того, как вы создадите и откроете файл, вы заметите, что он не содержит вообще никаких блоков. Это нормально, однако в таком виде этот фал бесполезен и даже не будет запущен. Чтобы файл мог выполнятся, нужно добавить стартовый блок.
 
@@ -34,7 +34,7 @@ status: new
 Добавленный маунтер содержит четыре свойства, подробнее о которых вы можете посмотреть [здесь](../../../references/dlc/dlc_mounters.md/#cr4questdlcmounter), однако нас сейчас интересует только поле **"quest"**, которое содержит пусть к нашему файлу квеста.
 
 Не закрывая окно **DLC Definition**, прейдите в [Asset Browser](../../../references/editors/asset_browser.md) и вернитесь к нашему файлу **"dlc77_quest"**. Выделите его и переключитесь снова на окно **DLC Definition**. Нажмите на свойство **"quest"** и после на появившуюся справа зеленую стрелочку ⬅. Путь к вашему файлу квест будет задан.
-![set_quest_dlc_definition.webp](../../../../assets/images/unnoficial_docs/base/dlc/set_quest_dlc_definition.webp)
+![set_quest_dlc_definition.webp](../../../../assets/images/unofficial_docs/base/dlc/set_quest_dlc_definition.webp)
 
 Закройте окно редактирования **DLC Definition** и в появившемся запросе на сохранение, нажмите **"Yes"**. Теперь игра знает о вашем файле квеста и будет запускать его при старте игры (как новой, так и из сохранения).
 
@@ -52,7 +52,7 @@ status: new
 Откройте файл квеста **"dlc77_quest"** и добавьте блок **"Complexity management --> Phase"**. Разместите блок фазы справа от блока **Start** и соедините блоки между собой (как показано в [руководстве](../../../references/quest/editor.md) по редактору квестов).
 
 Теперь выделите блок фазы и слева в списке свойств укажите в свойстве **phase** путь к фалу **"dlc77_structure.w2phase"** (выделив нужный файл в Asset Browser, и нажав зеленую стрелочку в окне нужного свойства).
-![add_dlc_quest_structure.webp](../../../../assets/images/unnoficial_docs/base/dlc/add_dlc_quest_structure.webp)
+![add_dlc_quest_structure.webp](../../../../assets/images/unofficial_docs/base/dlc/add_dlc_quest_structure.webp)
 
 !!! warning "Важно!"
     Если вы решите добавить фазу в файл квеста до того как создадите блок **In** внутри фазы, то в блоке фазы у вас не будет точки для входящего соединения. Это связано с тем, что внутри фазы может быть множество разных блоков **In** и от их количества будет зависеть число входящих соединений для блока фазы.
@@ -68,7 +68,7 @@ status: new
 Откройте файл **"dlc77_structure.w2phase"** и справа от блока In добавьте блок **"Scripting --> Script"**. Соедините блоки линией и выделите блок **Script**. Слева в окне свойств выберите свойство **functionName** и нажмите на красный треугольник 🔻. В открывшемся окне найдите **DisplayHudMessage**. После выбора скрипта в низу основных свойств блока появится набор свойств, доступных только для этого скрипта. В свойстве **localisedStringKey** укажите **"dlc77_desc"** (значение взято для примера, а вы можете указать любой ключ строки из [Localized Strings Editor](../../../references/editors/localized_strings_editor.md)).
 
 Теперь в REDkit запустите сохраненную игру (или используя шаблон **.redgame**) и при появлении игрока вы увидите ваше сообщение.
-![test_dlc_quest.webp](../../../../assets/images/unnoficial_docs/base/dlc/test_dlc_quest.webp)
+![test_dlc_quest.webp](../../../../assets/images/unofficial_docs/base/dlc/test_dlc_quest.webp)
 
 ## Послесловие
 

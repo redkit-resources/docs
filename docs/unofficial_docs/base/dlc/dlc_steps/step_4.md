@@ -14,11 +14,11 @@ tags:
 
 Для создание DLC Definition, откройте [Asset Browser](../../../references/editors/asset_browser.md) и перейдите в папку вашего DLC (которая будет по пути dlc\dlc77).
 Нажмите правой кнопкой мши на пустое место в окне просмотра файлов и выберите **Create --> DLC Definition**.
-![create_dlc_definition.webp](../../../../assets/images/unnoficial_docs/base/dlc/create_dlc_definition.webp)
+![create_dlc_definition.webp](../../../../assets/images/unofficial_docs/base/dlc/create_dlc_definition.webp)
 В качестве имени используйте основное кодовое имя вашего DLC. Итог получится, например таким - **"dlc77.reddlc"**.
 
 Откройте созданный файл .reddlc, чтобы начать его настройку.
-![set_reddlc_property.webp](../../../../assets/images/unnoficial_docs/base/dlc/set_reddlc_property.webp)
+![set_reddlc_property.webp](../../../../assets/images/unofficial_docs/base/dlc/set_reddlc_property.webp)
 На первом этапе достаточно будет настроить только основные свойства(не имеющие значка (+) на скрине), а свойства **mounters** и **languagePacks** по ходу разработки мода.
 !!! info "Примечание"
     Маунтеры (Mounters) - это набор подключаемых настроек, оповещающих игру о наличии в DLC разных аспектов модификации, таких как квесты или модификации внешнего вида персонажей (а так же многое другое).

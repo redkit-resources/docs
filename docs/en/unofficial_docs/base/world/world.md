@@ -25,7 +25,7 @@ scripts, and other elements of interaction with the player.
 
 Examples of existing game worlds include White Orchard, Novigrad, Skellige, and others.
 
-![World_LoadedWorld.webp](../../../../assets/images/unnoficial_docs/base/world/World_LoadedWorld.webp)
+![World_LoadedWorld.webp](../../../../assets/images/unofficial_docs/base/world/World_LoadedWorld.webp)
 
 ## Working with Worlds
 To start working, you’ll need to load an existing **World** or create your own.
@@ -49,7 +49,7 @@ To do this:
 As a result of the search, you’ll see all available game worlds, including those you’ve created. 
 To open a world, press Enter or double-click with the left mouse button.
 
-![World_SearchWorld.webp](../../../../assets/images/unnoficial_docs/base/world/World_SearchWorld.webp)
+![World_SearchWorld.webp](../../../../assets/images/unofficial_docs/base/world/World_SearchWorld.webp)
 
 !!! info "Tip"
     To find the location of the found file, 
@@ -65,7 +65,7 @@ In the main "World" window:
 2. In the window that opens, specify the name of your game **World**.
 3. If necessary, specify the DLC name (see the "DLC Features" section below).
 
-![World_OpenCreatedWorld.webp](../../../../assets/images/unnoficial_docs/base/world/World_OpenCreatedWorld.webp)
+![World_OpenCreatedWorld.webp](../../../../assets/images/unofficial_docs/base/world/World_OpenCreatedWorld.webp)
 
 ### DLC Features
 
@@ -87,7 +87,7 @@ You can always move the world between spaces.
 
 ### Scene
 
-![World_Scene.webp](../../../../assets/images/unnoficial_docs/base/world/World_Scene.webp){ style="width: 75%;" }
+![World_Scene.webp](../../../../assets/images/unofficial_docs/base/world/World_Scene.webp){ style="width: 75%;" }
 
 The Scene panel displays the structure of the current **World**. 
 It is organized as a hierarchical structure of directories 

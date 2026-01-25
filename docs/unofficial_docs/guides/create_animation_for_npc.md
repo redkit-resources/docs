@@ -50,7 +50,7 @@ Free-версия не подойдет, поскольку в ней недос
     Так как я планирую создать простую анимацию, наиболее удобным будет использовать не обременению
     лишними деталями модель - **yennefer_naked**.
 
-    ![yennefer_naked.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked.webp)
+    ![yennefer_naked.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/yennefer_naked.webp)
 
 
     После выбора варианта внешнего вида справа отобразится из чего он состоит. Простейший вариант
@@ -63,7 +63,7 @@ Free-версия не подойдет, поскольку в ней недос
 3. Теперь, когда вы нашли шаблон конкретного элемента, откройте его и найдите в графе элемент,
 который отвечает за **mesh** (модель) элемента.
 
-    ![yennefer_naked_graph.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp)
+    ![yennefer_naked_graph.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp)
 
 4. Внизу, в списке свойств вы увидите путь к модели. 
 Нажмите на значок лупы в строке с путем, и нужный нам файл будет выделен в **Asset Browser**. 
@@ -105,7 +105,7 @@ Free-версия не подойдет, поскольку в ней недос
         Позже в процессе работы я объясню, почему.
 
 
-![blender_import_fbx.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp)
+![blender_import_fbx.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp)
 
 ### Разбор ситуации с FBX
 Прежде чем продолжить, давайте разберемся что тут происходит.
@@ -122,7 +122,7 @@ Free-версия не подойдет, поскольку в ней недос
 
 Удалите вариации моделей для разной дальности (LOD). Для этого выделите соответствующие элементы в списке и нажмите **x**.
 
-![blender_lod_delete.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp)
+![blender_lod_delete.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp)
 
 **Объедините части модели.**
 
@@ -138,7 +138,7 @@ Free-версия не подойдет, поскольку в ней недос
 
 Удалите этот элемент аналогично удалению LOD.
 
-![blender_armature_delete.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp)
+![blender_armature_delete.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp)
 
 !!! success ""
     Подготовительный этап окончен. Модель готова для дальнейшей работы.
@@ -185,7 +185,7 @@ Free-версия не подойдет, поскольку в ней недос
     - Выберите пункт меню «**Replace Animation from an .re file**».
     - В настройках импорта обязательно установите пункт «Object scale» в единицу.
 
-    ![blender_object_scale.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_object_scale.webp)
+    ![blender_object_scale.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_object_scale.webp)
 
 Если вы сделали все верно, скелет будет заменен на более верный, 
 при нажатии пробела модель будет выполнять загруженную анимацию.
@@ -201,7 +201,7 @@ Free-версия не подойдет, поскольку в ней недос
 ### Исправление весов
 Теперь переходим ко второй проблеме
 
-![blender_weight_bug_example.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp){ style="width: 30%;" }
+![blender_weight_bug_example.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp){ style="width: 30%;" }
 
 Часть элементов лица не реагируют анимацию, так как не содержат информации о весе. 
 
@@ -210,12 +210,12 @@ Free-версия не подойдет, поскольку в ней недос
 1. Выберите модель и перейдите в режим редактирования «**Weight Paint**»
 2. В верхней части интерфейса, в списке вершин, выберите «**head**»
 
-    ![blender_weight_fix_1.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp)
+    ![blender_weight_fix_1.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp)
 
 3. Добавьте вес проблемным областям, нажав на них несколько раз.
 4. Если вы все сделали правильно, проблема исчезнет.
 
-    ![blender_weight_fix_2.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp)
+    ![blender_weight_fix_2.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp)
 
 !!! success "Можно работать" 
     На текущий момент вы уже можете создавать новую анимацию прямо в Blender, 
@@ -260,7 +260,7 @@ Cascadeur — это программа для создания анимаций
 
 В результате проделанной работы мы получим следующий результат:
 
-![cascadeur_result.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/cascadeur_result.webp)
+![cascadeur_result.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/cascadeur_result.webp)
 
 !!! success "Успех"
     Теперь вы можете создавать анимацию, опираясь на многочисленные обучающие видеоуроки в интернете.
@@ -299,7 +299,7 @@ Cascadeur — это программа для создания анимаций
 
 Йен машет вам рукой. Помашите ей в ответ 😊
 
-![yen_waves.webp](../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yen_waves.webp)
+![yen_waves.webp](../../assets/images/unofficial_docs/guides/create_animation_for_npc/yen_waves.webp)
 
 !!! note "Примечание"
     Существует некоторые подводные камни и проблемы, с которыми вы можете столкнуться в процессе работы с собственными 

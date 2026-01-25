@@ -11,7 +11,7 @@ tags:
 ## Работа с редактором
 Для запуска редактора строк, выберите меню **_Tools --> Localized Strings Editor_**.
 Редактор откроется в новом окне
-![localized_strings_editor.webp](../../../assets/images/unnoficial_docs/references/editors/localized_strings_editor.webp)
+![localized_strings_editor.webp](../../../assets/images/unofficial_docs/references/editors/localized_strings_editor.webp)
 
 Первый шаг при работе с редактором - это выбор основного языка с котором вы планируете работать в процессе создания мода.
 

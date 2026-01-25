@@ -114,7 +114,7 @@ After all the changes, working with code has become much more comfortable,
 even though they only apply to the code window and not the entire IDE.
 
 Final result:
-![scriptstudio.webp](../../../assets/images/unnoficial_docs/usesful_features/scriptstudio.webp)
+![scriptstudio.webp](../../../assets/images/unofficial_docs/usesful_features/scriptstudio.webp)
 
 ***
 Author: leviofanh

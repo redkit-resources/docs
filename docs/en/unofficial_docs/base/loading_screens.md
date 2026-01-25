@@ -30,7 +30,7 @@ Loading videos are tied to entries in the journal, which is located in the story
 
 Let's see how this looks:
 
-![journal_1.webp](../../../assets/images/unnoficial_docs/base/loading_screens/journal_1.webp)
+![journal_1.webp](../../../assets/images/unofficial_docs/base/loading_screens/journal_1.webp)
 
 Among the important parameters here is World.
 It determines for which world the video will play.
@@ -40,7 +40,7 @@ then when the journal entry is enabled, the specified video plays.
 
 Inside each journal file, there are entries. It's their activation that launches the corresponding video:
 
-![journal_2.webp](../../../assets/images/unnoficial_docs/base/loading_screens/journal_2.webp)
+![journal_2.webp](../../../assets/images/unofficial_docs/base/loading_screens/journal_2.webp)
 
 Pay attention to the Video filename parameter.
 

@@ -24,7 +24,7 @@ tags:
 
 Для установки пространства идентификаторов перейдите в **_View --> Settings --> Mod Project Settings_** и в поле **Project ID space** задайте стартовый идентификатор.
 
-![id_space.webp](../../../../assets/images/unnoficial_docs/base/dlc/id_space.webp)
+![id_space.webp](../../../../assets/images/unofficial_docs/base/dlc/id_space.webp)
 
 ***
 Автор: lxgdark

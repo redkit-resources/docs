@@ -13,7 +13,7 @@ The problem is probably related to incorrect UV unwrapping, which cannot be fixe
 
 After 7 hours of struggling with a team of 4 people, we found a solution. Yes, it's a workaround, but it works!
 
-![uv_bug_example.webp](../../../assets/images/unnoficial_docs/bugs/uv_bug_example.webp)
+![uv_bug_example.webp](../../../assets/images/unofficial_docs/bugs/uv_bug_example.webp)
 
 ## Required Tools
 

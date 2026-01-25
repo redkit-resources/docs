@@ -19,19 +19,19 @@ tags:
 Это инструмент поможет установить интерьер по координатам экстерьера, 
 а также применить повороты и сжатия (если таковые были)
 
-    ![align_selection.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/align_selection.webp){ style="width: 25%;" }
+    ![align_selection.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/align_selection.webp){ style="width: 25%;" }
 
 - Когда у вас выделен объект, вы можете продублировать его в направлении одной из осей. 
 Для этого зажмите ++shift++ и передвиньте объект в нужном направлении. 
 Удобно при строительстве заборов, набрасывании камней и прочей работ с ландшафтом, 
 требующей дублирования элемента по одной из оcей координат.
 
-    ![selection_duplicate.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/selection_duplicate.webp){ style="width: 25%;" }
+    ![selection_duplicate.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/selection_duplicate.webp){ style="width: 25%;" }
 
 - ++x++ / ++y++ / ++z++ для быстрого перемещения по соответствующей оси. 
 Удобно, если в текущем положении камеры сложно попасть на нужную стрелочку оси.
 
-    ![selection_fast_move.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/selection_fast_move.webp){ style="width: 25%;" }
+    ![selection_fast_move.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/selection_fast_move.webp){ style="width: 25%;" }
 
 - ++ctrl+shift+e++ – выделить все схожие w2ent в небольшом радиусе. 
 Позволяет выбрать все ближайшие одинаковые объекты для групповой работы с ними.
@@ -44,7 +44,7 @@ tags:
 - ++пкм++ – поворот камеры.
 - ++shift++ – ускоряет перемещение камеры в 5 раз.
 - ++лкм+"вращение колесика мыши"++ – увеличение/уменьшение скорости камеры.
-    ![camera_speed.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/camera_speed.webp)
+    ![camera_speed.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/camera_speed.webp)
 - ++j++ – для быстрого перемещения на точку в которую смотрит курсор. 
 Курсор должен указывать на объект или ландшафт (не в пустоту). 
 Удобно для быстрой навигации по карте.
@@ -59,7 +59,7 @@ tags:
 - ++"Вращение колесиком мыши"++ – меняет размер кисти.
 
     _При использовании Shape Brush - Stamp._
-    ![shape_brush.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/shape_brush.webp)
+    ![shape_brush.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/shape_brush.webp)
 
 - ++"~"++ - инвертирует Stamp, позволяя рисовать рельефные впадины. Зависит от на стройки Intensity.
 - ++ctrl+"движение мышью влево/вправо"++ – позволяет быстро изменить угол штампа.
@@ -67,13 +67,13 @@ tags:
 Если проставить значение fallout - 0, то при рисовании таким штампом рельеф изменяться не будет, 
 будут лишь переноситься текстуры. Удобно для создания типовых ландшафтов с заранее заготовленной схемой.
 
-     ![falloff.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/falloff.webp)
+     ![falloff.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/falloff.webp)
 
 - ++alt+"ЛКМ/ПКМ"++ по материалу в списке материалов проставляет его как вертикальную/горизонтальную маску. 
 Маска позволяет рисовать только по текстуре, которая выбрана в маске. 
 Если включить галочку Inv, то напротив рисование будет по всем текстурам кроме текстуры в маске.
 
-    ![texture_mask.webp](../../assets/images/unnoficial_docs/usesful_features/shortcuts/texture_mask.webp)
+    ![texture_mask.webp](../../assets/images/unofficial_docs/usesful_features/shortcuts/texture_mask.webp)
 
 ## Отладка игры
 

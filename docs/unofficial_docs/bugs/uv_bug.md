@@ -14,7 +14,7 @@ tags:
 
 После 7 часов мучений командой из 4 человек, мы нашли решение. Да, оно костыльное, но оно работает!
 
-![uv_bug_example.webp](../../assets/images/unnoficial_docs/bugs/uv_bug_example.webp)
+![uv_bug_example.webp](../../assets/images/unofficial_docs/bugs/uv_bug_example.webp)
 
 ## Необходимые инструменты
 

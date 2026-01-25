@@ -10,7 +10,7 @@
 
     Если у вас появилась эта фигня: 
 
-    ![debug_onscreen_bug.webp](../../assets/images/unnoficial_docs/bugs/debug_onscreen_bug.webp){ style="width: 20%;" }
+    ![debug_onscreen_bug.webp](../../assets/images/unofficial_docs/bugs/debug_onscreen_bug.webp){ style="width: 20%;" }
     
     1. Запустите отладочную игру на текущей карте.
     2. Откройте консоль отладки (Нажать ++"~"++).
@@ -679,7 +679,7 @@
 
     Пример на плече Геральта:
      
-    ![uv_bug_example.webp](../../assets/images/unnoficial_docs/bugs/uv_bug_example.webp)
+    ![uv_bug_example.webp](../../assets/images/unofficial_docs/bugs/uv_bug_example.webp)
     
 
      Решение этого бага оказалось не таким простым, подробнее [прочитать тут...](uv_bug.md).

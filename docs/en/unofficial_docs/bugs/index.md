@@ -9,7 +9,7 @@ This section collects known bugs and verified ways to work around them.
     ### A Strange Thing Appeared on the Left Side of the World Window
     If you see this thing:  
 
-    ![debug_onscreen_bug.webp](../../assets/images/unnoficial_docs/bugs/debug_onscreen_bug.webp){ style="width: 20%;" }
+    ![debug_onscreen_bug.webp](../../assets/images/unofficial_docs/bugs/debug_onscreen_bug.webp){ style="width: 20%;" }
     
     1. Launch the debug game on the current map.
     2. Open the debug console (Press ++"~"++).
@@ -678,7 +678,7 @@ This section collects known bugs and verified ways to work around them.
 
     Example on Geralt's shoulder:
      
-    ![uv_bug_example.webp](../../assets/images/unnoficial_docs/bugs/uv_bug_example.webp)
+    ![uv_bug_example.webp](../../assets/images/unofficial_docs/bugs/uv_bug_example.webp)
     
 
      The solution to this bug turned out to be not so simple, read more [details here...](uv_bug.md).
