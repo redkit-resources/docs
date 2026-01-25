@@ -1936,7 +1936,7 @@ choose the option with that clothing.</p>
 </div>
 <p>Since I plan to create a simple animation, the most convenient model to use is 
 the one without unnecessary details – <strong>yennefer_naked</strong>.</p>
-<p><img alt="yennefer_naked.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked.webp" /></p>
+<p><img alt="yennefer_naked.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/yennefer_naked.webp" /></p>
 <p>After selecting the appearance option, the right side will display what it consists of. 
 The simplest option includes the body, head, and hair. We’ll only need the body and head.</p>
 </li>
@@ -1948,7 +1948,7 @@ The simplest option includes the body, head, and hair. We’ll only need the bod
 <li>
 <p>Now that you’ve found the template for the specific element, open it and find the element 
    in the graph that is responsible for the <strong>mesh</strong> (model) of the element.</p>
-<p><img alt="yennefer_naked_graph.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp" /></p>
+<p><img alt="yennefer_naked_graph.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/yennefer_naked_graph.webp" /></p>
 </li>
 <li>
 <p>At the bottom, in the properties list, you’ll see the path to the model. 
@@ -1995,7 +1995,7 @@ Later in the process, I’ll explain why.</p>
 </div>
 </li>
 </ol>
-<p><img alt="blender_import_fbx.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp" /></p>
+<p><img alt="blender_import_fbx.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_import_fbx.webp" /></p>
 <h3 id="understanding-the-fbx-situation">Understanding the FBX Situation<a class="headerlink" href="#understanding-the-fbx-situation" title="Permanent link">&para;</a></h3>
 <p>Before continuing, let’s understand what’s happening here.</p>
 <p>During standard FBX import, the information about the skeleton’s binding to the model is lost.
@@ -2006,7 +2006,7 @@ This is why we’re using Blender 3.6 with the community fix.</p>
 <p><strong>Clean it of unnecessary elements.</strong></p>
 <p>Delete the LOD (Level of Detail) variations of the models. To do this, 
 select the corresponding elements in the list and press <strong>x</strong>.</p>
-<p><img alt="blender_lod_delete.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp" /></p>
+<p><img alt="blender_lod_delete.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_lod_delete.webp" /></p>
 <p><strong>Merge the model parts.</strong></p>
 <p>To simplify further work, merge the head and body into one model. 
 To do this:</p>
@@ -2017,7 +2017,7 @@ To do this:</p>
 <p><strong>Clear unnecessary data in the Armature.001 block.</strong></p>
 <p>This block contains bone information that isn’t needed for our task (it relates to facial expressions, which aren’t covered in this lesson).</p>
 <p>Delete this element similarly to how you deleted the LOD.</p>
-<p><img alt="blender_armature_delete.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp" /></p>
+<p><img alt="blender_armature_delete.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_armature_delete.webp" /></p>
 <div class="admonition success">
 <p>The preparatory stage is complete. The model is ready for further work.</p>
 </div>
@@ -2066,7 +2066,7 @@ The video above shows an example of how to select an animation and save it in <c
 <li>Choose the menu item "<strong>Replace Animation from an .re file</strong>".</li>
 <li>In the import settings, be sure to set "Object scale" to one.</li>
 </ul>
-<p><img alt="blender_object_scale.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_object_scale.webp" /></p>
+<p><img alt="blender_object_scale.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_object_scale.webp" /></p>
 </li>
 </ol>
 <p>If you’ve done everything correctly, the skeleton will be replaced with a more accurate one, 
@@ -2082,21 +2082,21 @@ Since the skeleton faces the -Y direction, we selected it during import.</p>
 </div>
 <h3 id="fixing-weights">Fixing Weights<a class="headerlink" href="#fixing-weights" title="Permanent link">&para;</a></h3>
 <p>Now let’s move on to the second issue.</p>
-<p><img alt="blender_weight_bug_example.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp" style="width: 30%;" /></p>
+<p><img alt="blender_weight_bug_example.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_bug_example.webp" style="width: 30%;" /></p>
 <p>Some facial elements don’t respond to the animation because they lack weight information. </p>
 <p>Let’s fix this manually:</p>
 <ol>
 <li>Select the model and switch to "<strong>Weight Paint</strong>" editing mode.</li>
 <li>
 <p>In the top part of the interface, in the vertex list, select "<strong>head</strong>".</p>
-<p><img alt="blender_weight_fix_1.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp" /></p>
+<p><img alt="blender_weight_fix_1.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_fix_1.webp" /></p>
 </li>
 <li>
 <p>Add weight to the problematic areas by clicking on them several times.</p>
 </li>
 <li>
 <p>If you’ve done everything correctly, the issue will disappear.</p>
-<p><img alt="blender_weight_fix_2.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp" /></p>
+<p><img alt="blender_weight_fix_2.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/blender_weight_fix_2.webp" /></p>
 </li>
 </ol>
 <div class="admonition success">
@@ -2138,7 +2138,7 @@ of our model with Cascadeur’s internal system.</p>
 <p>This is easily done using the built-in tool, described <a href="https://www.youtube.com/watch?v=gPOh1MT8Tlk">here</a>.</p>
 <p>After completing the matching, don’t forget to export (save) the settings for future use.</p>
 <p>As a result of this work, we’ll get the following:</p>
-<p><img alt="cascadeur_result.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/cascadeur_result.webp" /></p>
+<p><img alt="cascadeur_result.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/cascadeur_result.webp" /></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
 <p>Now you can create animations, relying on numerous tutorial videos available online.</p>
@@ -2180,7 +2180,7 @@ make it easier to find in the future.</li>
 then right-click and select "<strong>import simple/plain animation</strong>".</li>
 </ol>
 <p>Yennefer waves at you. Wave back 😊</p>
-<p><img alt="yen_waves.webp" src="../../../../assets/images/unnoficial_docs/guides/create_animation_for_npc/yen_waves.webp" /></p>
+<p><img alt="yen_waves.webp" src="../../../../assets/images/unofficial_docs/guides/create_animation_for_npc/yen_waves.webp" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There are some pitfalls and issues you might encounter while working with custom 
@@ -2213,7 +2213,7 @@ animations in REDkit. These will be covered separately.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2026</span>
   </span>
 
     

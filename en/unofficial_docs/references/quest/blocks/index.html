@@ -2167,38 +2167,38 @@
 <p>Все блоки раздела "Камера" можно считать устаревшими, так как они лишь единожды используются в основной игре. Вероятно эти блоки являются отголосками прошлых версий движка.</p>
 </div>
 <h3 id="activate-game-camera">Activate Game Camera<a class="headerlink" href="#activate-game-camera" title="Permanent link">&para;</a></h3>
-<p><img alt="camera_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node1.webp" /></p>
+<p><img alt="camera_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node1.webp" /></p>
 <p>Активирует главную игровую камеру. Этот блок пригодится, если ранее вы установили статическую камеру (например так, чтобы камера смотрела на игрока спереди в каком то месте игры). Блок позволит вернут камеру за спину игрока в стандартное положение.</p>
 <ul>
 <li><strong>blendTime</strong> - указывает время за которое произоидет переход от другой камеры. 0, если хотите, чтобы установка произошла моментально.</li>
 </ul>
 <h3 id="run-static-camera">Run Static Camera<a class="headerlink" href="#run-static-camera" title="Permanent link">&para;</a></h3>
-<p><img alt="camera_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node2.webp" /></p>
+<p><img alt="camera_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node2.webp" /></p>
 <p>Активирует статическую камеру, заранее установленную в игровом мире.</p>
 <ul>
 <li><strong>cameraTag</strong> - тег камеры, которую вы хотите активировать.</li>
 </ul>
 <h3 id="static-camera-sequence">Static Camera Sequence<a class="headerlink" href="#static-camera-sequence" title="Permanent link">&para;</a></h3>
-<p><img alt="camera_node3.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node3.webp" /></p>
+<p><img alt="camera_node3.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node3.webp" /></p>
 <p>Создает последовательные переходы между статическими камерами, установленными в мире.</p>
 <ul>
 <li><strong>cameras</strong> - массив тегов нужных камер</li>
 <li><strong>maxWaitTimePerCamera</strong> - максимальное время ожидания перед переходом к следующей камере.</li>
 </ul>
 <h3 id="switch-static-camera">Switch Static Camera<a class="headerlink" href="#switch-static-camera" title="Permanent link">&para;</a></h3>
-<p><img alt="camera_node4.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/camera_node4.webp" /></p>
+<p><img alt="camera_node4.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/camera_node4.webp" /></p>
 <p>Используется для плавного переключения между двумя статическими камерами, присутствующими в мире (первая камера уже должна быть активирована перед вызовом этого блока).</p>
 <ul>
 <li><strong>nextCameraTag</strong> - тег камеры, к которой должен произойти плавный переход.</li>
 </ul>
 <h2 id="complexity-management">Complexity management (Управление сложностью)<a class="headerlink" href="#complexity-management" title="Permanent link">&para;</a></h2>
 <h3 id="startin">Start/In<a class="headerlink" href="#startin" title="Permanent link">&para;</a></h3>
-<p><img alt="сomplexity_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/%D1%81omplexity_node1.webp" /></p>
+<p><img alt="сomplexity_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/%D1%81omplexity_node1.webp" /></p>
 <p>Отвечает за вход в квест/фазу. Блок <strong>Start</strong> используется в квесте и определяет начало квеста. Блок <strong>In</strong> используется в фазе и является точкой входа в фазу. У фазы может быть более одного блока <strong>In</strong> для реализации разных логик входа в фазу уровнем выше (для этого у каждого <strong>In</strong> нужно задать свойство <strong>socketID</strong>).</p>
 <h3 id="endout">End/Out<a class="headerlink" href="#endout" title="Permanent link">&para;</a></h3>
 <p>Отвечает за прекращение работы квеста/фазы. Блок <strong>End</strong> используется в контексте квеста и знаменует полное завершение всех действий внутри заданного квеста. Блок <strong>Out</strong> используется в фазах и полностью завершает выполнение всех логик внутри фазы.</p>
 <h3 id="phase">Phase<a class="headerlink" href="#phase" title="Permanent link">&para;</a></h3>
-<p><img alt="сomplexity_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/%D1%81omplexity_node2.webp" /></p>
+<p><img alt="сomplexity_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/%D1%81omplexity_node2.webp" /></p>
 <p>Фаза - это, по сути, папка, используемая для структурирования квеста. Технически они не обязательны, но рекомендуется добавить их для лучшей структуры. Они также могут иметь собственный внешний <strong>w2phase</strong> или быть встроенным в родительский файл.</p>
 <ul>
 <li><strong>phase</strong> - Ссылка на файл <strong>w2phase</strong>. Может быть оставлена пустой и, в таком случае она будет встроена в родительскую систему.</li>
@@ -2211,25 +2211,25 @@
 </ul>
 <h2 id="flow-control">Flow control (Управление потоком)<a class="headerlink" href="#flow-control" title="Permanent link">&para;</a></h2>
 <h3 id="condition">Condition<a class="headerlink" href="#condition" title="Permanent link">&para;</a></h3>
-<p><img alt="flow_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node1.webp" /></p>
+<p><img alt="flow_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node1.webp" /></p>
 <p>Проверяет, является ли конкретное условие в данный момент <strong>True</strong> или <strong>False</strong>, и немедленно выпускает сигнал через  соответствующий выход.</p>
 <ul>
 <li><strong>questCondition</strong> - условие, которое нужно проверить. На выбор предоставляется множество готовых условий, каждое из которых имеет собственные настройки. Основной набор условий и примеры их использования приведены на отдельной <a href="../conditions_and_functions/#_2">странице</a>.</li>
 </ul>
 <h3 id="cut-control">Cut Control<a class="headerlink" href="#cut-control" title="Permanent link">&para;</a></h3>
-<p><img alt="flow_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node2.webp" /></p>
+<p><img alt="flow_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node2.webp" /></p>
 <p>Используется, чтобы завершить ожидание, действие или целую фазу по сценарному условию, не дожидаясь, пока будут выполнены исходные условия этих узлов. Это похоже на выключение света в комнате, не заходя в неё. Как пример использования - ограничение времени на решение задачи (например, "найди улику за 60 секунд"). Вместо того чтобы создавать сложную систему отсчёта, вы можете использовать <strong>Pause</strong> и деактивировать реакцию на улику через <strong>Cut Control</strong> по истечении времени прервав всю логику работы с найденной уликой.</p>
 <ul>
 <li><strong>permanent</strong> - ключевое свойство, определяющее возможность повторной активации узла. <strong>False</strong> - связанный узел теряет только текущий сигнал. Если позже новый луч войдёт в этот узел, он активируется как обычно. <strong>True</strong> - связанный узел навсегда отключается. Любой последующий луч, входящий в него, будет проигнорирован</li>
 </ul>
 <h3 id="pause">Pause<a class="headerlink" href="#pause" title="Permanent link">&para;</a></h3>
-<p><img alt="flow_node3.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node3.webp" /></p>
+<p><img alt="flow_node3.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node3.webp" /></p>
 <p>Один из самых важных узлов в графе квестов. Удерживает сигнал внутри, пока не будет выполнено заданное условие. После выполнения условий сигнал выходит из выхода.</p>
 <ul>
 <li><strong>conditions</strong> - список условий, который должны выполнится, прежде чем пауза будет снята (должны быть выполнены все условия). На выбор предоставляется множество готовых условий, каждое из которых имеет собственные настройки. Основной набор условий и примеры их использования приведены на отдельной <a href="../conditions_and_functions/#_2">странице</a>.</li>
 </ul>
 <h3 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h3>
-<p><img alt="flow_node4.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/flow_node4.webp" /></p>
+<p><img alt="flow_node4.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/flow_node4.webp" /></p>
 <p>Выпускает луч в произвольную выходную точку. Этот блок поможет при необходимости сгенерировать случайное действие. Например вы хотите, чтобы при посещении какой то локации погода сменилась на случайную. Присоединив к выходным точкам скрипты смены погоды, луч попадет в случайный.</p>
 <ul>
 <li><strong><span class="keys"><kbd class="key-пкм">ПКМ</kbd></span> на блок + "Add output"</strong> - добавить еще одну выходную точку</li>
@@ -2237,7 +2237,7 @@
 </ul>
 <h2 id="game-systems-control">Game systems control (Управление игровыми системами)<a class="headerlink" href="#game-systems-control" title="Permanent link">&para;</a></h2>
 <h3 id="change-world">Change World<a class="headerlink" href="#change-world" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node1.webp" /></p>
+<p><img alt="game_control_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node1.webp" /></p>
 <p>Переносит игрока в указанный игровой мир.</p>
 <ul>
 <li><strong>worldFilePath</strong> - путь к файлу мира w2w. Не рекомендуется указывать. Вместо этого выберите обозначение мира в следующем свойстве.</li>
@@ -2252,21 +2252,21 @@
 <li><strong>targetTag</strong> - тэг точки на карте, куда будет телепортирован игрок при смене мира.</li>
 </ul>
 <h3 id="checkpoint">Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node2.webp" /></p>
+<p><img alt="game_control_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node2.webp" /></p>
 <p>Сохраняет игру. Нужен, чтобы в важных сюжетных точках позаботится о сохранении и не откатывать игрока далеко назад в случае чего.</p>
 <ul>
 <li><strong>enableSaving</strong> - можно использовать как запрет на сохранение, если поставить <strong>False (красный крестик)</strong>. Запрет на сохранение останется до следующего места, где он будет разрешен. Аналог этой операции есть в скриптах, поэтому <strong>текущее свойство рекомендуется всегда использовать со значением True (зеленая галочка)</strong>.</li>
 <li><strong>ignoreSaveLocks</strong> - сохранит игру игнорируя любы запреты на сохранение (если таковые были заданы ранее). Используйте только в очень важных местах сюжета.</li>
 </ul>
 <h3 id="denied-area">Denied Area<a class="headerlink" href="#denied-area" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node3.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node3.webp" /></p>
+<p><img alt="game_control_node3.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node3.webp" /></p>
 <p>Включает/отключает запрещающую зону на карте мира. Нужно, если у вас установлена зона которая запрещает доступ NPC и вы хотите в процессе отключить ее работу.</p>
 <ul>
 <li><strong>entityTag</strong> - тэг запрещающей зоны на карте.</li>
 <li><strong>enabled</strong> - работает ли запрещающая зона. <strong>True (зеленая галочка)</strong>, если зона активна и NPC не могут ее посещать. <strong>False (красный крестик)</strong>, чтобы выключить зону и сделать ее доступной для NPC.</li>
 </ul>
 <h3 id="factsdb-change">FactsDB Change<a class="headerlink" href="#factsdb-change" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node4.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node4.webp" /></p>
+<p><img alt="game_control_node4.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node4.webp" /></p>
 <p>Важнейший блок, позволяющий управлять <a href="../general/#_6">фактами</a> игры.</p>
 <ul>
 <li><strong>factID</strong> - текстовый идентификатор факта.</li>
@@ -2274,7 +2274,7 @@
 <li><strong>setExactValue</strong> - <strong>True (зеленая галочка)</strong>, если вы хотите, чтобы было установлено то значение, что задано в <strong>value</strong>. <strong>False (красный крестик)</strong>, чтобы прибавить к текущему значению факта значение из <strong>value</strong> (отрицательные значения тоже работают).</li>
 </ul>
 <h3 id="hideshow-layers">Hide/Show layers<a class="headerlink" href="#hideshow-layers" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node5.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node5.webp" /></p>
+<p><img alt="game_control_node5.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node5.webp" /></p>
 <p>Используется для отображения и скрытия слоев в мире. У этого есть две основные цели: показать изменения в мире, зависящие от действий игрока / времени, и оптимизировать игру, чтобы не загружать слишком много квестовых объектов, когда они не нужны.</p>
 <ul>
 <li><strong>world</strong> - В каком мире показывать/скрывать слой. Если не указать, то поиск слоя будет происходить в текущем мире (в том в котором игрок, на момент вызова блока).</li>
@@ -2283,7 +2283,7 @@
 <li><strong>syncOperation</strong> - если установлено значение <strong>False</strong>, слои отображаются/скрываются асинхронно (это означает, что может быть небольшая задержка в изменении состоянии слоев). Если установлено значение <strong>True</strong>, изменение происходит в одном и том же кадре (что может привести к снижению производительности, в зависимости от количества объектов в слоях). Для достижения наилучшей производительности старайтесь скрывать/показывать слои до загрузки мира с указанием <strong>False</strong>. Если же необходимо изменить видимость слоев этом мире, то стройте вашу логику так, чтобы игрок был на расстоянии и также используйте <strong>False</strong>. Значение <strong>True</strong> используйте в сценариях где вам по задумке нужно что-то показать или скрыть прямо перед игроком.</li>
 </ul>
 <h3 id="manage-fast-travel">Manage Fast Travel<a class="headerlink" href="#manage-fast-travel" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node6.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node6.webp" /></p>
+<p><img alt="game_control_node6.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node6.webp" /></p>
 <p>Управление точками быстрого перемещения. Позволяет сделать столбы для перемещения активными/не активными, а также видимыми/скрытыми на карте. Например Каэр Морхен виден на карте, но вы не сможете в него попасть, пока не будет активирован/отображен столб для быстрого перемещения.</p>
 <ul>
 <li><strong>operation</strong> - выберите что делать с точками быстрого перемещения. Существует три варианта: управление активностью и видимостью (<em>QMFT_EnableAndShow</em>), управление только активностью (<em>QMFT_EnableOnly</em>) и управление только видимостью (<em>QMFT_ShowOnly</em>).</li>
@@ -2293,7 +2293,7 @@
 <li><strong>affetedFastTravelPoints</strong>- список тэгов, тех точек быстрого перемещения, на которые влияет операция.</li>
 </ul>
 <h3 id="manage-switch">Manage Switch<a class="headerlink" href="#manage-switch" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node7.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node7.webp" /></p>
+<p><img alt="game_control_node7.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node7.webp" /></p>
 <p>Управляет переключателями в игре. Этот блок позволяет управлять различными интерактивными объектами в игре, которые имеют состояния (например рычаги или двери).</p>
 <ul>
 <li><strong>switchTag</strong> - тег переключателя в мире.</li>
@@ -2302,7 +2302,7 @@
 <li><strong>skipEvents</strong> - <strong>True (зеленая галочка)</strong> - чтобы пропустить все события, которые привязаны к действию переключателя. Например некоторые объекты на уровне шаблона имеют сопутствующие события, происходящие при переключении. Это свойство позволит их проигнорировать.</li>
 </ul>
 <h3 id="minigame">Minigame<a class="headerlink" href="#minigame" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node8.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node8.webp" /></p>
+<p><img alt="game_control_node8.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node8.webp" /></p>
 <p>Запускает мини-игру (Гвинт или кулачный бой).</p>
 <ul>
 <li><strong>minigame</strong> - выберите из списка вариант мини-игры</li>
@@ -2324,7 +2324,7 @@
 <li><strong>forceFaction</strong> - применяется для выбора колоды которой сыграет игрок. Например, если вы проводите турнир, где игроки поочереди играют разными колодами фракций. <em>GwintFaction_Neutral</em> - оставит колоду игрока.</li>
 </ul>
 <h3 id="time-management">Time Management<a class="headerlink" href="#time-management" title="Permanent link">&para;</a></h3>
-<p><img alt="game_control_node9.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/game_control_node9.webp" /></p>
+<p><img alt="game_control_node9.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/game_control_node9.webp" /></p>
 <p>Позволяет управлять временем в игре.</p>
 <p><strong>CPauseTimeFunction</strong> - ставит время на паузу или возобновляет его. Удобно для больших сюжетных моментов в которых важно сохранить текущее время игры.</p>
 <ul>
@@ -2342,13 +2342,13 @@
 </ul>
 <h2 id="gameplay">Gameplay (Игровой процесс)<a class="headerlink" href="#gameplay" title="Permanent link">&para;</a></h2>
 <h3 id="encounter-full-respawn">Encounter full respawn<a class="headerlink" href="#encounter-full-respawn" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node1.webp" /></p>
+<p><img alt="gameplay_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node1.webp" /></p>
 <p>Используется для полного перезапуска столкновения (<em>Encounter</em>). Основная идея — сбросить его до исходного состояния. Например, если игрок убил всех противников в зоне, вы можете использовать этот блок, чтобы все враги снова появились при выполнении определенных условий.</p>
 <ul>
 <li><strong>encounterTag</strong> - тэг зоны столкновения (<em>Encounter Area</em>) на карте.</li>
 </ul>
 <h3 id="encounter-manager">Encounter manager<a class="headerlink" href="#encounter-manager" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node2.webp" /></p>
+<p><img alt="gameplay_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node2.webp" /></p>
 <p>Используется для контроля встреч (<em>Encounters</em>) напрямую из логики квеста. Пригодится, когда вам нужно динамически включать, отключать встречу или управлять её фазами в процессе выполнения квеста.</p>
 <ul>
 <li><strong>encounterTag</strong> - тэг зоны столкновения (<em>Encounter Area</em>) на карте.</li>
@@ -2357,21 +2357,21 @@
 <li><strong>encounterSpawnPhase</strong> - запуск с определенной фазы. Позволяет запустить встречу не с ее фазы по умолчанию (<em>Default Phase</em>), а сразу с другой фазы, заданной в графе встречи (<em>Encounter Graph</em>) . Если указано <strong>"None"</strong>, будет использована фаза по умолчанию.</li>
 </ul>
 <h3 id="encounter-manual-activation">Encounter manual activation<a class="headerlink" href="#encounter-manual-activation" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node3.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node3.webp" /></p>
+<p><img alt="gameplay_node3.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node3.webp" /></p>
 <p>Отдельный блок, позволяющий запустить или прекратить столкновение (<em>Encounter</em>)</p>
 <ul>
 <li><strong>encounterTag</strong> - тэг зоны столкновения (<em>Encounter Area</em>) на карте.</li>
 <li><strong>deactivateEncounter</strong> - <strong>False (красный крестик)</strong>, чтобы активировать (запустить) столкновение. <strong>True (зеленая галочка)</strong> для деактивации.</li>
 </ul>
 <h3 id="encounter-phase-setter">Encounter phase setter<a class="headerlink" href="#encounter-phase-setter" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node4.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node4.webp" /></p>
+<p><img alt="gameplay_node4.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node4.webp" /></p>
 <p>Позволяет указать конкретную фазу для встречи (столкновения).</p>
 <ul>
 <li><strong>encounterTag</strong> - тэг зоны столкновения (<em>Encounter Area</em>) на карте.</li>
 <li><strong>encounterSpawnPhase</strong> - выбор определенной фазы. Позволяет выбрать фазу из графа встреч (<em>Encounter Graph</em>). Если указано <strong>"None"</strong>, будет использована фаза по умолчанию.</li>
 </ul>
 <h3 id="entity-motion">Entity Motion<a class="headerlink" href="#entity-motion" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node5.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node5.webp" /></p>
+<p><img alt="gameplay_node5.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node5.webp" /></p>
 <p>Это блок интерполяции (плавного перехода) состояния сущности. Её основная задача — не просто переместить предмет из точки A в точку B, а плавно и контролируемо изменить его позицию, поворот (вращение) и/или масштаб в пространстве за заданное время, следуя определённой кривой анимации. На практике это позволяет реализовать разные эффекты, как например, парящий предмет, или плавный сдвиг камня, заслонявшего пещеру.</p>
 <ul>
 <li><strong>entityTag</strong> - тэг сущности для которой применяется перемещение.</li>
@@ -2383,7 +2383,7 @@
 <li><strong>animationCurve</strong> - кривая анимации. Позволяет управлять поведением анимации, например более быстрая в начале и медленная в конце.</li>
 </ul>
 <h3 id="fast-forward-communities">Fast forward communities<a class="headerlink" href="#fast-forward-communities" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node6.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node6.webp" /></p>
+<p><img alt="gameplay_node6.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node6.webp" /></p>
 <p>Этот блок предназначен для тонкого контроля над процессом "перемотки" NPC, чтобы избежать багов и неестественного поведения. Так как у NPC размещенных с помощью <em>Community</em> есть различные расписания и сценарии поведения, могут возникнуть ситуации когда потребуется быстро привести поведение NPC к текущему времени суток. Этот блок поможет привести NPC  к тому состоянии, которому они должны соответствовать в текущий игровой момент.</p>
 <ul>
 <li><strong>manageBlackscreen</strong> - <strong>True (зеленая галочка)</strong>, чтобы процесс "перемотки" быс скрыт за черным экраном. Обязательно ставьте True, если игрок находится радом с NPC, для которых применяется блок.</li>
@@ -2392,10 +2392,10 @@
 <li><strong>timeLimit</strong> - лимит времени, на которое игра можете перемотать NPC. Если указано <strong>-1</strong>, то перемотка не имеет ограничений и NPC будут приведены к текущему игровому времени. А, например, значение 3600 переметет NPC всего на игровой час вперед.</li>
 </ul>
 <h3 id="interest-point-emitter">Interest point emitter<a class="headerlink" href="#interest-point-emitter" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node7.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node7.webp" /></p>
+<p><img alt="gameplay_node7.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node7.webp" /></p>
 <p>Вероятно устаревший блок. В игре не разу не используется. Вероятно заменой этого блока стал блок представленный ниже.</p>
 <h3 id="look-at">Look at<a class="headerlink" href="#look-at" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node8.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node8.webp" /></p>
+<p><img alt="gameplay_node8.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node8.webp" /></p>
 <p>Позволяет управлять вниманием (взглядом) различных NPC. Применяется в активных сценах (когда диалог между персонажами происходит в процессе игры). Например, вы исследуете помещение, пока NPC что-то рассказывает вам. Данный блок позволит сделать так, чтобы NPC следил за вами взглядом (поворачивая голову или даже все тело).</p>
 <ul>
 <li><strong>actor</strong> - тэг NPC, который будет следить взглядом.</li>
@@ -2418,7 +2418,7 @@
 <li><strong>eyesLookAtDampScale</strong> - корректирует естественность поворота глаз. Довольно редкий сценарий использования. Например если нужно создать эффект пьяных глаз.</li>
 </ul>
 <h3 id="play-animation">Play animation<a class="headerlink" href="#play-animation" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node9.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node9.webp" /></p>
+<p><img alt="gameplay_node9.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node9.webp" /></p>
 <p>Проигрывает анимацию для указанной сущности в мире (например мост, дверь или рычаг).</p>
 <ul>
 <li><strong>entityTag</strong> - тэг сущности для которой проигрывается анимация.</li>
@@ -2430,24 +2430,24 @@
 <li><strong>rewindTime</strong> - время которое нужно пропустить в начале анимации (чтобы воспроизвести ее, например с середины).</li>
 </ul>
 <h3 id="reward">Reward<a class="headerlink" href="#reward" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node10.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node10.webp" /></p>
+<p><img alt="gameplay_node10.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node10.webp" /></p>
 <p>Вручает игроку указанную награду (например по итогам выполнения квеста). Теоретически может использоваться для вручения награды другим персонажам, но механика игры построена так, что этот блок практически всегда используется для вручения награды игроку.</p>
 <ul>
 <li><strong>rewardName</strong>-  имя награды (определено в файлах игры или DLC).</li>
 <li><strong>targetEntityTag</strong> - тэг персонажа, которому вручается награда. Практически всегда <em>PLAYER</em>.</li>
 </ul>
 <h3 id="spawn-not-streamed-boat">Spawn Not Streamed Boat<a class="headerlink" href="#spawn-not-streamed-boat" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node11.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node11.webp" /></p>
+<p><img alt="gameplay_node11.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node11.webp" /></p>
 <p>Вероятно устаревший блок либо остаток от нереализованной системы лодочных гонок. В игре ни разу не использовался.</p>
 <h3 id="spawn-players-vehicle">Spawn Player's Vehicle<a class="headerlink" href="#spawn-players-vehicle" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node12.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node12.webp" /></p>
+<p><img alt="gameplay_node12.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node12.webp" /></p>
 <p>Позволяет заспавнить (загрузить) средство передвижения в указанной точке. Например когда вы входите в усадьбу Корво Бьянко, этот блок загрузит лошадь в конюшне. Либо если вы уплыли с острова на лодке, а затем снова переместились на этот остров, можно снова подгрузить лодку к причалу.</p>
 <ul>
 <li><strong>vehicleType</strong> -  тип средства передвижения (лошадь или лодка).</li>
 <li><strong>spawnPointTag</strong> - тэг точки в мире, куда нужно заспавнить средство передвижения.</li>
 </ul>
 <h3 id="story-phase-setter">Story phase setter<a class="headerlink" href="#story-phase-setter" title="Permanent link">&para;</a></h3>
-<p><img alt="gameplay_node13.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/gameplay_node13.webp" /></p>
+<p><img alt="gameplay_node13.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/gameplay_node13.webp" /></p>
 <p>Управляет активацией/деактивацией определенных фаз взаимодействия с NPC (<em>Community</em>). Важный блок для организации сюжетных изменений для NPC.</p>
 <ul>
 <li><strong>spawnsets</strong> - коллекция действий, варианты которых определены ниже.</li>
@@ -2468,14 +2468,14 @@
 <p>Блоки из этого раздела не влияют на игру и ее механики. Данные блоки используются сугубо для комментирования и обозначения блоков и предназначены для внутренней работы с графом квестов.</p>
 </div>
 <h3 id="comment-block">Comment block<a class="headerlink" href="#comment-block" title="Permanent link">&para;</a></h3>
-<p><img alt="helper_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/helper_node1.webp" /></p>
+<p><img alt="helper_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/helper_node1.webp" /></p>
 <p>Позволяет обернуть группу блоков, указав общий комментарий. Применяется для внутреннего обозначения, например при совместной работе, чтобы другой разработчик понял логику либо выполнил доработки из комментария.</p>
 <ul>
 <li><strong>commentGraphBlockText</strong> - текст комментария, которые будет отображаться в заголовке блока.</li>
 <li><strong>titleColor</strong> - цвет заголовка в блоке.</li>
 </ul>
 <h3 id="description-note">Description note<a class="headerlink" href="#description-note" title="Permanent link">&para;</a></h3>
-<p><img alt="helper_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/helper_node2.webp" /></p>
+<p><img alt="helper_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/helper_node2.webp" /></p>
 <p>Блок заметка, который можно разместить в любом месте редактора. Поможет не забыть какую то логику или будущие доработки.</p>
 <ul>
 <li><strong>caption</strong> - заголовок блока.</li>
@@ -2483,14 +2483,14 @@
 </ul>
 <h2 id="journal">Journal (Журнал)<a class="headerlink" href="#journal" title="Permanent link">&para;</a></h2>
 <h3 id="entry">Entry<a class="headerlink" href="#entry" title="Permanent link">&para;</a></h3>
-<p><img alt="journal_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node1.webp" /></p>
+<p><img alt="journal_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node1.webp" /></p>
 <p>Активирует запись в журнале.</p>
 <ul>
 <li><strong>entry</strong> - ссылка за запись в журнале.</li>
 <li><strong>showInfoOnScreen</strong> - <strong>True (зеленая галочка)</strong>, если хотите, чтобы информация об активации записи журнала была показана на экране.</li>
 </ul>
 <h3 id="map-pin-state">Map Pin State<a class="headerlink" href="#map-pin-state" title="Permanent link">&para;</a></h3>
-<p><img alt="journal_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node2.webp" /></p>
+<p><img alt="journal_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node2.webp" /></p>
 <p>Управляет точками на карте, которые связаны с записью журнала. Обычно при активации задания в журнале, на карте обозначается некоторая точка (или радиус) что связаны с этим заданием. Некоторых логиках вам может потребоваться не сразу показывать эти точки или скрывать их при каких то условиях. Например игрок идет по следу из улик и вам нужно активировать (показать) следующую улику на карте, только после того как игрок найдет предыдущую.</p>
 <ul>
 <li><strong>mappinEntry</strong> - ссылка на элемент журнала, связанного с этой точкой на карте.</li>
@@ -2498,7 +2498,7 @@
 <li><strong>disableAllOtherMapPins</strong> - если <strong>True (зеленая галочка)</strong>, при активации этого значка все остальные значки в рамках одного задания будут автоматически отключены. Так же позволяет реализовывать последовательное перемещение по точкам, при этом убирая уже пройденные.</li>
 </ul>
 <h3 id="objective-counter">Objective Counter<a class="headerlink" href="#objective-counter" title="Permanent link">&para;</a></h3>
-<p><img alt="journal_node3.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node3.webp" /></p>
+<p><img alt="journal_node3.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node3.webp" /></p>
 <p>Используется для отслеживания выполнения количественных задач, управляя счётчиком у конкретной цели в журнале. Например, если по заданию нужно убить три волка, вы можете после убийства волка увеличивать счетчик в задании с помощью этого блока.</p>
 <ul>
 <li><strong>manualObjective</strong> - указывает на запись в журнале (objective), счётчик которой нужно изменить.</li>
@@ -2511,7 +2511,7 @@
 <li><strong>Reset</strong> - сбрасывает значение счётчика в 0. Пригодится, если по заданию нужно убить три волка за определенное время. Если игрок не вложился, счетчик будет сброшен.</li>
 </ul>
 <h3 id="quest">Quest<a class="headerlink" href="#quest" title="Permanent link">&para;</a></h3>
-<p><img alt="journal_node4.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node4.webp" /></p>
+<p><img alt="journal_node4.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node4.webp" /></p>
 <p>Основной способ работы с журналом заданий. С помощью этого блока вы чаще всего будете управлять заданиями в журнале, переводя их в различные состояния.</p>
 <ul>
 <li><strong>questEntry</strong> - ссылка на задание в журнале.</li>
@@ -2520,13 +2520,13 @@
 <li><strong>enableAutoSave</strong> - стоит ли делать автосохранение после изменения состояния журнала.</li>
 </ul>
 <h3 id="quest-monster-known">Quest Monster Known<a class="headerlink" href="#quest-monster-known" title="Permanent link">&para;</a></h3>
-<p><img alt="journal_node5.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node5.webp" /></p>
+<p><img alt="journal_node5.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node5.webp" /></p>
 <p>Предназначена для заполнения бестиария новой записью.</p>
 <ul>
 <li><strong>manualQuest</strong> - ссылка на запись журнала, которая связана с записью в бестиарии.</li>
 </ul>
 <h3 id="track-quest">Track Quest<a class="headerlink" href="#track-quest" title="Permanent link">&para;</a></h3>
-<p><img alt="journal_node6.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/journal_node6.webp" /></p>
+<p><img alt="journal_node6.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/journal_node6.webp" /></p>
 <p>Позволяет направить внимание игрока на конкретный этап задания.</p>
 <ul>
 <li><strong>questEntry</strong> - ссылка на задание в журнале.</li>
@@ -2534,28 +2534,28 @@
 </ul>
 <h2 id="logical">Logical (Логические)<a class="headerlink" href="#logical" title="Permanent link">&para;</a></h2>
 <h3 id="and">And<a class="headerlink" href="#and" title="Permanent link">&para;</a></h3>
-<p><img alt="logical_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/logical_node1.webp" /></p>
+<p><img alt="logical_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/logical_node1.webp" /></p>
 <p>Пропустит луч дальше, если сигнал пришел во все входящие точки. <span class="keys"><kbd class="key-пкм">ПКМ</kbd></span> на блок, чтобы добавить еще входящих точек. Применяется, если для продвижения по квесту, обязательно исполнения нескольких условий.</p>
 <h3 id="xor">Xor<a class="headerlink" href="#xor" title="Permanent link">&para;</a></h3>
-<p><img alt="logical_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/logical_node2.webp" /></p>
+<p><img alt="logical_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/logical_node2.webp" /></p>
 <p>Единожды пропустит луч, если сигнал прошел через любую входящую точку. Все остальные входящие сигналы будут игнорироваться. Применяется, если нужно активировать событие по одному из нескольких вариантов. Например вы нашли улику или смогли разговорить крестьянина. Событие будет запущено, а срабатывание других условий проигнорировано.</p>
 <h2 id="playgo">PlayGo<a class="headerlink" href="#playgo" title="Permanent link">&para;</a></h2>
 <h3 id="activate-content">Activate Content<a class="headerlink" href="#activate-content" title="Permanent link">&para;</a></h3>
-<p><img alt="playgo_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/playgo_node1.webp" /></p>
+<p><img alt="playgo_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/playgo_node1.webp" /></p>
 <p>Заранее активирует фрагмент игрового контента. Этот блок выполняет задачу по оптимизации игры.</p>
 <ul>
 <li><strong>playGoChunk</strong> - сhunk (чанки) это заранее заготовленные наборы игровых ресурсов, которые можно загрузить в нужный момент, что позволит избежать прогрузки контента на глазах у игрока.</li>
 </ul>
 <h2 id="scenes">Scenes (Сцены)<a class="headerlink" href="#scenes" title="Permanent link">&para;</a></h2>
 <h3 id="context-dialog">Context Dialog<a class="headerlink" href="#context-dialog" title="Permanent link">&para;</a></h3>
-<p><img alt="scenes_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node1.webp" /></p>
+<p><img alt="scenes_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node1.webp" /></p>
 <p>Встраивает одну сцену в другую. Это блок позволяет дополнить существующую сцену новым диалогом. очень удобно, если вы делаете DLC и ходите внедрить в имеющийся игровой диалог новые варианты взаимодействий.</p>
 <ul>
 <li><strong>scene</strong> - путь к файлу сцены, которую нужно встроить.</li>
 <li><strong>targetScene</strong> - путь к файлу с целевой сценой, в которую мы встраиваем свою.</li>
 </ul>
 <h3 id="interaction-dialog">Interaction Dialog<a class="headerlink" href="#interaction-dialog" title="Permanent link">&para;</a></h3>
-<p><img alt="scenes_node2.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node2.webp" /></p>
+<p><img alt="scenes_node2.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node2.webp" /></p>
 <p>Добавляет для указанного NPC интеракитный диалог. Это позволяет подойти к NPC и начать с ним диалог, настроенный этим блоком.</p>
 <ul>
 <li><strong>scene</strong> - ссылка на файл сцены.</li>
@@ -2563,7 +2563,7 @@
 <li><strong>interrupt</strong> - <strong>True (зеленая галочка)</strong>, чтобы при начале интеракитного диалога прервать предыдущие взаимодействия.</li>
 </ul>
 <h3 id="scene">Scene<a class="headerlink" href="#scene" title="Permanent link">&para;</a></h3>
-<p><img alt="scenes_node3.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node3.webp" /></p>
+<p><img alt="scenes_node3.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node3.webp" /></p>
 <p>Запускает указанную сцену (катсцену).</p>
 <ul>
 <li><strong>scene</strong> - ссылка на файл сцены.</li>
@@ -2573,7 +2573,7 @@
 <li><strong>playGoChunk</strong> - сhunk (чанки) это заранее заготовленные наборы игровых ресурсов, которые можно загрузить в нужный момент, что позволит избежать прогрузки контента на глазах у игрока.</li>
 </ul>
 <h3 id="scene-prepare">Scene prepare<a class="headerlink" href="#scene-prepare" title="Permanent link">&para;</a></h3>
-<p><img alt="scenes_node4.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node4.webp" /></p>
+<p><img alt="scenes_node4.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node4.webp" /></p>
 <p>Подготавливает сцену для ее вопроизведения. Это позволяет загрузить нужные ресурсы в память заранее и избежать подвисания в начале воспроизведения тяжелой сцены.</p>
 <p>Содержит коллекцию сцен, которые нужно подготовить (<strong>storyScenes</strong>):</p>
 <ul>
@@ -2581,7 +2581,7 @@
 <li><strong>input</strong> - имя входящей точки по которой пойдет путь сцены. Если не указано, в память будет загружена вся сцена.</li>
 </ul>
 <h3 id="scripted-dialog">Scripted Dialog<a class="headerlink" href="#scripted-dialog" title="Permanent link">&para;</a></h3>
-<p><img alt="scenes_node5.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/scenes_node5.webp" /></p>
+<p><img alt="scenes_node5.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/scenes_node5.webp" /></p>
 <p>Вероятно устаревший блок. Не используется в основной игре.</p>
 <h2 id="scripting">Scripting (Скрипты)<a class="headerlink" href="#scripting" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
@@ -2589,7 +2589,7 @@
 <p>Практически все блоки в этом разделе позволяют точечно управлять игровыми скриптами. Это сложные механики требующие отдельных статей на каждый такой блок, поэтому они не будут тут рассмотрены (кроме одного, см ниже).</p>
 </div>
 <h3 id="script">Script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h3>
-<p><img alt="script_node1.webp" src="../../../../assets/images/unnoficial_docs/references/quests/quest_nodes/script_node1.webp" /></p>
+<p><img alt="script_node1.webp" src="../../../../assets/images/unofficial_docs/references/quests/quest_nodes/script_node1.webp" /></p>
 <p>Это очень важный блок, который позволяет выполнить игровой скрипт. Огромное число операций в игре выполняется через скрипты, не говоря о том, что вы можете сами их написать. Согласно логике работы блока, вам нужно выбрать один из множества скриптов списке и после появятся дополнительные поля для настройки. Так как это важная часть создания квестов, часть существующих скриптов описаны вы <a href="../conditions_and_functions/#_3">этой</a> статье.</p>
 <ul>
 <li><strong>functionName</strong> - имя функции из большого списка. Если вы написали свою функцию, она так тут появится.</li>
@@ -2621,7 +2621,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2026</span>
   </span>
 
     

@@ -1574,7 +1574,7 @@
 Это стандартное поведение ИИ определено в сложной системе поведений «behavior».</p>
 <p>Для понимания общей структуры работы поведений нужно пройти некоторый исследовательский путь.</p>
 <p>Для начала откроем шаблон кота и посмотрим на основные настройки во вкладке «<strong>Template properties</strong>»</p>
-<p><img alt="entity_template_prop.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/entity_template_prop.webp" /></p>
+<p><img alt="entity_template_prop.webp" src="../../../../assets/images/unofficial_docs/base/behavior/entity_template_prop.webp" /></p>
 <p>Здесь мы увидим указатель на базовый шаблон, применённый к данному коту.</p>
 <p>Такая иерархия нужна, если мы хотим создавать другие шаблоны котиков, но при этом сохранить их базовые поведения и свойства.</p>
 <p>Итак, поведение любого кота определяется его базовым шаблоном:</p>
@@ -1588,9 +1588,9 @@
 <p>Чтобы понять, что заставляет кота шипеть при виде игрока, ищем среди параметров настройки, 
 логически подходящие под это действие.</p>
 <p>Там мы найдем следующие параметры (см. скрин):</p>
-<p><img alt="entity_ai.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/entity_ai.webp" /></p>
+<p><img alt="entity_ai.webp" src="../../../../assets/images/unofficial_docs/base/behavior/entity_ai.webp" /></p>
 <p>Коллекция <code>reactionTree</code> содержит несколько различных реакций на внешние раздражители. Нужная нам реакция выглядит так:</p>
-<p><img alt="entity_ai_class_selector.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/entity_ai_class_selector.webp" /></p>
+<p><img alt="entity_ai_class_selector.webp" src="../../../../assets/images/unofficial_docs/base/behavior/entity_ai_class_selector.webp" /></p>
 <p>Определив реакцию, отвечающую за поведение при присутствии игрока, теперь ищем информацию о ней в скриптах</p>
 <p><div class="language-ws highlight"><span class="filename">Witcher Script</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">class</span> <span class="n">CAIActionTauntAndMoveOut</span> <span class="nb">extends</span> <span class="n">CAIMonsterActionSubtree</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>   
@@ -1626,7 +1626,7 @@
 <p>Писать новое дерево придётся только при создании совершенно новой игровой механики, затрагивающей всех NPC.</p>
 <p>Но вернёмся к шипящему котику. Найденное нами дерево кроме прочих действий, 
 генерирует событие анимации «<strong>Taunt</strong>», заставляющее котика шипеть.</p>
-<p><img alt="w2behtree_editor.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/w2behtree_editor.webp" /></p>
+<p><img alt="w2behtree_editor.webp" src="../../../../assets/images/unofficial_docs/base/behavior/w2behtree_editor.webp" /></p>
 <h3 id="_3">Визуальная часть поведения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Теперь разберёмся, как это проявляется визуально.</p>
 <p>Мы выяснили, что у котика определен параметр реакции на присутствие игрока. 
@@ -1640,7 +1640,7 @@
 Поскольку коты — фоновые и довольно простые NPC, у них даже нет 
 своего отдельного файла визуального поведения. 
 Они используют общий шаблон для всех животных.</p>
-<p><img alt="entity_animations.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/entity_animations.webp" /></p>
+<p><img alt="entity_animations.webp" src="../../../../assets/images/unofficial_docs/base/behavior/entity_animations.webp" /></p>
 <p>Перейдем теперь к данному файлу.</p>
 <p>По умолчанию редактор будет пустым, так как не загружена сущность, для которой мы хотим строить логику. </p>
 <p>Чтобы загрузить котика в редактор: </p>
@@ -1653,29 +1653,29 @@
 <p>Данный граф напоминает граф в редакторе квестов, но имеет странную логику построения. </p>
 <p>Например: В нем все лучи идут с права на лево, а вход в граф происходит не с наружи, а изнутри.</p>
 <p>Таким образом, то, что вы увидите при первом просмотре, будет концом логики, а не ее началом</p>
-<p><img alt="beh_editor.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/beh_editor.webp" /></p>
+<p><img alt="beh_editor.webp" src="../../../../assets/images/unofficial_docs/base/behavior/beh_editor.webp" /></p>
 <p>Для перехода к стартовым позициям логика потребуется двойной щелчок на блоки, содержащие логику. 
 К сожалению, визуально такие блоки четно не разграничены, поэтому пробуйте жать на все, что можно. 
 Как минимум блоки, подписанные как «<strong>State machine</strong>» точно имеют вложения.</p>
 <p>Блуждая по внутренним блокам, вы попадете на такой экран</p>
-<p><img alt="beh_graph.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/beh_graph.webp" /></p>
+<p><img alt="beh_graph.webp" src="../../../../assets/images/unofficial_docs/base/behavior/beh_graph.webp" /></p>
 <p>Это главный узел, распределяющий базовые поведения. Нам интересны самые левые узлы.</p>
 <p>В частности, кружек это одна из ситуаций, где начинает свой путь луч логики. Интересующий нас кружек, 
 является условием, которое сработает и запустит луч, 
 в случае если будет сгенерировано событие «<strong>Taunt</strong>» (вспоминаем первую часть урока).</p>
-<p><img alt="beh_graph_2.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/beh_graph_2.webp" /></p>
+<p><img alt="beh_graph_2.webp" src="../../../../assets/images/unofficial_docs/base/behavior/beh_graph_2.webp" /></p>
 <p>Собственно ближайший к точке блок имеет довольно простое вложение, а именно вызов анимации шипения</p>
-<p><img alt="beh_graph_3.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/beh_graph_3.webp" /></p>
+<p><img alt="beh_graph_3.webp" src="../../../../assets/images/unofficial_docs/base/behavior/beh_graph_3.webp" /></p>
 <p>Тут важно напомнить, что мы в едином шаблоне для животных, 
 а разные животные будут по-разному реагировать на игрока. 
 Именно поэтому блоки вызова анимации, обращаются к ней по имени, 
 не зная заранее есть ли она у данного животного. 
 Если такой анимации у животного нет, то просто ничего не произойдет.</p>
 <p>Набор же анимаций, определяется все в том же шаблоне кота, на той же вкладке «Animation», но теперь на подвкладке «Animsets».</p>
-<p><img alt="entity_animations_2.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/entity_animations_2.webp" /></p>
+<p><img alt="entity_animations_2.webp" src="../../../../assets/images/unofficial_docs/base/behavior/entity_animations_2.webp" /></p>
 <p>Таким образом, когда поведение вызывает проигрывание анимации с указанным именем, 
 она будет искаться среди всех пакетов анимаций у конкретной сущности.</p>
-<p><img alt="final_result.webp" src="../../../../assets/images/unnoficial_docs/base/behavior/final_result.webp" /></p>
+<p><img alt="final_result.webp" src="../../../../assets/images/unofficial_docs/base/behavior/final_result.webp" /></p>
 <p>Подытожим все сказанное</p>
 <ol>
 <li>Настройки ИИ определяют какие реакции есть у NPC</li>
@@ -1720,7 +1720,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2026</span>
   </span>
 
     

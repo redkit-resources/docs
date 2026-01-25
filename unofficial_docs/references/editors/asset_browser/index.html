@@ -2383,7 +2383,7 @@
 
 <h1 id="asset-browser">Asset Browser<a class="headerlink" href="#asset-browser" title="Permanent link">&para;</a></h1>
 <p>Asset Browser - это инструмент, используемый для доступа ко всем файлам в репозитории REDkit. По сути, это аналог файлового проводника, который есть в любой операционной системе, но позволяет взаимодействовать с файлами как с объектами движка.
-<img alt="asset_browser.wep" src="../../../../assets/images/unnoficial_docs/references/editors/asset_browser/asset_browser.webp" /></p>
+<img alt="asset_browser.wep" src="../../../../assets/images/unofficial_docs/references/editors/asset_browser/asset_browser.webp" /></p>
 <h2 id="_1">Как открыть<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Открыть Asset Browser можно несколькими способами:</p>
 <ul>
@@ -2391,10 +2391,10 @@
 <li>Через меню: <strong>View &rarr; Asset Browser</strong></li>
 <li>Кликнуть на иконку в главной панели</li>
 </ul>
-<p><img alt="how_to_open.webp" src="../../../../assets/images/unnoficial_docs/references/editors/asset_browser/how_to_open.webp" /></p>
+<p><img alt="how_to_open.webp" src="../../../../assets/images/unofficial_docs/references/editors/asset_browser/how_to_open.webp" /></p>
 <p>Также Asset Browser автоматически открывается, когда необходимо выбрать объект для дальнейшего взаимодействия, например, чтобы открыть игровой мир через меню <strong>File &rarr; Open World</strong>.</p>
 <h2 id="_2">Интерфейс<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><img alt="asset_browser_ui.webp" src="../../../../assets/images/unnoficial_docs/references/editors/asset_browser/asset_browser_ui.webp" /></p>
+<p><img alt="asset_browser_ui.webp" src="../../../../assets/images/unofficial_docs/references/editors/asset_browser/asset_browser_ui.webp" /></p>
 <p><strong>Легенда:</strong></p>
 <ol>
 <li>Показать/скрыть дерево каталогов Depot (10)</li>
@@ -2412,7 +2412,7 @@
 <h2 id="_3">Описание файловой структуры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Все оригинальные ресурсы игры хранятся в папке REDkit в каталоге r4data. Для оптимизации некоторые ресурсы извлекаются в отдельный "Uncook depot", который генерируется при первом запуске REDkit и хранится там, где вы его указали. Всё вместе это называется Read-only Depot или просто Depot. Эти ресурсы доступны только для чтения, и не рекомендуется изменять их за пределами REDkit, так как это может вызвать проблемы.</p>
 <p>Ресурсы, которые доступны для изменения, хранятся в папке вашего проекта, называемой рабочим пространством или "Workspace". Asset Browser позволяет легко управлять этими ресурсами. Для удобного понимания, в каком именно хранилище находится файл, существуют специальные значки. Файлы из "Read-only Depot" имеют значок "замок", что означает, что это оригинальные ресурсы игры из Depot и их редактировать нельзя. Файлы из "Workspace" имеют два значка: зеленая галочка указывает на то, что это оригинальный ресурс игры, но скопированный в Workspace через команду Checkout, а значок плюса на красном фоне означает, что это новые ресурсы, добавленные через Import или Create.</p>
-<p><img alt="ab_filesystem.webp" src="../../../../assets/images/unnoficial_docs/references/editors/asset_browser/ab_filesystem.webp" /></p>
+<p><img alt="ab_filesystem.webp" src="../../../../assets/images/unofficial_docs/references/editors/asset_browser/ab_filesystem.webp" /></p>
 <h2 id="_4">Основные возможности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">Создание новых ресурсов<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Для создания новых ресурсов щелкните правой кнопкой мыши и выберите "Create". Новые файлы будут иметь значок "плюс", указывающий на то, что они новые и добавлены в рабочее пространство.</p>
@@ -2420,7 +2420,7 @@
 <p>Для импорта внешних ресурсов щелкните правой кнопкой мыши и выберите "Import". Укажите путь к файлу на вашем ПК и задайте ему имя. Импортированные файлы также будут отображаться как новые в рабочем пространстве со значком "плюс".</p>
 <h3 id="_7">Изменение оригинальных ресурсов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>Для изменения оригинальных ресурсов игры щелкните правой кнопкой мыши и выберите "Checkout". Это скопирует ресурс из Depot в рабочее пространство и снимет флаг только для чтения. Скопированные таким образом ресурсы будут иметь значок зеленой галочки.
-<img alt="ab_checkout_icons.webp" src="../../../../assets/images/unnoficial_docs/references/editors/asset_browser/ab_checkout_icons.webp" /></p>
+<img alt="ab_checkout_icons.webp" src="../../../../assets/images/unofficial_docs/references/editors/asset_browser/ab_checkout_icons.webp" /></p>
 <h3 id="_8">Редактировать объект<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>Чтобы отредактировать объект, дважды щелкните по нему левой кнопкой мыши в Asset Browser. Это автоматически откроет соответствующий редактор. Если вы откроете таким образом оригинальный ресурс из Depot, то при сохранении появится предупреждение о необходимости переместить файл в рабочее пространство.</p>
 <h3 id="_9">Восстановление файлов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
@@ -2474,7 +2474,7 @@
     <span class="md-icon" title="Последнее обновление">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 января 2026 г.</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">25 января 2026 г.</span>
   </span>
 
     

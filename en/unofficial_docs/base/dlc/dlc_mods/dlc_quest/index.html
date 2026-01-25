@@ -1591,7 +1591,7 @@
 </div>
 <h2 id="_1">Создание файла квеста<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Перейдите в папку вашего DLC (далее в примере будет использоваться имя dlc77) и создайте папки так, чтобы они образовывали путь <strong>"dlc &rarr; dlc77 &rarr; data &rarr; quests"</strong>. Внутри созданной папки, нажмите правой кнопкой мыши на пустое место и выберите пункт меню <strong>"Create &rarr; Quest"</strong>. В качестве имени файла используйте <strong>"dlc77_quest"</strong>.
-<img alt="create_dlc_quest.webp" src="../../../../../assets/images/unnoficial_docs/base/dlc/create_dlc_quest.webp" /></p>
+<img alt="create_dlc_quest.webp" src="../../../../../assets/images/unofficial_docs/base/dlc/create_dlc_quest.webp" /></p>
 <p>После того, как вы создадите и откроете файл, вы заметите, что он не содержит вообще никаких блоков. Это нормально, однако в таком виде этот фал бесполезен и даже не будет запущен. Чтобы файл мог выполнятся, нужно добавить стартовый блок.</p>
 <p>Для создания стартового блока, нажмите правой кнопкой мыши на пустом месте холста (с серым фоном) и в открывшемся меню выберите <strong>"Complexity management &rarr; Start"</strong>. Сохраните файл через меню <strong>"File &rarr; Save"</strong> или комбинацию клавиш <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>. После этого редактор пока можно закрыть.</p>
 <h2 id="dlc">Настройка файла DLC<a class="headerlink" href="#dlc" title="Permanent link">&para;</a></h2>
@@ -1599,7 +1599,7 @@
 <p>Перейдите в корневую папку вашего DLC и откройте ранее созданный файл <strong>.reddlc</strong>. В открывшемся окне выделите строку <strong>"mounters"</strong> и справа нажмите на зеленую иконку ➕. В результате нажатия появится новая пустая строка строка. Теперь выделите эту строку и нажмите на красный перевернутый треугольник -🔻. В результате откроется окно со списком маунтеров, в котором нужно будет выбрать элемент с названием <strong>"CR4QuestDLCMounter"</strong>. Сделайте двойной щелчок по маунтеру, чтобы добавить его DLC.</p>
 <p>Добавленный маунтер содержит четыре свойства, подробнее о которых вы можете посмотреть <a href="../../../../references/dlc/dlc_mounters/#cr4questdlcmounter">здесь</a>, однако нас сейчас интересует только поле <strong>"quest"</strong>, которое содержит пусть к нашему файлу квеста.</p>
 <p>Не закрывая окно <strong>DLC Definition</strong>, прейдите в <a href="../../../../references/editors/asset_browser/">Asset Browser</a> и вернитесь к нашему файлу <strong>"dlc77_quest"</strong>. Выделите его и переключитесь снова на окно <strong>DLC Definition</strong>. Нажмите на свойство <strong>"quest"</strong> и после на появившуюся справа зеленую стрелочку ⬅. Путь к вашему файлу квест будет задан.
-<img alt="set_quest_dlc_definition.webp" src="../../../../../assets/images/unnoficial_docs/base/dlc/set_quest_dlc_definition.webp" /></p>
+<img alt="set_quest_dlc_definition.webp" src="../../../../../assets/images/unofficial_docs/base/dlc/set_quest_dlc_definition.webp" /></p>
 <p>Закройте окно редактирования <strong>DLC Definition</strong> и в появившемся запросе на сохранение, нажмите <strong>"Yes"</strong>. Теперь игра знает о вашем файле квеста и будет запускать его при старте игры (как новой, так и из сохранения).</p>
 <h2 id="_2">Структура квеста<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Как было описано в <a href="../../../../references/quest/general/">основном материале</a> о работе квестов, для удобства работы с большой структурой, нам необходимо дробить логики на отдельные фазы (файлы формата <strong>w2phase</strong>). Мало того, если изучить существующие файлы квестов, разработчики стараются и вовсе не размещать никакой логики в самом фале квеста, а старт основных действий запускают с файла фазы, который обычно носит название содержащее слово <strong>"structure" (структура)</strong>. Давайте поступим так же.</p>
@@ -1611,7 +1611,7 @@
 <p>После создания файла нам так же требуется указать в нем точку входа, через которую <a href="../../../../references/quest/general/#_4">луч</a> квеста попадет внутрь. Откройте файл <strong>"dlc77_structure"</strong> и с помощью контекстного меню <strong>"Complexity management &rarr; In"</strong> добавьте входной блок. Сохраните и закройте файл. Теперь когда фаза создана ее можно добавить в основной файл квеста.</p>
 <p>Откройте файл квеста <strong>"dlc77_quest"</strong> и добавьте блок <strong>"Complexity management &rarr; Phase"</strong>. Разместите блок фазы справа от блока <strong>Start</strong> и соедините блоки между собой (как показано в <a href="../../../../references/quest/editor/">руководстве</a> по редактору квестов).</p>
 <p>Теперь выделите блок фазы и слева в списке свойств укажите в свойстве <strong>phase</strong> путь к фалу <strong>"dlc77_structure.w2phase"</strong> (выделив нужный файл в Asset Browser, и нажав зеленую стрелочку в окне нужного свойства).
-<img alt="add_dlc_quest_structure.webp" src="../../../../../assets/images/unnoficial_docs/base/dlc/add_dlc_quest_structure.webp" /></p>
+<img alt="add_dlc_quest_structure.webp" src="../../../../../assets/images/unofficial_docs/base/dlc/add_dlc_quest_structure.webp" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Важно!</p>
 <p>Если вы решите добавить фазу в файл квеста до того как создадите блок <strong>In</strong> внутри фазы, то в блоке фазы у вас не будет точки для входящего соединения. Это связано с тем, что внутри фазы может быть множество разных блоков <strong>In</strong> и от их количества будет зависеть число входящих соединений для блока фазы.</p>
@@ -1622,7 +1622,7 @@
 <p>Для закрепления понимания работы квеста, давайте выполним простой пример, который покажет, что файл квеста корректно используется игрой.</p>
 <p>Откройте файл <strong>"dlc77_structure.w2phase"</strong> и справа от блока In добавьте блок <strong>"Scripting &rarr; Script"</strong>. Соедините блоки линией и выделите блок <strong>Script</strong>. Слева в окне свойств выберите свойство <strong>functionName</strong> и нажмите на красный треугольник 🔻. В открывшемся окне найдите <strong>DisplayHudMessage</strong>. После выбора скрипта в низу основных свойств блока появится набор свойств, доступных только для этого скрипта. В свойстве <strong>localisedStringKey</strong> укажите <strong>"dlc77_desc"</strong> (значение взято для примера, а вы можете указать любой ключ строки из <a href="../../../../references/editors/localized_strings_editor/">Localized Strings Editor</a>).</p>
 <p>Теперь в REDkit запустите сохраненную игру (или используя шаблон <strong>.redgame</strong>) и при появлении игрока вы увидите ваше сообщение.
-<img alt="test_dlc_quest.webp" src="../../../../assets/images/unnoficial_docs/base/dlc/test_dlc_quest.webp" /></p>
+<img alt="test_dlc_quest.webp" src="../../../../assets/images/unofficial_docs/base/dlc/test_dlc_quest.webp" /></p>
 <h2 id="_4">Послесловие<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>Лучший способ научится программировать квесты - это изучение существующих квестов в основной игре и дополнениях, однако эти структуры могут показаться очень большими и сложными для новичков.</p>
 <p>Благо на сайте с официальной документацией REDkit, разработчики разместили тестовый мод <a href="https://cdprojektred.atlassian.net/wiki/spaces/W3REDkit/pages/28770305/Demo+Mod+Mariska+s+Wonderland">Mariska's Wonderland</a>, который можно скачать в виде zip-архива и открыть в REDkit. Там вы найдете фал <strong>"mariska_test_quest"</strong>, описывающий короткий сюжет этого мода и позволяющий изучать редактор квестов на более простом примере.</p>
@@ -1656,7 +1656,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2026</span>
   </span>
 
     

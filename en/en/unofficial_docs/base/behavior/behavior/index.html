@@ -1647,7 +1647,7 @@
 This standard AI behavior is defined in the complex "behavior" system.</p>
 <p>To understand the general structure of how behaviors work, you need to go through a bit of an investigative journey.</p>
 <p>First, let’s open the cat template and look at the main settings in the "<strong>Template Properties</strong>" tab.</p>
-<p><img alt="entity_template_prop.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/entity_template_prop.webp" /></p>
+<p><img alt="entity_template_prop.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/entity_template_prop.webp" /></p>
 <p>Here, we’ll see a reference to the base template applied to this cat.</p>
 <p>This hierarchy is necessary if we want to create other cat templates while preserving their base behaviors and properties.</p>
 <p>So, the behavior of any cat is determined by its base template:</p>
@@ -1660,9 +1660,9 @@ By choosing a template, you define the set of parameters that need to be configu
 Base templates are defined in script files and are based on special behavior trees, which we’ll explore later.</p>
 <p>To understand what makes the cat hiss when it sees the player, we look for settings that logically fit this action.</p>
 <p>There, we’ll find the following parameters (see screenshot):</p>
-<p><img alt="entity_ai.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/entity_ai.webp" /></p>
+<p><img alt="entity_ai.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/entity_ai.webp" /></p>
 <p>The <code>reactionTree</code> collection contains several different reactions to external stimuli. The reaction we’re interested in looks like this:</p>
-<p><img alt="entity_ai_class_selector.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/entity_ai_class_selector.webp" /></p>
+<p><img alt="entity_ai_class_selector.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/entity_ai_class_selector.webp" /></p>
 <p>Having identified the reaction responsible for behavior in the presence of the player, we now look for information about it in the scripts.</p>
 <p><div class="language-ws highlight"><span class="filename">Witcher Script</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">class</span> <span class="n">CAIActionTauntAndMoveOut</span> <span class="nb">extends</span> <span class="n">CAIMonsterActionSubtree</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>   
@@ -1698,7 +1698,7 @@ Most tasks can be solved using existing trees.</p>
 <p>You’ll only need to write a new tree when creating a completely new game mechanic that affects all NPCs.</p>
 <p>But let’s get back to the hissing cat. The tree we found, among other actions, 
 generates an animation event called "<strong>Taunt</strong>," which makes the cat hiss.</p>
-<p><img alt="w2behtree_editor.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/w2behtree_editor.webp" /></p>
+<p><img alt="w2behtree_editor.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/w2behtree_editor.webp" /></p>
 <h3 id="the-visual-part-of-behavior">The Visual Part of Behavior<a class="headerlink" href="#the-visual-part-of-behavior" title="Permanent link">&para;</a></h3>
 <p>Now, let’s figure out how this manifests visually.</p>
 <p>We’ve determined that the cat has a parameter for reacting to the player’s presence. 
@@ -1712,7 +1712,7 @@ Here, all animations for all possible situations of the current NPC are defined.
 Since cats are background and fairly simple NPCs, they don’t even have 
 their own separate visual behavior file. 
 They use a shared template for all animals.</p>
-<p><img alt="entity_animations.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/entity_animations.webp" /></p>
+<p><img alt="entity_animations.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/entity_animations.webp" /></p>
 <p>Now, let’s go to this file.</p>
 <p>By default, the editor will be empty because no entity is loaded for which we want to build the logic.</p>
 <p>To load the cat into the editor:</p>
@@ -1725,29 +1725,29 @@ They use a shared template for all animals.</p>
 <p>This graph resembles the quest editor’s graph but has a strange logic structure.</p>
 <p>For example: All lines go from right to left, and the entry into the graph happens from the inside, not the outside.</p>
 <p>Thus, what you see at first glance is the end of the logic, not its beginning.</p>
-<p><img alt="beh_editor.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/beh_editor.webp" /></p>
+<p><img alt="beh_editor.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/beh_editor.webp" /></p>
 <p>To navigate to the starting points of the logic, you’ll need to double-click on blocks containing logic. 
 Unfortunately, such blocks aren’t clearly marked, so try clicking on everything you can. 
 At the very least, blocks labeled "<strong>State machine</strong>" definitely have nested content.</p>
 <p>While wandering through the inner blocks, you’ll come across a screen like this:</p>
-<p><img alt="beh_graph.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/beh_graph.webp" /></p>
+<p><img alt="beh_graph.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/beh_graph.webp" /></p>
 <p>This is the main node that distributes base behaviors. We’re interested in the leftmost nodes.</p>
 <p>In particular, the circle is one of the situations where a logic path begins. The circle we’re interested in 
 is a condition that will trigger and start the path 
 if the "<strong>Taunt</strong>" event is generated (remember the first part of the lesson).</p>
-<p><img alt="beh_graph_2.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/beh_graph_2.webp" /></p>
+<p><img alt="beh_graph_2.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/beh_graph_2.webp" /></p>
 <p>The block closest to the point has a fairly simple nested content, specifically calling the hissing animation.</p>
-<p><img alt="beh_graph_3.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/beh_graph_3.webp" /></p>
+<p><img alt="beh_graph_3.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/beh_graph_3.webp" /></p>
 <p>It’s important to note that we’re in a shared template for animals, 
 and different animals will react differently to the player. 
 That’s why the animation call blocks refer to the animation by name, 
 without knowing in advance whether the animal has it. 
 If the animal doesn’t have such an animation, nothing will happen.</p>
 <p>The set of animations is defined in the same cat template, in the same "Animation" tab, but now in the "Animsets" sub-tab.</p>
-<p><img alt="entity_animations_2.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/entity_animations_2.webp" /></p>
+<p><img alt="entity_animations_2.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/entity_animations_2.webp" /></p>
 <p>Thus, when the behavior calls for playing an animation with a specified name, 
 it will be searched for among all animation packages for the specific entity.</p>
-<p><img alt="final_result.webp" src="../../../../../assets/images/unnoficial_docs/base/behavior/final_result.webp" /></p>
+<p><img alt="final_result.webp" src="../../../../../assets/images/unofficial_docs/base/behavior/final_result.webp" /></p>
 <p>Let’s summarize everything we’ve discussed:</p>
 <ol>
 <li>AI settings determine what reactions an NPC has.</li>
@@ -1793,7 +1793,7 @@ template-like or cyclical, thanks to various randomization functions.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2026</span>
   </span>
 
     
