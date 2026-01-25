@@ -14,7 +14,7 @@ They are tied to a specific world and a certain moment in the story.
 But how do they work?
 
 Like all videos in the engine, these are files with the .usm extension. If you're not familiar with them yet, 
-it's recommended to check out the [guide on creating USM videos](../../unnoficial_docs/guides/create_usm_video.md) before starting.
+it's recommended to check out the [guide on creating USM videos](../guides/create_usm_video.md) before starting.
 
 All videos for loading screens must be strictly located in the folder:
 

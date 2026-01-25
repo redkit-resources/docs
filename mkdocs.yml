@@ -15,60 +15,60 @@ nav:
     - Благодарности: credits.md
 
   - Документация сообщества:
-    - Главная: unnoficial_docs/index.md
+    - Главная: unofficial_docs/index.md
     - Основы:
-        Главная: unnoficial_docs/base/index.md
+        Главная: unofficial_docs/base/index.md
         DLC-моды:
-          - О DLC модах: unnoficial_docs/base/dlc/index.md
-          - Шаг 1. Пространство ID: unnoficial_docs/base/dlc/dlc_steps/step_1.md
-          - Шаг 2. Имя мода: unnoficial_docs/base/dlc/dlc_steps/step_2.md
-          - Шаг 3. Структура папок: unnoficial_docs/base/dlc/dlc_steps/step_3.md
-          - Шаг 4. Определение DLC: unnoficial_docs/base/dlc/dlc_steps/step_4.md
-          - Варианты DLC. Квестовый DLC-мод: unnoficial_docs/base/dlc/dlc_mods/dlc_quest.md
+          - О DLC модах: unofficial_docs/base/dlc/index.md
+          - Шаг 1. Пространство ID: unofficial_docs/base/dlc/dlc_steps/step_1.md
+          - Шаг 2. Имя мода: unofficial_docs/base/dlc/dlc_steps/step_2.md
+          - Шаг 3. Структура папок: unofficial_docs/base/dlc/dlc_steps/step_3.md
+          - Шаг 4. Определение DLC: unofficial_docs/base/dlc/dlc_steps/step_4.md
+          - Варианты DLC. Квестовый DLC-мод: unofficial_docs/base/dlc/dlc_mods/dlc_quest.md
         Поведения:
-          - Общие сведения: unnoficial_docs/base/behavior/behavior.md
+          - Общие сведения: unofficial_docs/base/behavior/behavior.md
         Мир:
-          - Миры основы: unnoficial_docs/base/world/world.md
+          - Миры основы: unofficial_docs/base/world/world.md
 
-        Загрузочные экраны: unnoficial_docs/base/loading_screens.md
+        Загрузочные экраны: unofficial_docs/base/loading_screens.md
 
     - Гайды:
-        - Главная: unnoficial_docs/guides/index.md
-        - Создать анимацию для NPC: unnoficial_docs/guides/create_animation_for_npc.md
-        - Создать USM видео: unnoficial_docs/guides/create_usm_video.md
-        - Новый медальон в hud: unnoficial_docs/guides/create_new_hud_medallion.md
+        - Главная: unofficial_docs/guides/index.md
+        - Создать анимацию для NPC: unofficial_docs/guides/create_animation_for_npc.md
+        - Создать USM видео: unofficial_docs/guides/create_usm_video.md
+        - Новый медальон в hud: unofficial_docs/guides/create_new_hud_medallion.md
 
     - Полезные фичи:
-        - Главная: unnoficial_docs/useful_features/index.md
-        - Полезные горячие клавиши: unnoficial_docs/useful_features/shortcuts.md
-        - Скопировать инфу из свойств объекта: unnoficial_docs/useful_features/copy_info_from_objects_prop.md
-        - Настройка Script Studio: unnoficial_docs/useful_features/setup_script_studio.md
+        - Главная: unofficial_docs/useful_features/index.md
+        - Полезные горячие клавиши: unofficial_docs/useful_features/shortcuts.md
+        - Скопировать инфу из свойств объекта: unofficial_docs/useful_features/copy_info_from_objects_prop.md
+        - Настройка Script Studio: unofficial_docs/useful_features/setup_script_studio.md
 
     - Баги и их решения:
-        - Главная: unnoficial_docs/bugs/index.md
-        - Швы на текстурах: unnoficial_docs/bugs/uv_bug.md
+        - Главная: unofficial_docs/bugs/index.md
+        - Швы на текстурах: unofficial_docs/bugs/uv_bug.md
 
     - Справочники:
-        - Главная: unnoficial_docs/references/index.md
+        - Главная: unofficial_docs/references/index.md
         - Редакторы:
-          - Редактор локализуемых строк: unnoficial_docs/references/editors/localized_strings_editor.md
-          - Asset Browser: unnoficial_docs/references/editors/asset_browser.md
+          - Редактор локализуемых строк: unofficial_docs/references/editors/localized_strings_editor.md
+          - Asset Browser: unofficial_docs/references/editors/asset_browser.md
         - DLC Definition:
-          - Описание DLC Definition: unnoficial_docs/references/dlc/dlc_definition.md
-          - DLC Mounters: unnoficial_docs/references/dlc/dlc_mounters.md
+          - Описание DLC Definition: unofficial_docs/references/dlc/dlc_definition.md
+          - DLC Mounters: unofficial_docs/references/dlc/dlc_mounters.md
         - Квесты:
-          - Общие данные о квестах: unnoficial_docs/references/quest/general.md
-          - Редактор файлов квестов: unnoficial_docs/references/quest/editor.md
-          - Квестовые блоки: unnoficial_docs/references/quest/blocks.md
-          - Условия и функции: unnoficial_docs/references/quest/conditions_and_functions.md
-          - Отладка квестов: unnoficial_docs/references/quest/debug.md
-          - Примеры сценариев: unnoficial_docs/references/quest/examples.md
+          - Общие данные о квестах: unofficial_docs/references/quest/general.md
+          - Редактор файлов квестов: unofficial_docs/references/quest/editor.md
+          - Квестовые блоки: unofficial_docs/references/quest/blocks.md
+          - Условия и функции: unofficial_docs/references/quest/conditions_and_functions.md
+          - Отладка квестов: unofficial_docs/references/quest/debug.md
+          - Примеры сценариев: unofficial_docs/references/quest/examples.md
         - Мир:
-            - Параметры мира: unnoficial_docs/references/world/world_params.md
-            - Umbra: unnoficial_docs/references/world/umbra.md
-            - Параметры pathlib: unnoficial_docs/references/world/pathlib.md
-            - Параметры теней: unnoficial_docs/references/world/shadow_params.md
-            - Параметры окружения: unnoficial_docs/references/world/env_params.md
-            - Параметры геометрии: unnoficial_docs/references/world/merged_geometry_params.md
-        - Расширения файлов: unnoficial_docs/references/file_extensions.md
-        - Типы данных параметров: unnoficial_docs/references/data_types.md
+            - Параметры мира: unofficial_docs/references/world/world_params.md
+            - Umbra: unofficial_docs/references/world/umbra.md
+            - Параметры pathlib: unofficial_docs/references/world/pathlib.md
+            - Параметры теней: unofficial_docs/references/world/shadow_params.md
+            - Параметры окружения: unofficial_docs/references/world/env_params.md
+            - Параметры геометрии: unofficial_docs/references/world/merged_geometry_params.md
+        - Расширения файлов: unofficial_docs/references/file_extensions.md
+        - Типы данных параметров: unofficial_docs/references/data_types.md

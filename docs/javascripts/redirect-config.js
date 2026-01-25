@@ -13,7 +13,7 @@ window.REDIRECT_CONFIG = {
         // "/guides/*/old.html": "/guides/*/new.html",
         // "/**/unnoficial_docs/**": "/**/unofficial_docs/**",
 
-        // "/unnoficial_docs/**": "/unofficial_docs/**",
+        "/unnoficial_docs/**": "/unofficial_docs/**",
 
       },
 
@@ -30,7 +30,7 @@ window.REDIRECT_CONFIG = {
     en: {
       basePaths: ['/docs/en', '/docs/en/en'],
       redirects: {
-        // "/unnoficial_docs/**": "/unofficial_docs/**",
+        "/unnoficial_docs/**": "/unofficial_docs/**",
       },
     }
   }

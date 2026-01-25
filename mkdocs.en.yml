@@ -39,39 +39,39 @@ nav:
     - Credits: en/credits.md
 
   - Community Documentation:
-    - Home: en/unnoficial_docs/index.md
+    - Home: en/unofficial_docs/index.md
     - Basics:
-        Home: en/unnoficial_docs/base/index.md
+        Home: en/unofficial_docs/base/index.md
         Behaviors:
-          - General Information: en/unnoficial_docs/base/behavior/behavior.md
+          - General Information: en/unofficial_docs/base/behavior/behavior.md
         World:
-          - World Basics: en/unnoficial_docs/base/world/world.md
-        Loading screens: unnoficial_docs/base/loading_screens.md
+          - World Basics: en/unofficial_docs/base/world/world.md
+        Loading screens: unofficial_docs/base/loading_screens.md
 
     - Guides:
-        - Home: en/unnoficial_docs/guides/index.md
-        - Create NPC Animation: en/unnoficial_docs/guides/create_animation_for_npc.md
-        - Create USM video: en/unnoficial_docs/guides/create_usm_video.md
-        - New medallion in hud: en/unnoficial_docs/guides/create_new_hud_medallion.md
+        - Home: en/unofficial_docs/guides/index.md
+        - Create NPC Animation: en/unofficial_docs/guides/create_animation_for_npc.md
+        - Create USM video: en/unofficial_docs/guides/create_usm_video.md
+        - New medallion in hud: en/unofficial_docs/guides/create_new_hud_medallion.md
 
     - Useful Features:
-        - Home: en/unnoficial_docs/useful_features/index.md
-        - Useful Shortcuts: en/unnoficial_docs/useful_features/shortcuts.md
-        - Copy Info from Object Properties: en/unnoficial_docs/useful_features/copy_info_from_objects_prop.md
-        - Customizing Script Studio: en/unnoficial_docs/useful_features/setup_script_studio.md
+        - Home: en/unofficial_docs/useful_features/index.md
+        - Useful Shortcuts: en/unofficial_docs/useful_features/shortcuts.md
+        - Copy Info from Object Properties: en/unofficial_docs/useful_features/copy_info_from_objects_prop.md
+        - Customizing Script Studio: en/unofficial_docs/useful_features/setup_script_studio.md
 
     - Bugs and Solutions:
-        - Home: en/unnoficial_docs/bugs/index.md
-        - Stitches on textures: en/unnoficial_docs/bugs/uv_bug.md
+        - Home: en/unofficial_docs/bugs/index.md
+        - Stitches on textures: en/unofficial_docs/bugs/uv_bug.md
 
     - References:
-        - Home: en/unnoficial_docs/references/index.md
+        - Home: en/unofficial_docs/references/index.md
         - World:
-            - World Parameters: en/unnoficial_docs/references/world/world_params.md
-            - Umbra: en/unnoficial_docs/references/world/umbra.md
-            - Pathlib Parameters: en/unnoficial_docs/references/world/pathlib.md
-            - Shadow Parameters: en/unnoficial_docs/references/world/shadow_params.md
-            - Environment Parameters: en/unnoficial_docs/references/world/env_params.md
-            - Geometry Parameters: en/unnoficial_docs/references/world/merged_geometry_params.md
-        - File Extensions: en/unnoficial_docs/references/file_extensions.md
-        - Parameter Data Types: en/unnoficial_docs/references/data_types.md
+            - World Parameters: en/unofficial_docs/references/world/world_params.md
+            - Umbra: en/unofficial_docs/references/world/umbra.md
+            - Pathlib Parameters: en/unofficial_docs/references/world/pathlib.md
+            - Shadow Parameters: en/unofficial_docs/references/world/shadow_params.md
+            - Environment Parameters: en/unofficial_docs/references/world/env_params.md
+            - Geometry Parameters: en/unofficial_docs/references/world/merged_geometry_params.md
+        - File Extensions: en/unofficial_docs/references/file_extensions.md
+        - Parameter Data Types: en/unofficial_docs/references/data_types.md
