@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://redkit-resources.github.io/docs/unofficial_docs/base/behavior/behavior_architecture/" rel="canonical"/>
+<link href="../../../../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.49" name="generator"/>
+<title>Архитектура системы поведения - REDkit Open Documentation</title>
+<link href="../../../../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+<link href="../../../../stylesheets/syntax_highlight.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/pymdown_details.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/custom_admonitions.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/title_case_fix.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/toc_toggle.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/redkit_community.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/space.css" rel="stylesheet"/>
+<link href="../../../../stylesheets/mermaid_lightbox.css" rel="stylesheet"/>
+<link href="../../../../css/drawio-darkmode.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="REDkit Open Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="REDkit Open Documentation">
+<img alt="logo" src="../../../../assets/favicon.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            REDkit Open Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Архитектура системы поведения
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Light theme" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Light theme">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
+</label>
+<input aria-label="Dark theme" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Dark theme">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+</label>
+<input aria-label="System theme" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="System theme">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="Select language" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="/docs/" hreflang="ru">
+              Русский
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/docs/en/en/" hreflang="en">
+              English
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/redkit-resources/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    redkit-resources/docs
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../en/">
+          
+  
+  Getting Started
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../en/unofficial_docs/">
+          
+  
+  Community Documentation
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="REDkit Open Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="REDkit Open Documentation">
+<img alt="logo" src="../../../../assets/favicon.svg"/>
+</a>
+    REDkit Open Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/redkit-resources/docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</div>
+<div class="md-source__repository">
+    redkit-resources/docs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Getting Started
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/">
+<span class="md-ellipsis">
+    Welcome
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/contribute/">
+<span class="md-ellipsis">
+    Contribution Guide
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/changelog/">
+<span class="md-ellipsis">
+    Changelog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/credits/">
+<span class="md-ellipsis">
+    Credits
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Community Documentation
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Community Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Basics
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Basics
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/base/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Behaviors
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Behaviors
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/base/behavior/behavior/">
+<span class="md-ellipsis">
+    General Information
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/base/behavior/behavior_architecture/">
+<span class="md-ellipsis">
+    Behavior Architecture
+  </span>
+<span class="md-status md-status--new"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    World
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_3">
+<span class="md-nav__icon md-icon"></span>
+            World
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/base/world/world/">
+<span class="md-ellipsis">
+    World Basics
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../loading_screens/">
+<span class="md-ellipsis">
+    Loading screens
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Guides
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/guides/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/guides/create_animation_for_npc/">
+<span class="md-ellipsis">
+    Create NPC Animation
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/guides/create_usm_video/">
+<span class="md-ellipsis">
+    Create USM video
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/guides/create_new_hud_medallion/">
+<span class="md-ellipsis">
+    New medallion in hud
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Useful Features
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            Useful Features
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/useful_features/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/useful_features/shortcuts/">
+<span class="md-ellipsis">
+    Useful Shortcuts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/useful_features/copy_info_from_objects_prop/">
+<span class="md-ellipsis">
+    Copy Info from Object Properties
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/useful_features/setup_script_studio/">
+<span class="md-ellipsis">
+    Customizing Script Studio
+  </span>
+<span class="md-status md-status--new"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Bugs and Solutions
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            Bugs and Solutions
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/bugs/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/bugs/uv_bug/">
+<span class="md-ellipsis">
+    Stitches on textures
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+<span class="md-ellipsis">
+    References
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/">
+<span class="md-ellipsis">
+    Home
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    World
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_2">
+<span class="md-nav__icon md-icon"></span>
+            World
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/world/world_params/">
+<span class="md-ellipsis">
+    World Parameters
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/world/umbra/">
+<span class="md-ellipsis">
+    Umbra
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/world/pathlib/">
+<span class="md-ellipsis">
+    Pathlib Parameters
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/world/shadow_params/">
+<span class="md-ellipsis">
+    Shadow Parameters
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/world/env_params/">
+<span class="md-ellipsis">
+    Environment Parameters
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/world/merged_geometry_params/">
+<span class="md-ellipsis">
+    Geometry Parameters
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/file_extensions/">
+<span class="md-ellipsis">
+    File Extensions
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../en/unofficial_docs/references/data_types/">
+<span class="md-ellipsis">
+    Parameter Data Types
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#-behavior">
+<span class="md-ellipsis">
+      Сначала - три разных "behavior"
+    </span>
+</a>
+<nav aria-label="Сначала - три разных " behavior""="" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scriptable-state-machine-object-state-layer">
+<span class="md-ellipsis">
+      Scriptable State Machine - "в каком состоянии объект" (object-state layer)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#behavior-tree-decision-layer">
+<span class="md-ellipsis">
+      Behavior Tree - "что делать" (decision layer)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#behavior-graph-presentation-layer">
+<span class="md-ellipsis">
+      Behavior Graph - "что играет" (presentation layer)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#npc-vs-player">
+<span class="md-ellipsis">
+      NPC vs Player. Общее исполнение, разное управление
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      Системы и слои абстракции
+    </span>
+</a>
+<nav aria-label="Системы и слои абстракции" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scripting-state-machines">
+<span class="md-ellipsis">
+      Scripting &amp; state machines
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai-orchestration">
+<span class="md-ellipsis">
+      Постановщик (AI Orchestration)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#behavior-trees">
+<span class="md-ellipsis">
+      Behavior Trees
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#movement">
+<span class="md-ellipsis">
+      Movement
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#behavior-graphs">
+<span class="md-ellipsis">
+      Behavior graphs
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#animation-system">
+<span class="md-ellipsis">
+      Animation System
+    </span>
+</a>
+<nav aria-label="Animation System" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#animation-events">
+<span class="md-ellipsis">
+      Animation Events
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      События
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<span class="md-tag">Основы</span>
+<span class="md-tag">Архитектура</span>
+<span class="md-tag">Поведения</span>
+<span class="md-tag">Behavior</span>
+<span class="md-tag">w2behtree</span>
+<span class="md-tag">w2beh</span>
+<span class="md-tag">w2steer</span>
+<span class="md-tag">w2animev</span>
+</nav>
+<a class="md-content__button md-icon" href="https://github.com/redkit-resources/docs/edit/main/docs/en/unofficial_docs/base/behavior/behavior_architecture.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/redkit-resources/docs/raw/main/docs/en/unofficial_docs/base/behavior/behavior_architecture.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"></path></svg>
+</a>
+<h1 id="_1">Архитектура системы поведения<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p><strong>Глоссарий</strong></p>
+<ul>
+<li>BT - Behavior Tree</li>
+<li>WS - Witcher Script</li>
+<li>SSM - Scriptable State Machine</li>
+<li>FSM - Finite State Machine (Архитектурный паттерн)</li>
+<li>NPC - Non Playable Character</li>
+</ul>
+<h2 id="-behavior">Сначала - три разных "behavior"<a class="headerlink" href="#-behavior" title="Permanent link">¶</a></h2>
+<p>Главный источник путаницы и его стоит проговорить сейчас, отдельно: слово "behavior" в движке означает три несвязанных механизма. 
+Они соединены только через переменные и события, но живут на разных слоях. </p>
+<h3 id="scriptable-state-machine-object-state-layer"><strong>Scriptable State Machine</strong> - "в каком состоянии объект" (<em>object-state layer</em>)<a class="headerlink" href="#scriptable-state-machine-object-state-layer" title="Permanent link">¶</a></h3>
+<p>Кончечный автомат (FSM) на Witcher Script, состояние самого объекта, а не его анимация и не ИИ-цель. 
+Общий механизм для всех, но у игрока он занимает особое место: 
+раз у игрока нет Behavior Tree, именно SSM становится главным источником решений игрока. 
+То есть у NPC решения делает BT, SSM просто отражает состояние, а у игрока SSM и решает, и отражает состояние одновременно.</p>
+<h3 id="behavior-tree-decision-layer"><strong>Behavior Tree</strong> - "что делать" (<em>decision layer</em>)<a class="headerlink" href="#behavior-tree-decision-layer" title="Permanent link">¶</a></h3>
+<p>Дерево принятия решений оно же дерево поведенией. Отвечает за ИИ действия. 
+Есть только у NPC - у игрока такого слоя нет вообще, решения игрока идут напрямую из ввода и SSM игрока.</p>
+<h3 id="behavior-graph-presentation-layer"><strong>Behavior Graph</strong> - "что играет" (<em>presentation layer</em>)<a class="headerlink" href="#behavior-graph-presentation-layer" title="Permanent link">¶</a></h3>
+<p>Это не про решения вообще, это про то, как решение выглядит. 
+В других движках это называется анимационный граф (animgraph).
+Анимационная state machine, которая смешивает позы скелета и выдает итоговую позу. 
+Она общая для всех (NPC и игрок), но сама ничего не решает - только реагирует на переменные/события, 
+которые пришли снаружи (от BT или от SSM).</p>
+<h2 id="npc-vs-player">NPC vs Player. Общее исполнение, разное управление<a class="headerlink" href="#npc-vs-player" title="Permanent link">¶</a></h2>
+<p>Общая исполнительная часть у всех одинаковая, разница только в управляющей части между игроком и NPC,
+у игрока нет BT поскольку это AI для NPC, решения игрока же дает ввод и глобальная SSM <code>CR4Player</code>. 
+Она командует общей исполнительной частью напрямую и, в отличии от NPC замыкает цикл через animation events, 
+для игрока это основной механизм тайминга действий, а не вспомогательный. О циклах событий будет в конце. 
+У NPC состояния скорее обслуживают BT дерево.</p>
+<p><strong>Диаграма потока:</strong></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../../assets/diagrams/unofficial_docs/base/behavior/behavior_control_flow.drawio"><div class="mxgraph" data-mxgraph='{"toolbar-position": "bottom", "toolbar-nohide": "0", "tooltips": "1", "border": 5, "resize": "1", "edit": "_blank", "lightbox": "1", "toolbar": "pages tags zoom layers lightbox", "xml": "&lt;mxfile host=\"Electron\" agent=\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36\" version=\"29.6.6\"&gt;\n  &lt;diagram name=\"\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430-1\" id=\"RtWqmvIJMaCE0OnAcs4j\"&gt;\n    &lt;mxGraphModel dx=\"674\" dy=\"458\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-1\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#005252,#EA6B66);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"230\" width=\"270\" x=\"40\" y=\"220\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-2\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=light-dark(#A2A200,#CCCC00);strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"230\" width=\"261\" x=\"320\" y=\"220\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-3\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 11px; color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26)); background-color: light-dark(rgb(234, 107, 102), rgb(234, 107, 102));&amp;quot;&amp;gt;\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 NPC&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"110\" x=\"45\" y=\"230\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-4\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;span style=&amp;quot;background-color: light-dark(rgb(162, 162, 0), rgb(204, 204, 0));&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&amp;quot;&amp;gt;\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0438\u0433\u0440\u043e\u043a\u0430&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"110\" x=\"340\" y=\"230\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-5\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;\u0420\u0435\u0448\u0430\u0435\u0442 \u0434\u0435\u0440\u0435\u0432\u043e, \u0446\u0435\u043b\u044c \u0441\u0442\u0430\u0432\u0438\u0442 \u043f\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0449\u0438\u043a&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"220\" x=\"59.5\" y=\"260\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-7\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;span style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;\u0420\u0435\u0448\u0430\u0435\u0442 \u0432\u0432\u043e\u0434 + state mashine, \u0434\u0435\u0440\u0432\u0435\u0432\u0430 \u043d\u0435\u0442&amp;lt;/i&amp;gt;&amp;lt;/span&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"220\" x=\"340\" y=\"260\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-17\" edge=\"1\" parent=\"1\" source=\"nDcR__n-7cQm_msBMms8-10\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d80073;strokeColor=#A50040;\" target=\"nDcR__n-7cQm_msBMms8-11\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-10\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;align=left;strokeColor=#FF8000;\" value=\"&amp;lt;font style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;&amp;amp;nbsp;\u041f\u043e\u0441\u0442\u0430\u043d\u043e\u0432\u0449\u0438\u043a - \u0441\u043e\u0437\u0434\u0430\u0435\u0442 NPC, \u0432\u044b\u0434\u0430\u0435\u0442 \u0446\u0435\u043b\u044c&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"230.5\" x=\"59.75\" y=\"300\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-11\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;align=left;strokeColor=#6600CC;\" value=\"&amp;lt;font style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;&amp;amp;nbsp;Behavior Tree - \u041a\u0430\u0436\u0434\u044b\u0439 \u0442\u0438\u043a \u0432\u044b\u0431\u0438\u0440\u0430\u0435\u0442 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"230.5\" x=\"59.5\" y=\"350\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-12\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;align=center;strokeColor=light-dark(#005252,#006666);\" value=\"&amp;lt;font style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;Actor Action - \u041f\u0435\u0440\u0435\u0434\u0430\u0435\u0442 \u043a\u043e\u043c\u0430\u043d\u0434\u044b \u043d\u0430 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"230.5\" x=\"59.75\" y=\"400\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-20\" edge=\"1\" parent=\"1\" source=\"nDcR__n-7cQm_msBMms8-13\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d80073;strokeColor=#A50040;\" target=\"nDcR__n-7cQm_msBMms8-14\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-13\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#FF8000;\" value=\"&amp;lt;span style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;\u0412\u0432\u043e\u0434 PlayerInput - \u041a\u043d\u043e\u043f\u043a\u0438 / \u0421\u0442\u0438\u043a / \u041a\u0430\u043c\u0435\u0440\u0430&amp;lt;/span&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"230.5\" x=\"340\" y=\"300\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-21\" edge=\"1\" parent=\"1\" source=\"nDcR__n-7cQm_msBMms8-14\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d80073;strokeColor=#A50040;\" target=\"nDcR__n-7cQm_msBMms8-15\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-14\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#FF8000;\" value=\"&amp;lt;span style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;State Machine CR4Player - \u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f&amp;amp;nbsp;&amp;lt;/span&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"230.5\" x=\"340\" y=\"350\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-15\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=light-dark(#005252,#006666);\" value=\"&amp;lt;span style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;SSM \u043a\u043e\u043c\u0430\u043d\u0434\u0443\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044e \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e&amp;amp;nbsp;&amp;lt;/span&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"230.5\" x=\"340\" y=\"400\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-18\" edge=\"1\" parent=\"1\" source=\"nDcR__n-7cQm_msBMms8-11\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.098;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#d80073;strokeColor=#A50040;\" target=\"nDcR__n-7cQm_msBMms8-12\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-22\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"540\" x=\"41\" y=\"500\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-23\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"\u041e\u0431\u0449\u0430\u044f \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"220\" x=\"201\" y=\"460\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-27\" edge=\"1\" parent=\"1\" source=\"nDcR__n-7cQm_msBMms8-24\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#d80073;strokeColor=#A50040;\" target=\"nDcR__n-7cQm_msBMms8-25\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-24\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00BABA,#00CCCC);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"80\" width=\"140\" x=\"53.5\" y=\"520\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-28\" edge=\"1\" parent=\"1\" source=\"nDcR__n-7cQm_msBMms8-25\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#d80073;strokeColor=#A50040;\" target=\"nDcR__n-7cQm_msBMms8-26\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-25\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00CC00,#00CC00);\" value=\"&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;Behavior Graph&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;span style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;(AnimGraph)&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;font style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;\u041f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435 + \u0441\u043e\u0431\u044b\u0442\u0438\u044f -&amp;amp;gt; \u041f\u043e\u0437\u0430&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"80\" width=\"160\" x=\"220\" y=\"520\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-26\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00CC00,#00CC00);\" value=\"Animation&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;font style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;\u0421\u043a\u0435\u043b\u0435\u0442, motion, animevents&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"80\" width=\"160\" x=\"410.5\" y=\"520\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"nDcR__n-7cQm_msBMms8-29\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;Movement&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;&amp;lt;span style=&amp;quot;font-size: 11px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;i&amp;gt;&amp;lt;font style=&amp;quot;font-size: 10px;&amp;quot;&amp;gt;\u0421\u043a\u043e\u0440\u043e\u0441\u0442\u044c \u0438 \u043d\u0430\u043f\u043f\u0440\u0432\u043b\u0435\u043d\u0438\u0435, \u043d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f, \u0443\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435 \u043d\u0430 navmesh&amp;lt;/font&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"55\" width=\"125\" x=\"61\" y=\"530\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></a></p>
+<h2 id="_2">Системы и слои абстракции<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>Полная карта слоев. Тот же поток, но разложенный по слоям:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../../assets/diagrams/unofficial_docs/base/behavior/behavior_layermap.drawio"><div class="mxgraph" data-mxgraph='{"toolbar-position": "bottom", "toolbar-nohide": "0", "tooltips": "1", "border": 5, "resize": "1", "edit": "_blank", "lightbox": "1", "toolbar": "pages tags zoom layers lightbox", "xml": "&lt;mxfile host=\"Electron\" agent=\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36\" version=\"29.6.6\"&gt;\n  &lt;diagram name=\"\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430-1\" id=\"1ZXJePQM8XEhyj1FbsN6\"&gt;\n    &lt;mxGraphModel dx=\"2058\" dy=\"2005\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-4\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#314354;strokeWidth=2;fillColor=#647687;fontColor=#ffffff;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"200\" width=\"620\" x=\"-10\" y=\"70\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-14\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;\u041f\u041e\u0421\u0422\u0410\u041d\u041e\u0412\u0429\u0418\u041a&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;i style=&amp;quot;&amp;quot;&amp;gt;\u041a\u0442\u043e \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 \u0438 \u0437\u0430\u0447\u0435\u043c?&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"120\" x=\"10\" y=\"110\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-15\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=light-dark(#FF8000,#FF8000);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"460\" x=\"140\" y=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-99\" edge=\"1\" parent=\"1\" source=\"xPnRs9-hT7Y3agPohjy0-17\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"xPnRs9-hT7Y3agPohjy0-26\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-17\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#314354;strokeWidth=2;fillColor=#647687;fontColor=#ffffff;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"200\" width=\"620\" x=\"-10\" y=\"300\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-20\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;\u0420\u0415\u0428\u0415\u041d\u0418\u0415&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;i style=&amp;quot;&amp;quot;&amp;gt;\u0427\u0442\u043e \u0434\u0435\u043b\u0430\u0442\u044c?&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"110\" x=\"10\" y=\"340\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-21\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#5D00BA,#7F00FF);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"220\" x=\"140\" y=\"310\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-22\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=light-dark(#A2A200,#CCCC00);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"230\" x=\"370\" y=\"310\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-23\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;Behavior Trees&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;span style=&amp;quot;font-size: 13px;&amp;quot;&amp;gt;AI \u043b\u043e\u0433\u0438\u043a\u0430 (\u0414\u0435\u0440\u0435\u0432\u043e \u0440\u0435\u0448\u0435\u043d\u0438\u0439)&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;br&amp;gt;&amp;lt;p style=&amp;quot;box-sizing: border-box; margin: 0px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;\u041a\u0430\u0436\u0434\u044b\u0439 \u0442\u0438\u043a \u043e\u0431\u0445\u043e\u0434\u0438\u0442 \u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442\u043d\u043e\u0435 \u0434\u0435\u0440\u0435\u0432\u043e \u0438\u0437 composite / decorator / condition / task.&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;div class=&amp;quot;cls&amp;quot; style=&amp;quot;box-sizing: border-box; margin-top: 9px; display: flex; flex-wrap: wrap; gap: 5px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 13px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"190\" x=\"155\" y=\"332.5\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-38\" edge=\"1\" parent=\"1\" source=\"xPnRs9-hT7Y3agPohjy0-26\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"xPnRs9-hT7Y3agPohjy0-37\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-26\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#314354;strokeWidth=2;fillColor=#647687;fontColor=#ffffff;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"200\" width=\"620\" x=\"-10\" y=\"530\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-31\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=light-dark(#008282,#006666);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"460\" x=\"140\" y=\"540\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-32\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;\u041c\u041e\u0421\u0422&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;i style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;\u0420\u0435\u0448\u0435\u043d\u0438\u0435 -&amp;amp;gt; \u041a\u043e\u043c\u0430\u043d\u0434\u044b&amp;lt;/font&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"110\" x=\"10\" y=\"570\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-48\" edge=\"1\" parent=\"1\" source=\"xPnRs9-hT7Y3agPohjy0-37\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"xPnRs9-hT7Y3agPohjy0-40\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-37\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#314354;strokeWidth=2;fillColor=#647687;fontColor=#ffffff;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"200\" width=\"620\" x=\"-10\" y=\"760\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-40\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#314354;strokeWidth=2;fillColor=#647687;fontColor=#ffffff;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"200\" width=\"620\" x=\"-10\" y=\"990\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-42\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;\u0418\u0421\u041f\u041e\u041b\u041d\u0415\u041d\u0418\u0415&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;i&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;\u0414\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u0432 \u043c\u0438\u0440\u0435&amp;lt;/font&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"105\" x=\"15\" y=\"800\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-44\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00BABA,#00CCCC);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"220\" x=\"150\" y=\"770\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-45\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00BABA,#00CCCC);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"220\" x=\"380\" y=\"770\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-50\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;div&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;\u0410\u041d\u0418\u041c\u0410\u0426\u0418\u042f&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;i&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;\u041f\u043e\u0437\u0430, motion, \u0441\u043e\u0431\u044b\u0442\u0438\u044f&amp;lt;/font&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"100\" x=\"15\" y=\"1030\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-51\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00CC00,#00CC00);gradientColor=none;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"220\" x=\"150\" y=\"1000\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-52\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00CC00,#00CC00);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"220\" x=\"380\" y=\"1000\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-56\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeColor=#432D57;strokeWidth=2;fillColor=#76608a;fontColor=#ffffff;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"200\" width=\"620\" x=\"-10\" y=\"-150\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-57\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;div&amp;gt;&amp;lt;b style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;\u0424\u0423\u041d\u0414\u0410\u041c\u0415\u041d\u0422&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;i&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;\u0425\u043e\u0441\u0442\u0438\u0442 \u0432\u0441\u0435 \u043e\u0431\u044a\u0435\u043a\u0442\u044b \u0432\u044b\u0448\u0435&amp;lt;/font&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"120\" width=\"110\" x=\"10\" y=\"-115\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-58\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;strokeColor=light-dark(#D857D8,#FF66FF);fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"180\" width=\"460\" x=\"140\" y=\"-140\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-60\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;Spawn, Community, Action Points, Job Trees, Reactions&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;div&amp;gt;\u0417\u0430\u0441\u0435\u043b\u0435\u043d\u0438\u0435 \u043c\u0438\u0440\u0430 \u0438 \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0435: \u041a\u0442\u043e \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442, \u0433\u0434\u0435 \u043f\u043e\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0438 \u043a\u0430\u043a\u043e\u0439 \u0432\u044b\u0441\u043e\u043a\u0443\u0440\u043e\u0432\u043d\u0435\u0432\u043e\u0439 \u0437\u0430\u0434\u0430\u0447\u0435\u0439 \u0437\u0430\u043d\u044f\u0442.&amp;amp;nbsp;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;\u0421\u043e\u0437\u0434\u0430\u0435\u0442 NPC \u0438 \u043d\u0430\u0441\u0442\u0440\u0430\u0432\u0438\u0432\u0430\u0435\u0442 \u0435\u0433\u043e behavior tree.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;amp;nbsp;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"350\" x=\"195\" y=\"100\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-61\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;\u0418\u0433\u0440\u043e\u043a&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;span style=&amp;quot;font-size: 13px;&amp;quot;&amp;gt;\u0412\u0432\u043e\u0434 + state machines CR4Player&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;br&amp;gt;&amp;lt;p style=&amp;quot;box-sizing: border-box; margin: 0px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;\u0423 \u0438\u0433\u0440\u043e\u043a\u0430 \u0434\u0435\u0440\u0435\u0432\u0430 \u043d\u0435\u0442. \u0420\u0435\u0448\u0430\u044e\u0442 \u0432\u0432\u043e\u0434 \u0438 \u0433\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u0430\u044f state machine \u0441\u043e \u0441\u0432\u043e\u0438\u043c\u0438 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f\u043c\u0438 \u043e\u043d\u0430 \u0432\u0445\u043e\u0434\u0438\u0442 \u0432 \u0441\u0442\u0435\u043a \u043d\u0438\u0436\u0435, \u0441\u0440\u0430\u0437\u0443 \u043d\u0430 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438.&amp;lt;/p&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"210\" x=\"380\" y=\"322.5\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-62\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;\" value=\"&amp;lt;div&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;\u0410\u0441tor Actions &amp;amp;amp; Movment bridge&amp;amp;nbsp;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;quot;\u041e\u0434\u043d\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u043d\u0430 NPC&amp;quot;. \u041f\u0440\u0435\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0437\u0430\u043f\u0440\u043e\u0441\u044b \u0432 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 animgraph. \u041c\u043e\u0441\u0442 \u043c\u0435\u0436\u0434\u0443 \u0442\u0435\u043c &amp;quot;\u0427\u0442\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c&amp;quot; \u0438 &amp;quot;\u041a\u0430\u043a \u0441\u0434\u0435\u043b\u0430\u0442\u044c&amp;quot;. \u041f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430.&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"130\" width=\"350\" x=\"195\" y=\"565\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-63\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Movment&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;font-size: 13px;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Movment, steering, locomotion&amp;lt;/i&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;p style=&amp;quot;box-sizing: border-box; margin: 0px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;\u0421\u0447\u0438\u0442\u0430\u0435\u0442 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u044c \u0438 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0437\u0430 \u043a\u0430\u0434\u0440, \u0434\u0435\u0440\u0436\u0438\u0442 \u043d\u0430 navmesh, \u0441\u043e\u0433\u043b\u0430\u0441\u0443\u0435\u0442 root motion \u0441 \u0436\u0435\u043b\u0430\u0435\u043c\u044b\u043c \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\u043c.&amp;lt;/p&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"190\" x=\"165\" y=\"780\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-64\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Navigation&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;font-size: 13px;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Pathfinding, pathlib&amp;lt;/i&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;p style=&amp;quot;box-sizing: border-box; margin: 0px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;Navmesh + navgraph, \u043f\u0440\u043e\u043a\u043b\u0430\u0434\u043a\u0430 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0430.&amp;lt;/p&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"190\" x=\"395\" y=\"760\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-65\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;Behavior Graphs&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;p style=&amp;quot;box-sizing: border-box; margin: 0px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;Animgraph, State Machine \u0434\u043b\u044f \u0430\u043d\u0438\u043c\u0430\u0446\u0438\u0439. \u0421\u0435\u0442\u044c \u0438\u0437 \u043d\u043e\u0434 \u043f\u043e\u043b\u0443\u0447\u0430\u044e\u0449\u0430\u044f \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435 \u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u044f \u043e\u0442 \u0441\u043a\u0440\u0438\u043f\u0442\u043e\u0432/\u0434\u0435\u0440\u0435\u0432\u044c\u0435\u0432.&amp;lt;/p&amp;gt;&amp;lt;div class=&amp;quot;cls&amp;quot; style=&amp;quot;box-sizing: border-box; margin-top: 9px; display: flex; flex-wrap: wrap; gap: 5px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-size: 13px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"185\" x=\"165\" y=\"1020\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-66\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;Animation System&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;p style=&amp;quot;box-sizing: border-box; margin: 0px; font-family: ui-sans-serif, system-ui, -apple-system, &amp;amp;quot;Segoe UI&amp;amp;quot;, Roboto, sans-serif;&amp;quot;&amp;gt;\u0421\u0447\u0438\u0442\u0430\u0435\u0442 \u043f\u043e\u0437\u0443 \u0432 \u043a\u043e\u0441\u0442\u0438, \u0438\u0437\u0432\u043b\u0435\u043a\u0430\u0435\u0442 root motion \u0438 \u0448\u043b\u0435\u0442 animation events.&amp;lt;/p&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"140\" width=\"190\" x=\"395\" y=\"1000\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-67\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;\" value=\"&amp;lt;div&amp;gt;&amp;lt;span style=&amp;quot;font-size: 14px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Scripting &amp;amp;amp; State Machines&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;Witcher Script \u0445\u043e\u0441\u0442\u0438\u0442 \u043a\u0430\u0436\u0434\u044b\u0439 \u043e\u0431\u044a\u0435\u043a\u0442 \u0432\u044b\u0448\u0435 \u0438 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 OnSpawned / OnTick&amp;amp;nbsp; / OnAnimEvent, \u0441\u043e\u0431\u044b\u0442\u0438\u044f \u0434\u0432\u0438\u0436\u043a\u0430 \u0438 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f \u043e\u0442 \u0433\u0440\u0430\u0444\u0430. \u0414\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430 \u044d\u0442\u043e \u0435\u0449\u0435 \u0438 \u0433\u043b\u0430\u0432\u043d\u044b\u0439 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u043f\u0440\u0438\u043d\u044f\u0442\u0438\u044f \u0440\u0435\u0448\u0435\u043d\u0438\u0439 (\u0437\u0430\u043c\u0435\u043d\u044f\u0435\u0442 \u0441\u043e\u0431\u043e\u0439 decision layer).&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"130\" width=\"350\" x=\"195\" y=\"-115\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-68\" parent=\"1\" style=\"shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;legacyAnchorPoints=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;strokeWidth=4;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"430\" width=\"50\" x=\"610\" y=\"70\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-75\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=24;fontColor=default;rotation=90;\" value=\"&amp;lt;font&amp;gt;Decision Layer&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"190\" x=\"585\" y=\"275\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-77\" parent=\"1\" style=\"shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;legacyAnchorPoints=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;strokeWidth=4;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"190\" width=\"50\" x=\"610\" y=\"990\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-78\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=24;fontColor=default;rotation=90;\" value=\"&amp;lt;font&amp;gt;Presentation Layer&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"60\" width=\"230\" x=\"565\" y=\"1070\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-80\" parent=\"1\" style=\"shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;legacyAnchorPoints=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;strokeWidth=4;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"190\" width=\"50\" x=\"610\" y=\"-150\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-81\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=24;fontColor=default;rotation=90;\" value=\"Object-State Layer\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"250\" x=\"555\" y=\"-45\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-87\" parent=\"1\" style=\"shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;legacyAnchorPoints=0;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;strokeWidth=4;\" value=\"\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"430\" width=\"50\" x=\"610\" y=\"530\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-88\" parent=\"1\" style=\"text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=24;fontColor=default;rotation=90;\" value=\"Execution Layer\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"30\" width=\"190\" x=\"585\" y=\"735\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"xPnRs9-hT7Y3agPohjy0-18\" edge=\"1\" parent=\"1\" source=\"xPnRs9-hT7Y3agPohjy0-4\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"xPnRs9-hT7Y3agPohjy0-21\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></a></p>
+<p><strong>Системы по отдельности</strong>:</p>
+<h3 id="scripting-state-machines">Scripting &amp; state machines<a class="headerlink" href="#scripting-state-machines" title="Permanent link">¶</a></h3>
+<p>SSM на WS, паттерн на котором держится вся игровая логика. 
+В краце, объект может быть в одном из заданных состояний, состояние это фактически цикл который 
+крутится в отдельном ассинхроном потоке (latent функции), объект переключается по очереди между этими состояниями, 
+например <em>ходит</em> -&gt; <em>атакует</em> -&gt; <em>мертв</em>. </p>
+<p><strong>Ключевые классы</strong></p>
+<ul>
+<li>СActor</li>
+<li>CGameplayEntity</li>
+<li>CR4Player</li>
+</ul>
+<h3 id="ai-orchestration">Постановщик (AI Orchestration)<a class="headerlink" href="#ai-orchestration" title="Permanent link">¶</a></h3>
+<p>Заселение мира и расписание: Кто существует, где появляется и какой высокуровневой задачей занят. 
+Создает NPC и настравивает его behavior tree. Игрока не трогает вообще.</p>
+<p><strong>Ключевые классы:</strong></p>
+<ul>
+<li>CEncounter - Объект-постановвщик, spawn tree + пул существ</li>
+<li>CCommunitySystem - Система спавна NPC по расписаниям</li>
+<li>CJobTree - Рабочие точки и их анимации</li>
+<li>CBehTreeReactionManager - Стимулы мира и их реации</li>
+</ul>
+<h3 id="behavior-trees">Behavior Trees<a class="headerlink" href="#behavior-trees" title="Permanent link">¶</a></h3>
+<p>Слой AI решений: Каждый тик обходит приоритетное дерево, выбирает действие и рассылает команды на исполнение. 
+Сердце повередния NPC.</p>
+<p><strong>Ключевые классы:</strong></p>
+<ul>
+<li>CBehTree (.w2behtree) - ассет дерева </li>
+<li>IBehTreeTask - интерфейс для тасков на Witcher Script</li>
+</ul>
+<h3 id="movement">Movement<a class="headerlink" href="#movement" title="Permanent link">¶</a></h3>
+<p>Считает скорость и направление за кадр, держит агента на navmesh, согласует root motion с желаемым движением.
+У NPC им рулит steering граф (.w2steer), у игрока же ввод напрямую, по этому компонент общий, но драйверы разные.</p>
+<p><strong>Ключевые классы</strong>:</p>
+<ul>
+<li>CMovingAgentComponent - компонент движения</li>
+<li>CMoveSteeringBehavior (.w2steer) - дерево steering</li>
+<li>CMovementAdjustor - подгонка анимации в цель</li>
+</ul>
+<h3 id="behavior-graphs">Behavior graphs<a class="headerlink" href="#behavior-graphs" title="Permanent link">¶</a></h3>
+<p>Анимационная state machine и сеть смешивания поз: переменные и события приходят на вход со скриптов и деревьев, 
+на выходе готовая поза скелета на каждый кадр.</p>
+<p><strong>Ключевые классы</strong>:</p>
+<p>CBehaviorGraph (.w2beh) - ассет графа</p>
+<h3 id="animation-system">Animation System<a class="headerlink" href="#animation-system" title="Permanent link">¶</a></h3>
+<p>Считает позу в кости, извлекает root motion и в нужный момент шлет animation events. Держит граф + скелет.</p>
+<p><strong>Ключевые классы</strong>:</p>
+<p>CAnimatedComponent - центр: стек граф + скелет
+CSkeleton - скелет
+CExtAnimEvent - запеченные в клип события</p>
+<h4 id="animation-events">Animation Events<a class="headerlink" href="#animation-events" title="Permanent link">¶</a></h4>
+<p>Необходимы для двусторонней связи: логика запускает анимацию, а запеченные в клип события в нужный кадр 
+вызывают именованные OnAnimEvent_* функции обратно на объекте. </p>
+<p>AddAnimEventCallback('Имя','OnAnimEvent_X') - Регистрациия коллбека в скриптах</p>
+<p>Когда воспроизведение доходит до события - CAnimatedComponent зовет эту функцию по имени</p>
+<h2 id="_3">События<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>Все уровени связанны только через события:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../../../../assets/diagrams/unofficial_docs/base/behavior/behavior_eventsmap.drawio"><div class="mxgraph" data-mxgraph='{"toolbar-position": "bottom", "toolbar-nohide": "0", "tooltips": "1", "border": 5, "resize": "1", "edit": "_blank", "lightbox": "1", "toolbar": "pages tags zoom layers lightbox", "xml": "&lt;mxfile host=\"Electron\" agent=\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36\" version=\"29.6.6\"&gt;\n  &lt;diagram name=\"\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430-1\" id=\"7Z2IWY1SapVXbvV05l2S\"&gt;\n    &lt;mxGraphModel dx=\"1416\" dy=\"961\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-7\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-4\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d80073;strokeColor=#A50040;strokeWidth=3;\" target=\"TOS6VSPKSMuS4deYZbbP-6\" value=\"\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-4\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#CC6600,#CC6600);fillColor=light-dark(#E6E6E6,#1E2129);glass=0;\" value=\"\u041f\u041e\u0421\u0422\u0410\u041d\u041e\u0412\u0429\u0418\u041a&amp;lt;br class=&amp;quot;Apple-interchange-newline&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;Orchestration&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;i&amp;gt;(spawn, reactions, ap, communities...)&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"210\" x=\"20\" y=\"380\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-11\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-6\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"TOS6VSPKSMuS4deYZbbP-10\" value=\"\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-6\" parent=\"1\" style=\"whiteSpace=wrap;html=1;strokeColor=light-dark(#6666FF,#6666FF);rounded=1;strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;\u0420\u0415\u0428\u0415\u041d\u0418\u0415&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;Behavior tree&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;i&amp;gt;(w2behtree)&amp;lt;/i&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"140\" x=\"260\" y=\"380\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-16\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-10\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d80073;strokeColor=#A50040;strokeWidth=3;\" target=\"TOS6VSPKSMuS4deYZbbP-15\" value=\"\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-54\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-10\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;strokeWidth=2;curved=1;fillColor=#1ba1e2;strokeColor=#006EAF;\" target=\"TOS6VSPKSMuS4deYZbbP-17\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"498\" y=\"320\"/&gt;\n              &lt;mxPoint x=\"825\" y=\"320\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-1\" connectable=\"0\" parent=\"TOS6VSPKSMuS4deYZbbP-54\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=light-dark(#FFFFFF,#1E2129);\" value=\"&amp;lt;font style=&amp;quot;font-size: 12px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;EVENT:&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;span style=&amp;quot;background-color: light-dark(rgb(255, 255, 255), rgb(230, 230, 230));&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&amp;quot;&amp;gt;ActorActionRaiseEvents&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"-0.0237\" y=\"2\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-10\" parent=\"1\" style=\"whiteSpace=wrap;html=1;strokeColor=light-dark(#009999,#009999);rounded=1;strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"\u041c\u041e\u0421\u0422&amp;lt;br class=&amp;quot;Apple-interchange-newline&amp;quot;&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;b&amp;gt;Actor action&amp;lt;/b&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"135\" x=\"430\" y=\"380\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-18\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-15\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"TOS6VSPKSMuS4deYZbbP-17\" value=\"\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-15\" parent=\"1\" style=\"whiteSpace=wrap;html=1;strokeColor=light-dark(#24BBBB,#33FFFF);rounded=1;strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;\u0414\u0412\u0418\u0416\u0415\u041d\u0418\u0415&amp;lt;/div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;b&amp;gt;Steering + path&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"130\" x=\"600\" y=\"380\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-20\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-17\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"TOS6VSPKSMuS4deYZbbP-19\" value=\"\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-67\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-17\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;curved=1;fillColor=#b1ddf0;strokeColor=#10739e;strokeWidth=2;dashed=1;dashPattern=8 8;\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"840\" y=\"480\"/&gt;\n              &lt;mxPoint x=\"840\" y=\"680\"/&gt;\n              &lt;mxPoint x=\"580\" y=\"680\"/&gt;\n            &lt;/Array&gt;\n            &lt;mxPoint x=\"875\" y=\"479.9999999999998\" as=\"sourcePoint\"/&gt;\n            &lt;mxPoint x=\"580\" y=\"750\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-4\" connectable=\"0\" parent=\"TOS6VSPKSMuS4deYZbbP-67\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=light-dark(#FFFFFF,#1E2129);\" value=\"&amp;lt;font style=&amp;quot;font-size: 12px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;EVENT:&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;span style=&amp;quot;background-color: light-dark(rgb(255, 255, 255), rgb(230, 230, 230));&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&amp;quot;&amp;gt;OnBehaviorGraphNotification&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"0.0137\" y=\"-12\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"30\" y=\"-28\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-17\" parent=\"1\" style=\"whiteSpace=wrap;html=1;strokeColor=light-dark(#2BC97B,#33FF99);rounded=1;strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;ANIMGRAPH&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;Behavior graph&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;i&amp;gt;(w2beh)&amp;lt;/i&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"130\" x=\"760\" y=\"380\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-8\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-19\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;fillColor=#d80073;strokeColor=#A50040;\" target=\"TOS6VSPKSMuS4deYZbbP-21\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-13\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-19\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;dashed=1;curved=1;strokeWidth=2;fillColor=#60a917;strokeColor=#2D7600;\" target=\"TOS6VSPKSMuS4deYZbbP-15\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"953\" y=\"340\"/&gt;\n              &lt;mxPoint x=\"698\" y=\"340\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-14\" connectable=\"0\" parent=\"OLsJr0rBaK3dFHkjkzP_-13\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" value=\"Root motion \u0432 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"-0.3322\" y=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"37\" y=\"-1\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-19\" parent=\"1\" style=\"whiteSpace=wrap;html=1;strokeColor=light-dark(#209D5F,#33FF99);rounded=1;strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);\" value=\"&amp;lt;div&amp;gt;\u0410\u041d\u0418\u041c\u0410\u0426\u0418\u042f&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;i&amp;gt;(entity / w2anims)&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"130\" x=\"920\" y=\"380\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-24\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-21\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.864;entryY=-0.016;entryDx=0;entryDy=0;dashed=1;curved=1;fillColor=#fad7ac;strokeColor=#b46504;strokeWidth=2;entryPerimeter=0;\" target=\"TOS6VSPKSMuS4deYZbbP-23\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-64\" connectable=\"0\" parent=\"TOS6VSPKSMuS4deYZbbP-24\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#B5739D;labelBackgroundColor=light-dark(#FFFFFF,#1E2129);\" value=\"&amp;lt;i&amp;gt;FLAG: ReportToScript&amp;lt;/i&amp;gt;&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"-0.9364\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-5\" connectable=\"0\" parent=\"TOS6VSPKSMuS4deYZbbP-24\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=light-dark(#FFFFFF,#1E2129);\" value=\"&amp;lt;font style=&amp;quot;font-size: 12px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;CALLBACK:&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;span style=&amp;quot;background-color: light-dark(rgb(255, 255, 255), rgb(230, 230, 230));&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&amp;quot;&amp;gt;AddAnimEventCallback&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"-0.028\" y=\"3\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"9\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-6\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-21\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;curved=1;strokeWidth=3;fillColor=#1ba1e2;strokeColor=#006EAF;\" target=\"TOS6VSPKSMuS4deYZbbP-6\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;\n            &lt;Array as=\"points\"&gt;\n              &lt;mxPoint x=\"1110\" y=\"520\"/&gt;\n              &lt;mxPoint x=\"1110\" y=\"290\"/&gt;\n              &lt;mxPoint x=\"330\" y=\"290\"/&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-7\" connectable=\"0\" parent=\"OLsJr0rBaK3dFHkjkzP_-6\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\" value=\"&amp;lt;i style=&amp;quot;color: rgb(166, 109, 145); background-color: light-dark(rgb(255, 255, 255), rgb(30, 33, 41));&amp;quot;&amp;gt;FLAG: ReportToAi&amp;lt;/i&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"-0.9413\" y=\"4\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"4\" y=\"12\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-9\" connectable=\"0\" parent=\"OLsJr0rBaK3dFHkjkzP_-6\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=light-dark(#FFFFFF,#1E2129);\" value=\"&amp;lt;font style=&amp;quot;font-size: 12px;&amp;quot;&amp;gt;EVENT:&amp;lt;br&amp;gt;&amp;lt;font style=&amp;quot;background-color: light-dark(rgb(255, 255, 255), rgb(230, 230, 230)); color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&amp;quot;&amp;gt;ListenToAnimEvent&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"0.0147\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"33\" as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-21\" parent=\"1\" style=\"whiteSpace=wrap;html=1;strokeColor=light-dark(#006600,#006600);rounded=1;strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);gradientColor=none;\" value=\"ANIMEVENTS&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&amp;lt;i&amp;gt;(w2animev)&amp;lt;/i&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"100\" width=\"120\" x=\"1010\" y=\"520\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-44\" edge=\"1\" parent=\"1\" source=\"TOS6VSPKSMuS4deYZbbP-23\" style=\"edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;dashed=1;fillColor=#1ba1e2;strokeColor=#006EAF;curved=1;strokeWidth=3;\" target=\"TOS6VSPKSMuS4deYZbbP-17\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"OLsJr0rBaK3dFHkjkzP_-3\" connectable=\"0\" parent=\"TOS6VSPKSMuS4deYZbbP-44\" style=\"edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=light-dark(#FFFFFF,#1E2129);\" value=\"&amp;lt;font style=&amp;quot;font-size: 12px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;EVENTS:&amp;lt;br&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;span style=&amp;quot;background-color: light-dark(rgb(255, 255, 255), rgb(230, 230, 230));&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&amp;quot;&amp;gt;RaiseBehaviorEvent&amp;lt;br&amp;gt;RaiseBehaviorVariable&amp;lt;br&amp;gt;SetBehaviorVariable&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry relative=\"1\" x=\"-0.2926\" y=\"-16\" as=\"geometry\"&gt;\n            &lt;mxPoint as=\"offset\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"TOS6VSPKSMuS4deYZbbP-23\" parent=\"1\" style=\"rounded=1;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=light-dark(#E6E6E6,#1E2129);gradientColor=none;\" value=\"&amp;lt;font style=&amp;quot;font-size: 15px;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;SCRIPTS + Scriptable State Machines - \u0425\u043e\u0441\u0442\u0438\u0442 \u043a\u0430\u0436\u0434\u044b\u0439 \u043e\u0431\u044a\u0435\u043a\u0442 \u0432\u044b\u0448\u0435 \u0438 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 \u0441\u043e\u0431\u044b\u0442\u0438\u044f&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;\" vertex=\"1\"&gt;\n          &lt;mxGeometry height=\"60\" width=\"1030\" x=\"15\" y=\"750\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></a> </p>
+<hr/>
+<p>Автор: leviofanh</p>
+<p><em>Документация поддерживается участниками сообщества <a href="https://discord.gg/kRTEy8KcNa">REDkit RU</a></em></p>
+<hr/>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2026</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Created">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2026</span>
+</span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Supported by REDkit RU community
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://discord.gg/kRTEy8KcNa" rel="noopener" target="_blank" title="discord.gg">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/redkit-resources/docs" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.code.annotate", "navigation.instant", "navigation.instant.progress", "search.highlight", "navigation.footer", "navigation.tabs", "navigation.top", "content.action.edit", "content.action.view"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "git"}}</script>
+<script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+<script src="../../../../javascripts/redirect-config.js"></script>
+<script src="../../../../javascripts/redirect-router.js"></script>
+<script src="../../../../javascripts/pymdown_details.js"></script>
+<script src="../../../../javascripts/mathjax.js"></script>
+<script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../../../../javascripts/toc_toggle.js"></script>
+<script src="../../../../javascripts/redkit_community.js"></script>
+<script src="../../../../javascripts/mermaid_lightbox.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<script src="../../../../javascripts/drawio_reload.js"></script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script><script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></body></html>

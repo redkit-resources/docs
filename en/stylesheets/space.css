@@ -1,0 +1,11 @@
+.md-grid {
+  max-width: 95%;
+}
+
+@media (min-width: 1920px) {
+  .md-grid {
+    max-width: 1728px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

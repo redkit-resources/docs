@@ -1,0 +1,53 @@
+.mermaid {
+  cursor: zoom-in;
+}
+
+.mermaid-lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.mermaid-lightbox-active {
+  width: min(1400px, 92vw);
+  max-height: 90vh;
+  background: var(--md-default-bg-color, #fff);
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: grab;
+  touch-action: none;
+}
+
+.mermaid-lightbox-active.dragging {
+  cursor: grabbing;
+}
+
+.mermaid-lightbox-close {
+  position: fixed;
+  top: 1rem; right: 1.5rem;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.mermaid-lightbox-hint {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  z-index: 10001;
+  pointer-events: none;
+}
