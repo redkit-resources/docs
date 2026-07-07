@@ -7,8 +7,6 @@ tags:
   - world
   - w2w
 
-status: new
-
 ---
 
 # World

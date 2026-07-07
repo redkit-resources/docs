@@ -3,8 +3,6 @@ tags:
   - References
   - World
   - Environment
-  
-status: new
 
 ---
 # shadowConfig

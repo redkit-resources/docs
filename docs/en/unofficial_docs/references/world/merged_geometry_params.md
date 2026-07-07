@@ -4,7 +4,6 @@ tags:
   - World
   - w2w
     
-status: new
 ---
 
 # mergedGeometry

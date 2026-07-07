@@ -75,7 +75,12 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
   - pymdownx.inlinehilite
   - pymdownx.betterem
   - pymdownx.blocks.caption
@@ -85,7 +90,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.smartsymbols
   - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.magiclink
 
   - admonition
@@ -99,6 +103,9 @@ markdown_extensions:
 
 plugins:
   - tags
+  - glightbox
+  - drawio:
+      darkmode: true
 
   - search:
       lang:
@@ -138,6 +145,8 @@ extra_css:
   - stylesheets/title_case_fix.css
   - stylesheets/toc_toggle.css
   - stylesheets/redkit_community.css
+  - stylesheets/space.css
+  - stylesheets/mermaid_lightbox.css
 
 extra_javascript:
   - javascripts/redirect-config.js
@@ -147,3 +156,6 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/toc_toggle.js
   - javascripts/redkit_community.js
+  - javascripts/mermaid_lightbox.js
+  - https://viewer.diagrams.net/js/viewer-static.min.js
+  - javascripts/drawio_reload.js

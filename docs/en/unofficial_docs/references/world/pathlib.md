@@ -5,8 +5,6 @@ tags:
   - Navigation
   - navmesh
 
-status: new
-
 ---
 
 # PathLib

@@ -4,8 +4,6 @@ tags:
   - World
   - Environment
   
-status: new
-
 ---
 
 # environmentParameters

@@ -5,8 +5,6 @@ tags:
   - occlusion
   - w3occlusiondef
 
-status: new
-
 ---
 
 # Umbra

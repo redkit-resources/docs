@@ -7,7 +7,9 @@
 !!! docs "Поведение"
     Раздел c информацией об поведениях, графах поведений.
     
-    [:octicons-arrow-right-24: Начать изучение](behavior/behavior.md){ .md-button }
+    [:octicons-arrow-right-24: Начать изучение практически](behavior/behavior.md){ .md-button }
+    
+    [:octicons-arrow-right-24: Или начать сразу с архитектуры](behavior/behavior_architecture.md){ .md-button }
 
 
 !!! docs "Миры"

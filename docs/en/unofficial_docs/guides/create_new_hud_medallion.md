@@ -10,9 +10,6 @@ tags:
   - .redswf
   - .as
   - .ws
-
-status: new
-
 ---
 
 # How to Create Your Own Medallion in HUD

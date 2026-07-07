@@ -27,6 +27,7 @@ nav:
           - Варианты DLC. Квестовый DLC-мод: unofficial_docs/base/dlc/dlc_mods/dlc_quest.md
         Поведения:
           - Общие сведения: unofficial_docs/base/behavior/behavior.md
+          - Архитектура поведений: unofficial_docs/base/behavior/behavior_architecture.md
         Мир:
           - Миры основы: unofficial_docs/base/world/world.md
 

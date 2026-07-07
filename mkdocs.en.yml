@@ -44,6 +44,7 @@ nav:
         Home: en/unofficial_docs/base/index.md
         Behaviors:
           - General Information: en/unofficial_docs/base/behavior/behavior.md
+          - Behavior Architecture: en/unofficial_docs/base/behavior/behavior_architecture.md
         World:
           - World Basics: en/unofficial_docs/base/world/world.md
         Loading screens: unofficial_docs/base/loading_screens.md

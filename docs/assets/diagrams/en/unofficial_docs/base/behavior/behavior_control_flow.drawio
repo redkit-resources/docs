@@ -1,0 +1,82 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="RtWqmvIJMaCE0OnAcs4j">
+    <mxGraphModel dx="674" dy="458" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nDcR__n-7cQm_msBMms8-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#005252,#EA6B66);fillColor=light-dark(#E6E6E6,#1E2129);" value="" vertex="1">
+          <mxGeometry height="230" width="270" x="40" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=light-dark(#A2A200,#CCCC00);strokeWidth=2;fillColor=light-dark(#E6E6E6,#1E2129);" value="" vertex="1">
+          <mxGeometry height="230" width="261" x="320" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 11px; color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26)); background-color: light-dark(rgb(234, 107, 102), rgb(234, 107, 102));&quot;&gt;NPC control&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="45" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;background-color: light-dark(rgb(162, 162, 0), rgb(204, 204, 0));&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(26, 26, 26));&quot;&gt;Player control&lt;/font&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="110" x="340" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;i&gt;The tree decides, the orchestrator sets the goal&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="220" x="59.5" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;&lt;i&gt;Input + state machine decide, no tree&lt;/i&gt;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="220" x="340" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-17" edge="1" parent="1" source="nDcR__n-7cQm_msBMms8-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d80073;strokeColor=#A50040;" target="nDcR__n-7cQm_msBMms8-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;strokeColor=#FF8000;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;Orchestrator - creates NPCs, hands out the goal&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="230.5" x="59.75" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;strokeColor=#6600CC;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;Behavior Tree - each tick picks an action&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="230.5" x="59.5" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;strokeColor=light-dark(#005252,#006666);" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Actor Action - passes commands for execution&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="230.5" x="59.75" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-20" edge="1" parent="1" source="nDcR__n-7cQm_msBMms8-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d80073;strokeColor=#A50040;" target="nDcR__n-7cQm_msBMms8-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FF8000;" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;PlayerInput - Buttons / Stick / Camera&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="230.5" x="340" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-21" edge="1" parent="1" source="nDcR__n-7cQm_msBMms8-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d80073;strokeColor=#A50040;" target="nDcR__n-7cQm_msBMms8-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FF8000;" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;State Machine CR4Player - States&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="230.5" x="340" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=light-dark(#005252,#006666);" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;SSM commands execution directly&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="230.5" x="340" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-18" edge="1" parent="1" source="nDcR__n-7cQm_msBMms8-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.098;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#d80073;strokeColor=#A50040;" target="nDcR__n-7cQm_msBMms8-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#E6E6E6,#1E2129);" value="" vertex="1">
+          <mxGeometry height="120" width="540" x="41" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Shared executive part" vertex="1">
+          <mxGeometry height="30" width="220" x="201" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-27" edge="1" parent="1" source="nDcR__n-7cQm_msBMms8-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#d80073;strokeColor=#A50040;" target="nDcR__n-7cQm_msBMms8-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00BABA,#00CCCC);" value="" vertex="1">
+          <mxGeometry height="80" width="140" x="53.5" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-28" edge="1" parent="1" source="nDcR__n-7cQm_msBMms8-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#d80073;strokeColor=#A50040;" target="nDcR__n-7cQm_msBMms8-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00CC00,#00CC00);" value="&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Behavior Graph&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;(AnimGraph)&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Variables + events -&amp;gt; Pose&lt;/font&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="220" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#00CC00,#00CC00);" value="Animation&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Skeleton, motion, animevents&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="410.5" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="nDcR__n-7cQm_msBMms8-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Movement&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;i&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Speed and direction, navigation, keeping on the navmesh&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="125" x="61" y="530" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
